@@ -1,0 +1,384 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: url("../../images/Group 230.svg") no-repeat 50% 20%;
+    background-size: 112%;
+}
+
+@font-face {
+    font-family: 'yek';
+    src: url('../../fonts/yek.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'yekan_bakh';
+    src: url('../../fonts/YekanBakh_Bold.ttf') format('truetype');
+}
+
+
+/* #main_holder {
+    border: 1px solid red;
+    margin-right: -700px; 
+     position: absolute; 
+     top: 100%;
+    margin: 0 auto;
+    right: 51.0%;
+    width: 100%;
+    height: 1000px;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    overflow: hidden;
+} */
+
+
+/* 
+#shape1 {
+    position: absolute;
+    top: -19px;
+    left: -18px;
+    width: 606px;
+    height: 678px;
+}
+
+#shape2 {
+    position: absolute;
+    width: 597px;
+    height: 559px;
+    top: 97px;
+    right: -68px;
+} */
+
+.shape1_holder {
+    background: url("../../images/Path 62.svg")no-repeat 0% 0%;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 1008.1px;
+    height: 1110.1px;
+}
+
+.shape2_holder {
+    background: url("../../images/197.svg")no-repeat 0% 0%;
+    background-size: 620px;
+    position: absolute;
+    bottom: 0px;
+    right: -15.7px;
+    width: 636px;
+    height: 657px;
+}
+
+#form_holder {
+    /* border: 1px solid red; */
+    background: #ffffff;
+    width: 465px;
+    height: 360px;
+    border-radius: 28px;
+    transform: translateX(50%) translateY(-50%);
+    position: absolute;
+    top: 60%;
+    right: 50%;
+    direction: rtl;
+    font-size: 25px;
+    box-shadow: 0px 3px 10px 2px #cccccc;
+}
+
+.userNameTextHolder {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'yek';
+    padding-right: 70px;
+    color: #707070;
+}
+
+.userNameInputHolder1 {
+    /* border: 1px solid red; */
+    position: relative;
+    bottom: 13px;
+}
+
+.userNameInputHolder2 {
+    border-radius: 15px;
+    background: url(../../images/Profile.svg) 4% no-repeat #E9E9E9;
+    background-size: 20px;
+    width: 356px;
+    direction: ltr;
+    margin-right: 65px;
+}
+
+.userNameInputHolder2>input {
+    width: 75%;
+    height: 41px;
+    margin-left: 47px;
+    /* border: 1px solid red; */
+    background: #E9E9E9;
+    color: #B2B2B2;
+    font-family: 'yek';
+    font-size: 18px;
+    border: none;
+}
+
+input::placeholder {
+    color: #B2B2B2;
+    font-family: 'yek';
+    font-size: 18px;
+}
+
+
+/* passsssssss */
+
+.passWordTextHolder>p {
+    margin-block-start: 0em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.passWordTextHolder {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'yek';
+    padding-right: 70px;
+    color: #707070;
+    display: block;
+}
+
+.passWordInputHolder1 {
+    /* border: 1px solid red; */
+    position: relative;
+    bottom: 13px;
+}
+
+.passWordInputHolder2 {
+    border-radius: 15px;
+    background: url(../../images/lock.svg) 2% no-repeat #E9E9E9;
+    background-size: 32px;
+    width: 356px;
+    direction: ltr;
+    margin-right: 65px;
+}
+
+.passWordInputHolder2>input {
+    width: 75%;
+    height: 41px;
+    margin-left: 47px;
+    /* border: 1px solid red; */
+    background: #E9E9E9;
+    color: #B2B2B2;
+    font-family: 'yek';
+    font-size: 18px;
+    border: none;
+}
+
+input::placeholder {
+    font-family: 'yek';
+}
+
+.passWordInputHolder2>input::placeholder {
+    direction: rtl;
+}
+
+.section1 {
+    /* border: 1px solid red; */
+}
+
+.section2 {
+    /* border: 1px solid red; */
+    position: relative;
+    bottom: 13px;
+}
+
+#menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid transparent;
+    width: 1579px;
+    height: 120px;
+    direction: rtl;
+    font-family: 'yek';
+}
+
+.menu-logo img {
+    margin: 10px;
+    margin-right: 10px;
+    margin-right: 19px;
+    float: right;
+    width: 92px;
+    height: 84px;
+}
+
+ul {
+    list-style: none;
+}
+
+.menu-tab {
+    border: 1px solid transparent;
+    width: 773px;
+    height: 110px;
+    display: inline-block;
+    margin-top: -20px;
+    font-size: 35px;
+}
+
+.menu-tab li {
+    display: inline-block;
+    margin-left: 75px;
+    margin-top: 35px;
+    color: #777;
+}
+
+.menu-tab li:nth-child(1) {
+    display: inline-block;
+    margin-top: 35px;
+    color: #444;
+}
+
+.border-bottom {
+    border-radius: 30px;
+    width: 24px;
+    height: 8px;
+    position: relative;
+    bottom: 1px;
+    right: 12px;
+    background: linear-gradient(0deg, rgba(156, 90, 247, 1) 0%, rgba(70, 91, 234, 1) 100%);
+}
+
+#search-holder {
+    width: 398px;
+    height: 71px;
+    border: 1px solid transparent;
+    padding-right: 20px;
+    float: left;
+    position: absolute;
+    left: 30px;
+    top: 21px;
+    font-family: 'yekan_bakh';
+}
+#search-box {
+    background: url(../../images/Iconly-Light-Search.svg) no-repeat 9px 10px;
+    background-color: #7D74E2;
+    font-family: yek;
+    font-size: 20px;
+    color: transparent;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    float: left;
+    transition: .5s;
+    position: relative;
+    text-align: right;
+    float: left;
+    text-indent: 25px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#search-box:focus {
+    color: white;
+    transition: .5s;
+    width: 315px;
+    padding-right: 20px;
+    cursor: text;
+}
+
+#user {
+    background: url(../../images/Iconly-Light-Profile.svg) no-repeat 8px 8px;
+    background-color: #7D74E2;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin-top: 5px;
+    border: none;
+    float: left;
+    margin-left: 10px;
+}
+
+.little-des {
+    color: white;
+    transform: rotate(270deg);
+    font-size: 25px;
+    position: absolute;
+    line-height: 10px;
+    top: 152px;
+    right: 249px;
+    width: 242px;
+    font-weight: lighter;
+}
+
+.forgetPass {
+    /* border: 1px solid red; */
+    padding-right: 65px;
+    position: relative;
+    bottom: 26px;
+}
+
+.forgetPass>a {
+    /* border: 1px solid red; */
+    text-decoration: none;
+    color: #4985EC;
+    font-family: 'yek';
+    font-size: 18px;
+}
+
+.exclamation {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    /* border: 1px solid red; */
+    position: relative;
+    top: 7px;
+    background: url(../../images/Info_Square.svg);
+    background-size: 15px;
+}
+
+.signup {
+    border: 2px solid#665AEE;
+    width: 100px;
+    height: 30px;
+    position: relative;
+    top: 2px;
+    border-radius: 10px;
+    font-family: 'yek';
+    font-size: 20px;
+    padding: 5px 5px 5px 14px;
+    text-align: center;
+    display: inline-block;
+    color: #665AEE;
+    font-weight: 900;
+    background: url(../../images/Iconly-Light-outline-Profile.svg) no-repeat 16% 50%;
+    cursor: pointer;
+}
+
+.signin {
+    /* border: 1px solid red; */
+    width: 70px;
+    height: 35px;
+    border-radius: 10px;
+    font-family: 'yek';
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    display: inline-block;
+    font-weight: 900;
+    color: white;
+    background: linear-gradient(#5A5BED, #895AF4);
+    cursor: pointer;
+}
+
+.buttons_holder {
+    /* border: 1px solid red; */
+    position: relative;
+    bottom: 18px;
+    padding-right: 141px;
+}
+
+.formInnerHolder {
+    /* border: 1px solid red; */
+    position: relative;
+    left: 10px;
+}

@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+
+  font-family: "yek";
+  list-style: none;
+  /* background: url('../../../Assets/images/back-set.png') no-repeat 0% -16px;
+    background-size: 100%; */
+}
+
+/* Holder  */
+
+#center-holder {
+  width: 1583px;
+  direction: rtl;
+  margin: 0 auto;
+}
+
+/* Responsive */
+
+@media Screen and (max-width: 1450px) {
+  #center-holder {
+    width: 1450px;
+  }
+}
+
+@media Screen and (max-width: 1350px) {
+  #center-holder {
+    width: 1350px;
+  }
+}
+
+@media Screen and (max-width: 1250px) {
+  #center-holder {
+    width: 1250px;
+  }
+}
+
+@media Screen and (max-width: 1150px) {
+  #center-holder {
+    width: 1150px;
+  }
+}
+
+@media Screen and (max-width: 1024px) {
+  #center-holder {
+    width: 1024px;
+  }
+}
+
+@media Screen and (max-width: 768px) {
+  #center-holder {
+    width: 768px;
+  }
+}
+
+@media Screen and (max-width: 414px) {
+  #center-holder {
+    width: 414px;
+    background: #f9f9f9;
+  }
+}
+
+@media Screen and (max-width: 375px) {
+  #center-holder {
+    width: 375px;
+    background: #f9f9f9;
+  }
+}
+
+@media Screen and (max-width: 360px) {
+  #center-holder {
+    width: 360px;
+    background: #f9f9f9;
+  }
+}
+
+
+@font-face {
+  font-family: "yek";
+  src: url("../../../Assets/fonts/Yekan\ Bakh\ Vip\ Version.ttf")
+    format("truetype");
+}

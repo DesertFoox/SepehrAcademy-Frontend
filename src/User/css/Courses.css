@@ -1,0 +1,642 @@
+#panel_holder {
+  background-color: white;
+  border-radius: 38px;
+}
+#right {
+  background: rgb(0, 212, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 212, 255, 1) 5%,
+    rgba(107, 88, 219, 1) 95%
+  );
+}
+body {
+  overflow-y: visible !important; /* Hide vertical scrollbar */
+  overflow-x: hidden !important; /* Hide vertical scrollbar */
+}
+#user_inf {
+  width: 170.8px;
+  height: 228px;
+  position: relative;
+  left: 84px;
+  top: 24px;
+}
+#user_inf .imgprof {
+  width: 91%;
+  border: 7px solid white;
+  border-radius: 21px;
+  height: 146px;
+}
+#user_name {
+  width: 100%;
+  height: 45px;
+  position: relative;
+  bottom: 0;
+  border-radius: 16px;
+  background: white;
+}
+@font-face {
+  font-family: "yek";
+  src: url("../../Assets/fonts/yek.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "yekan_bakh";
+  src: url("../../Assets/fonts/YekanBakh_Bold.ttf") format("truetype");
+}
+.name {
+  color: #704ed4;
+  font-size: 30px;
+  font-family: "yek";
+  position: relative;
+}
+.editprof {
+  top: -22px;
+  position: relative;
+  left: -62px;
+}
+#id {
+  font-family: "yekan_bakh";
+  font-size: 17px;
+  color: #704ed4;
+}
+#panel_menu {
+  width: 260px;
+  height: 431px;
+  position: relative;
+  left: 61px;
+  top: 36px;
+}
+.menu {
+  width: 89%;
+  height: 83px;
+  border-radius: 14px;
+  font-size: 30px;
+  font-family: "yek";
+  text-align: right;
+  align-items: center;
+  display: grid;
+  padding-right: 68px;
+  left: -39px;
+  position: relative;
+  margin-bottom: 25px;
+}
+.btnmenus {
+  background-color: #ffffff !important;
+  height: 4.3125rem;
+
+  border-radius: 14px !important;
+  font-size: 25px !important;
+  font-family: "yek";
+}
+.btgg {
+  background: none !important;
+  width: 18.25rem;
+  box-shadow: none !important;
+}
+.my_cour {
+  background: white;
+  background-image: url("../../Assets/images/Iconly-Bold-Play.svg");
+  background-repeat: no-repeat;
+  background-position: 250px 25px;
+}
+.singup {
+  background: white;
+  background-image: url("../../Assets/images/Iconly-Bold-Add User.svg");
+  background-repeat: no-repeat;
+  background-position: 250px 23px;
+}
+.edit {
+  background: white;
+  background-image: url("../../Assets/images/Iconly-Bold-Edit Square.svg");
+  background-repeat: no-repeat;
+  color: #704ed4 !important;
+  background-position: 250px 24px;
+}
+.leave {
+  background: white;
+  background-image: url("../../Assets/images/Iconly-Bold-Close Square.svg");
+  background-repeat: no-repeat;
+  background-position: 250px 25px;
+}
+#bell {
+  float: left;
+  position: absolute;
+  top: 17px;
+  right: 22px;
+  width: 53px;
+}
+.my_cur {
+  font-family: "yek";
+  color: #704ed4;
+  font-size: 30px;
+  position: relative;
+  left: 35%;
+  top: 44px;
+}
+#cart {
+  float: left;
+  position: absolute;
+  top: 17px;
+  left: 22px;
+  width: 53px;
+}
+.courses_inf li {
+  list-style: none;
+  display: inline-block;
+  font-size: 27px;
+  font-family: "yek";
+  text-align: center;
+  width: 172px;
+}
+.courses_inf {
+  width: 100%;
+  direction: rtl;
+  height: 30px;
+  position: relative;
+}
+#courses_holder {
+  width: 1066px;
+  height: 603px;
+  position: relative;
+  left: 34px;
+  top: 99px;
+}
+.sec_cur {
+  width: 100%;
+  height: 540px;
+}
+#cur_img {
+  width: 37.37px;
+  height: 33.28px;
+  margin-right: -245px;
+  position: relative;
+  top: 11px;
+}
+#cur_img img {
+  width: 100%;
+  height: 100%;
+}
+.dore {
+  width: 168px;
+  position: relative;
+  right: 73px;
+}
+.kargah {
+  width: 65px;
+  position: relative;
+  right: 125px;
+}
+.cash {
+  width: 163px;
+  position: relative;
+  right: 179px;
+}
+.tar {
+  width: 105px;
+  position: relative;
+  right: 392px;
+}
+.vaz {
+  width: 116px;
+  position: relative;
+  right: 113px;
+}
+#next {
+  position: relative;
+  bottom: 62px;
+  width: 124px;
+  height: 44px;
+  left: 514px;
+  font-family: "yek";
+  display: inline-flex;
+}
+.page {
+  font-size: 30px;
+  color: #704ed4;
+}
+.left {
+  position: relative;
+  left: -22px;
+  top: 15px;
+}
+.right {
+  position: relative;
+  right: -11px;
+  top: 11px;
+}
+.page {
+  width: 45px;
+  height: 45px;
+  background: #d8d5f6;
+  border-radius: 100px;
+  text-align: center;
+  line-height: 49px;
+}
+@media only screen and (max-width: 1600px) {
+  #courses_holder {
+    width: 891px;
+    height: 493px;
+  }
+  .sec_cur {
+    width: 100%;
+    height: 100%;
+  }
+  #courses_holder {
+    width: 828px;
+    top: 75px;
+    height: 493px;
+    left: 20px;
+  }
+  .my_cur {
+    font-family: "yek";
+    color: #704ed4;
+    font-size: 30px;
+    position: relative;
+    left: 31%;
+    top: 16px;
+  }
+  .courses_inf li {
+    list-style: none;
+    display: inline-block;
+    font-size: 22px;
+    font-family: "yek";
+    text-align: center;
+    width: 129px;
+  }
+  #cur_img {
+    width: 37.37px;
+    height: 33.28px;
+    margin-right: 49px;
+    position: relative;
+    top: 7px;
+  }
+  .dore {
+    width: 168px;
+    position: relative;
+    right: 34px;
+    bottom: 9px;
+  }
+  .kargah {
+    width: 65px;
+    position: relative;
+    right: 49px;
+    bottom: 5px;
+  }
+  .tar {
+    width: 105px;
+    position: relative;
+    right: 66px;
+    bottom: 7px;
+  }
+  .vaz {
+    width: 116px;
+    position: relative;
+    right: 86px;
+    bottom: 6px;
+  }
+  .page {
+    width: 37px;
+    height: 37px;
+    background: #d8d5f6;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 42px;
+  }
+  #next {
+    position: relative;
+    bottom: 83px;
+    width: 124px;
+    height: 44px;
+    left: 400px;
+    font-family: "yek";
+    display: inline-flex;
+  }
+  .right {
+    position: relative;
+    right: -13px;
+    top: 7px;
+  }
+  .left {
+    position: relative;
+    left: -22px;
+    top: 11px;
+  }
+  .cash {
+    width: 163px;
+    position: relative;
+    right: 65px;
+    bottom: 7px;
+  }
+  .dore {
+    width: 168px;
+    position: relative;
+    right: 31px;
+    bottom: 6px;
+  }
+}
+@media only screen and (max-width: 1150px) {
+  #courses_holder {
+    width: 641px;
+    height: 356px;
+    top: 18px;
+    left: 20px;
+  }
+  #next {
+    position: relative;
+    bottom: 57px;
+    width: 124px;
+    height: 44px;
+    left: 269px;
+    font-family: "yek";
+    display: inline-flex;
+  }
+  .my_cur {
+    font-family: "yek";
+    color: #704ed4;
+    font-size: 16px;
+    position: relative;
+    left: 35%;
+    top: 23px;
+  }
+  .right img {
+    width: 100%;
+    height: 100%;
+  }
+  .right {
+    position: relative;
+    right: -8px;
+    top: 1px;
+    width: 22px;
+    height: 26px;
+  }
+  .left {
+    position: relative;
+    left: -15px;
+    top: 1px;
+    width: 8px;
+    height: 28px;
+  }
+  .left img {
+    width: 100%;
+    height: 100%;
+  }
+  #cur_img {
+    width: 22.19px;
+    height: 19px;
+    margin-right: 49px;
+    position: relative;
+    top: 7px;
+  }
+  .courses_inf li {
+    list-style: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: "yek";
+    text-align: center;
+    width: 103px;
+  }
+  #cur_img {
+    width: 22.19px;
+    height: 19px;
+    margin-right: 40px;
+    position: relative;
+    top: 7px;
+  }
+  .dore {
+    width: 102px;
+    position: relative;
+    right: 41px;
+    bottom: 0px;
+  }
+  .page {
+    width: 26px;
+    height: 26px;
+    background: #d8d5f6;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 18px;
+  }
+  #cart {
+    float: left;
+    position: absolute;
+    top: 20px;
+    left: 34px;
+    width: 38.15px;
+  }
+  .cash {
+    width: 97px;
+    position: relative;
+    right: 91px;
+    bottom: 1px;
+  }
+  .kargah {
+    width: 56px;
+    position: relative;
+    right: 65px;
+    bottom: 0px;
+  }
+  .tar {
+    width: 93px;
+    position: relative;
+    right: 102px;
+    bottom: 1px;
+  }
+  .vaz {
+    width: 83px;
+    position: relative;
+    right: 114px;
+    bottom: 0px;
+  }
+  .courses_inf {
+    width: 100%;
+    direction: rtl;
+    height: 20px;
+    position: relative;
+  }
+  .items li {
+    font-size: 11px;
+  }
+  #bell {
+      width: 53px;
+  }
+}
+@media only screen and (max-width: 1398px) {
+  .btgg {
+    width: 15rem;
+  }
+  .my_cour {
+    background-position: 192px 24px !important;
+  }
+  .singup {
+    background-position: 192px 24px !important;
+  }
+  .edit {
+    background-position: 192px 24px !important;
+  }
+  .leave {
+    background-position: 192px 24px !important;
+  }
+  #name {
+    color: #704ed4;
+    font-size: 24px;
+    font-family: "yek";
+  }
+  #id {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  #user_inf {
+    visibility: hidden !important;
+  }
+  #menu {
+    visibility: hidden;
+  }
+  .imgheight {
+    height: 180px !important;
+  }
+  #search-holder {
+    visibility: hidden;
+  }
+  #right {
+    visibility: hidden;
+  }
+  #courses_holder {
+    width: 100%;
+    height: 100%;
+    top: 62px;
+    left: 20px;
+    left: 0;
+  }
+  #panel_holder {
+    width: 100%;
+    left: 0;
+    height: 100%;
+    top: 397px;
+    border-radius: 0;
+  }
+ 
+  #cur_img {
+    width: 59.24px;
+    height: 52px;
+    margin-right: 51px;
+    position: relative;
+    top: 36px;
+  }
+  .dore {
+    width: 102px;
+    position: relative;
+    right: 36px;
+    top: 38px;
+  }
+  .my_cur {
+    font-family: "yek";
+    top: 92px;
+    color: #704ed4;
+    font-size: 23px;
+    position: relative;
+    left: 35%;
+  }
+  #user_inf .imgprof {
+    width: 73px;
+    border: 7px solid gray;
+    border-radius: 21px;
+    height: 73px;
+    position: relative;
+    left: 66px;
+    top: 91px;
+  }
+  #user_name {
+    background: none;
+    top: 37px;
+  }
+  .editprof {
+    width: 15.71px;
+    position: relative;
+    left: -34px;
+    top: -1px;
+  }
+  .items li {
+    font-size: 20px;
+  }
+  #cart {
+    visibility: hidden;
+    display: none;
+  }
+  #user_inf {
+    width: 110px;
+    left: 40px;
+    height: 228px;
+    position: relative;
+    visibility: visible;
+    top: -87px;
+  }
+  .name {
+    font-size: 30px;
+    left: 18.7px;
+    bottom: 27px;
+    color: #989898;
+  }
+  #id {
+    font-size: 17px;
+    top: -7px;
+    color: #989898;
+    left: -9px;
+  }
+  #bell {
+    visibility: hidden;
+    display: none;
+  }
+  .kargah {
+    display: none;
+    visibility: hidden;
+  }
+  .cash {
+    display: none;
+    visibility: hidden;
+  }
+  .tar {
+    display: none;
+    visibility: hidden;
+    
+  }
+  .vaz {
+    visibility: hidden;
+    display: none;
+  }
+  .courses_inf {
+    visibility: hidden;
+    display: none;
+  }
+  .shape1_holder {
+    visibility: hidden;
+    display: none;
+  }
+  .shape2_holder {
+    visibility: hidden;
+    display: none;
+  }
+  .sec_cur ul {
+    position: relative;
+    bottom: 380px;
+  }
+}
+.profholder {
+  height: 2.4375rem !important;
+  border-radius: 14px !important;
+}
+.blackbge {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  border-top-left-radius: 36px;
+}
+.changeinput {
+  background: #e9e9e9 !important;
+  border-radius: 15px !important;
+  font-size: 26px !important;
+  font-family: "yek" !important;
+  direction: rtl !important;
+  text-align: right !important;
+  color: #b2b2b2 !important;
+}

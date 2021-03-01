@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="110" height="85" viewBox="0 0 110 85">
+  <g id="laptop" transform="translate(0 -53.334)">
+    <g id="Group_26" data-name="Group 26" transform="translate(0 53.334)">
+      <g id="Group_25" data-name="Group 25">
+        <path id="Path_305" data-name="Path 305" d="M107.5,123.334H105v-57.5a12.515,12.515,0,0,0-12.5-12.5h-75A12.515,12.515,0,0,0,5,65.834v57.5H2.5a2.5,2.5,0,0,0-2.5,2.5v7.5a5,5,0,0,0,5,5H105a5,5,0,0,0,5-5v-7.5A2.5,2.5,0,0,0,107.5,123.334ZM10,65.834a7.5,7.5,0,0,1,7.5-7.5h75a7.5,7.5,0,0,1,7.5,7.5v57.5H10v-57.5Zm95,67.5H5v-5H45a2.5,2.5,0,0,0,2.5,2.5h15a2.5,2.5,0,0,0,2.5-2.5h40Z" transform="translate(0 -53.334)" fill="#fd7054"/>
+      </g>
+    </g>
+    <g id="Group_28" data-name="Group 28" transform="translate(15 63.334)">
+      <g id="Group_27" data-name="Group 27">
+        <path id="Path_306" data-name="Path 306" d="M141.5,96h-75A2.5,2.5,0,0,0,64,98.5v50a2.5,2.5,0,0,0,2.5,2.5h75a2.5,2.5,0,0,0,2.5-2.5v-50A2.5,2.5,0,0,0,141.5,96ZM139,146H69V101h70Z" transform="translate(-64 -96)" fill="#fd7054"/>
+      </g>
+    </g>
+    <g id="Group_30" data-name="Group 30" transform="translate(40 88.334)">
+      <g id="Group_29" data-name="Group 29">
+        <rect id="Rectangle_9" data-name="Rectangle 9" width="5" height="5" fill="#fd7054"/>
+      </g>
+    </g>
+    <g id="Group_32" data-name="Group 32" transform="translate(52.5 88.334)">
+      <g id="Group_31" data-name="Group 31">
+        <rect id="Rectangle_10" data-name="Rectangle 10" width="5" height="5" fill="#fd7054"/>
+      </g>
+    </g>
+    <g id="Group_34" data-name="Group 34" transform="translate(65 88.334)">
+      <g id="Group_33" data-name="Group 33">
+        <rect id="Rectangle_11" data-name="Rectangle 11" width="5" height="5" fill="#fd7054"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,2602 @@
+#content {
+  border: 1px solid transparent;
+  width: 1581px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* Skill */
+
+.skill {
+  border: 1px solid transparent;
+  position: relative;
+  width: 1479px;
+  height: 720px;
+  margin: 100px auto;
+}
+
+#res-skill {
+  display: none;
+}
+
+/* Right-Skill */
+
+#right-skill {
+  float: right;
+  width: 575px;
+  height: 520px;
+  margin-top: 80px;
+  color: #707070;
+  position: relative;
+  right: 20px;
+  animation: skills 1s normal forwards ease-in-out;
+}
+
+.title-skill {
+  font-size: 50px;
+  text-align: center;
+  line-height: 4px;
+}
+
+.title-skill > strong {
+  color: #744fd6;
+  font-weight: lighter;
+}
+
+.border-bottom-skill {
+  border-radius: 30px;
+  width: 575px;
+  height: 10px;
+  background: linear-gradient(
+    0deg,
+    rgba(156, 90, 247, 1) 0%,
+    rgba(70, 91, 234, 1) 100%
+  );
+  margin-top: 30px;
+  margin-right: 0px;
+}
+
+.des-skill {
+  width: 575px;
+  font-size: 34px;
+  text-align: right;
+  line-height: 43px;
+  margin-top: 25px;
+  margin-right: 3px;
+}
+
+.see-curses {
+  position: relative;
+  float: right;
+  width: 300px;
+  height: 80px;
+  background: linear-gradient(
+    90deg,
+    rgba(70, 91, 234, 1) 0%,
+    rgba(164, 90, 248, 1) 100%
+  );
+  border-radius: 15px;
+  line-height: 82px;
+  margin-right: 4px;
+  font-size: 33px;
+  color: white;
+  text-align: right;
+  text-indent: 35px;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: 0.2s;
+}
+.see-curses:hover {
+  transform: scale(1.1);
+}
+
+.see-curses > img {
+  position: absolute;
+  width: 35px;
+  margin-right: 20px;
+  margin-top: 22px;
+}
+
+/* Header > Skill > Left */
+
+.laptop-vector-skill {
+  width: 800px;
+  float: left;
+  margin-left: 30px;
+  animation: laptop 1s normal forwards ease-in-out;
+  transition: 0.2s;
+}
+.laptop-vector-skill:hover {
+  transform: scale(1.1);
+}
+/* Grouping */
+
+.grouping {
+  border: 1px solid transparent;
+  position: relative;
+  width: 1150px;
+  height: 520px;
+  margin: 30px auto;
+  text-align: center;
+  font-family: "yek";
+  font-size: 70px;
+}
+.grouping > p {
+  margin: 0 auto;
+  color: #744fd6;
+}
+
+.group {
+  border: 1px solid white;
+  width: 220px;
+  height: 250px;
+  font-size: 40px;
+  color: #888888;
+  display: inline-block;
+  line-height: 360px;
+  border-radius: 25px;
+  box-shadow: 2px 1px 24px #ccc;
+  cursor: default;
+  margin-right: 25px;
+  margin-top: 75px;
+  transition: 0.2s;
+}
+.group:hover {
+  transform: scale(1.1);
+}
+.grouping > input {
+  transition: 0.2s;
+  position: absolute;
+  border: 2px solid #744fd6;
+  outline: none;
+  border-radius: 15px;
+  width: 150px;
+  height: 60px;
+  font-size: 30px;
+  background: none;
+  color: #744fd6;
+  font-family: yek;
+  text-align: center;
+  bottom: 10px;
+  right: 502px;
+  cursor: pointer;
+}
+.grouping > input:hover {
+  transform: scale(1.1);
+  background-color: #744fd6;
+  color: #fff;
+}
+.math {
+  background: url("../../../Assets/images/math.svg") no-repeat 50% 20% white;
+  background-size: 70px;
+  margin-right: 0;
+}
+
+.technology {
+  background: url("../../../Assets/images/laptop-1.svg") no-repeat 50% 21% white;
+  background-size: 90px;
+}
+
+.chemistry {
+  background: url("../../../Assets/images/chemi.svg") no-repeat 50% 22% white;
+  background-size: 50px;
+}
+
+.physics {
+  background: url("../../../Assets/images/fizik.svg") no-repeat 50% 22% white;
+  background-size: 70px;
+}
+
+/* Developing */
+
+.developing {
+  border: 1px solid transparent;
+  position: relative;
+  width: 1500px;
+  height: 790px;
+  margin: 110px auto;
+  margin-bottom: 0;
+  text-align: center;
+  font-family: "yek";
+  font-size: 70px;
+}
+
+.developing > p {
+  margin: 50px auto;
+  color: #744fd6;
+}
+.right-developing>img {
+  width: 650px;
+  float: right;
+  margin-top: 40px;
+  margin-right: 20px;
+  transition: 0.2s;
+}
+
+.left-developing {
+  border: 1px solid transparent;
+  position: relative;
+  width: 620px;
+  height: 580px;
+  margin-top: 45px;
+  margin-left: 120px;
+  font-family: "yek";
+  float: left;
+}
+
+.develop {
+  position: relative;
+  border: 1px solid white;
+  width: 265px;
+  height: 270px;
+  color: #777777;
+  float: left;
+  border-radius: 20px;
+  box-shadow: 2px 1px 24px #ccc;
+  cursor: default;
+  margin-left: 20px;
+  font-size: 30px;
+  background-color: white;
+  transition: 0.2s;
+}
+.develop:hover {
+  transform: scale(1.1);
+}
+
+.move {
+  margin-top: 20px;
+}
+
+.back-img {
+  background: linear-gradient(
+    0deg,
+    rgb(236, 230, 230) 20%,
+    rgb(255, 255, 255) 80%
+  );
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+  height: 140px;
+  border-radius: 15px;
+}
+
+.react > img {
+  width: 110px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.html > img,
+.css > img {
+  width: 90px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.angular > img {
+  width: 95px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.develop > h3 {
+  font-size: 25px;
+  margin-top: 18px;
+  font-family: yek, Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+
+.develop > p {
+  font-size: 20px;
+  color: #999999;
+  float: right;
+  margin-top: 13px;
+  margin-right: 30px;
+}
+
+.develop > span {
+  background: url("../../../Assets/images/star.svg") no-repeat 20% 50%;
+  width: 50px;
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+  font-size: 20px;
+  text-align: right;
+}
+
+/* Go-Ahead */
+
+.go-ahead {
+  border: 1px solid transparent;
+  width: 1500px;
+  height: 790px;
+  margin: 10px auto;
+  text-align: center;
+  font-family: "yek";
+  font-size: 70px;
+}
+
+.go-ahead > p {
+  margin: 60px auto;
+  color: #744fd6;
+}
+
+.left-ahead > img {
+  width: 640px;
+  float: left;
+  margin-top: 40px;
+  margin-left: 60px;
+  transition: 0.2s;
+}
+.left-ahead > img:hover {
+  transform: scale(1.1);
+}
+.right-ahead {
+  position: relative;
+  border: 1px solid transparent;
+  width: 470px;
+  height: 260px;
+  float: right;
+  margin-top: 40px;
+  border-radius: 20px;
+  margin-right: 70px;
+  background: white;
+  box-shadow: 2px 1px 24px #ccc;
+  transition: 0.2s;
+}
+
+.right-ahead>h2, .right-ahead>p {
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-size: 40px;
+  color: #777777;
+  font-family: "yek";
+  font-weight: lighter;
+}
+
+.right-ahead > p {
+  font-size: 33px;
+  font-family: "yek";
+  color: #999999;
+}
+
+#emaill {
+  font-family: yek, Arial, Helvetica, sans-serif;
+  background: #f3f1f1;
+  font-size: 20px;
+  color: #744fd6;
+  border: none;
+  outline: none;
+  padding-top: 6px;
+  border-radius: 50px;
+  width: 350px;
+  height: 65px;
+  text-indent: 25px;
+  margin-top: 5px;
+  direction: ltr;
+}
+
+.input-circle {
+  background: url("../../../Assets/images/right_arrow.svg") no-repeat 50% 50%
+    #8165cf;
+  background-size: 27px;
+  position: absolute;
+  top: 141px;
+  right: 60px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* Top Professors */
+
+.top-professors {
+  border: 1px solid transparent;
+  width: 1300px;
+  height: 740px;
+  margin: 10px auto;
+  text-align: center;
+  font-family: "yek";
+  font-size: 70px;
+}
+
+.top-professors > p {
+  margin: 60px auto;
+  color: #744fd6;
+}
+
+.all-professors {
+  border: 1px solid transparent;
+  margin: 0 auto;
+  width: 100%;
+  height: 510px;
+}
+
+.right-side,
+.left-side {
+  position: relative;
+  border: 1px solid transparent;
+  float: right;
+  width: 595px;
+  height: 509px;
+  margin-right: 45px;
+}
+
+.professor {
+  background: linear-gradient(
+    -130deg,
+    rgb(173, 136, 224) 0%,
+    rgb(110, 124, 214) 100%
+  );
+  border-radius: 15px;
+  width: 280px;
+  height: 180px;
+  float: left;
+  margin-left: 12px;
+  margin-top: 70px;
+}
+
+.lecturer1 > img {
+  position: absolute;
+  width: 125px;
+  top: 10px;
+  left: 87px;
+}
+
+.lecturer3 > img {
+  position: absolute;
+  width: 125px;
+  bottom: 126px;
+  left: 87px;
+}
+
+.lecturer2 > img {
+  position: absolute;
+  width: 125px;
+  top: 10px;
+  right: 92px;
+}
+
+.lecturer4 > img {
+  position: absolute;
+  width: 125px;
+  bottom: 126px;
+  right: 92px;
+}
+
+.professor > h3 {
+  margin-top: 75px;
+  font-size: 30px;
+  color: white;
+  font-family: yek;
+  font-weight: lighter;
+}
+
+.professor > p {
+  margin-top: 10px;
+  font-size: 22px;
+  color: rgb(236, 231, 231);
+  font-family: yek;
+  font-weight: lighter;
+}
+
+.big-professor {
+  position: relative;
+  background: linear-gradient(
+    -130deg,
+    rgb(173, 136, 224) 0%,
+    rgb(110, 124, 214) 100%
+  );
+  border-radius: 15px;
+  width: 585px;
+  height: 430px;
+  margin-right: 5px;
+  margin-top: 70px;
+  transition: all 0.2s;
+}
+.big-professor:hover {
+  transform: scale(1.05);
+}
+.big-professor > img {
+  position: absolute;
+  width: 190px;
+  bottom: 345px;
+  right: 200px;
+  transition: 0.2s;
+}
+
+.big-professor > h3 {
+  margin: 0;
+  padding-top: 100px;
+  font-size: 40px;
+  color: white;
+  font-family: yek;
+}
+
+.big-professor > h4 {
+  margin: 10px auto;
+  text-align: right;
+  text-indent: 90px;
+  font-size: 31px;
+  color: rgb(248, 244, 244);
+  font-family: yek;
+}
+
+.big-professor > p {
+  width: 400px;
+  margin: 20px auto;
+  margin-right: 90px;
+  text-align: right;
+  line-height: 40px;
+  font-size: 29px;
+  color: rgb(236, 234, 234);
+  font-family: yek;
+  font-weight: lighter;
+}
+
+/* Suggestions & Complaints */
+
+.suggestions-complaints {
+  border: 1px solid transparent;
+  width: 1300px;
+  height: 720px;
+  margin: 40px auto;
+  text-align: center;
+  font-family: "yek";
+  font-size: 70px;
+}
+
+.suggestions-complaints > p {
+  margin: 60px auto;
+  color: #744fd6;
+}
+.right-complaint:hover > img {
+  transform: scale(1.05);
+}
+.right-complaint > img {
+  transition: 0.2s;
+  width: 640px;
+  float: right;
+  margin-top: 25px;
+  margin-right: 10px;
+}
+
+.left-complaint {
+  position: relative;
+  border: 1px solid transparent;
+  width: 470px;
+  height: 330px;
+  float: left;
+  margin-top: 90px;
+  border-radius: 20px;
+  margin-left: 20px;
+  background: white;
+  box-shadow: 2px 1px 24px #ccc;
+  transition: 0.2s;
+}
+.left-complaint>h2 {
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-size: 33px;
+  font-family: yek;
+  color: #777777;
+}
+
+#message-text {
+  position: relative;
+  font-family: yek, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f3f1f1;
+  font-size: 20px;
+  color: #744fd6;
+  border: none;
+  outline: none;
+  padding-top: 4px;
+  border-radius: 50px;
+  width: 350px;
+  height: 55px;
+  text-indent: 25px;
+  top: -20px;
+  direction: rtl;
+}
+
+.left-complaint > p {
+  margin-top: -30px;
+  margin-bottom: 0;
+  font-size: 33px;
+  font-family: yek;
+  color: #777777;
+}
+
+#emaill-2 {
+  font-family: yek, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f3f1f1;
+  font-size: 20px;
+  color: #744fd6;
+  border: none;
+  outline: none;
+  padding-top: 6px;
+  border-radius: 50px;
+  width: 350px;
+  height: 55px;
+  text-indent: 25px;
+  margin-top: 0;
+  direction: ltr;
+  position: relative;
+  top: -20px;
+}
+
+.send {
+  position: relative;
+  top: -30px;
+  background: rgb(173, 136, 224) url("../../../Assets/images/left-arrow.png")
+    no-repeat 20px 8px;
+  background-size: 24px;
+  margin-right: 290px;
+  margin-top: 0;
+  width: 120px;
+  height: 40px;
+  border-radius: 50px;
+  font-family: yek;
+  font-size: 27px;
+  color: white;
+  text-align: right;
+  text-indent: 18px;
+  cursor: pointer;
+}
+
+/* Responsive */
+
+@media Screen and (max-width: 1450px) {
+  /* Content */
+  #content {
+    width: 1348px;
+    overflow: hidden;
+    border: 1px solid transparent;
+    margin: 0 auto;
+  }
+  .skill {
+    border: 1px solid transparent;
+    position: relative;
+    width: 1346px;
+    height: 620px;
+    margin: 70px auto;
+  }
+  #right-skill {
+    border: 1px solid transparent;
+    width: 473px;
+    height: 450px;
+    margin-top: 70px;
+    right: 40px;
+  }
+  .title-skill {
+    font-size: 40px;
+  }
+  .border-bottom-skill {
+    width: 473px;
+    margin-right: 0;
+  }
+  .des-skill {
+    width: 473px;
+    font-size: 29px;
+    margin-top: 10px;
+    margin-right: 0;
+  }
+  .see-curses {
+    width: 220px;
+    height: 60px;
+    border-radius: 10px;
+    line-height: 62px;
+    margin-right: 2px;
+    font-size: 25px;
+    text-indent: 18px;
+  }
+  .see-curses > img {
+    width: 30px;
+    margin-right: 17px;
+    margin-top: 15px;
+  }
+  .laptop-vector-skill {
+    width: 700px;
+    margin-left: 70px;
+    margin-top: 35px;
+  }
+  .grouping {
+    border: 1px solid transparent;
+    font-size: 60px;
+  }
+  .grouping > p,
+  .developing > p {
+    margin: 20px auto;
+    margin-bottom: 0;
+  }
+  .developing {
+    border: 1px solid transparent;
+    width: 1346px;
+    height: 740px;
+    margin: 40px auto;
+    font-size: 60px;
+  }
+  .right-developing > img {
+    width: 580px;
+  }
+  .left-developing {
+    margin-left: 80px;
+  }
+  .go-ahead {
+    border: 1px solid transparent;
+    width: 1346px;
+    height: 680px;
+    margin: 0 auto;
+    font-size: 60px;
+  }
+  .go-ahead > p {
+    margin: 30px auto;
+  }
+  .left-ahead > img {
+    width: 560px;
+  }
+  .input-circle {
+    top: 131px;
+    right: 60px;
+  }
+  .right-side,
+  .left-side {
+    margin-right: 25px;
+  }
+  .top-professors {
+    border: 1px solid transparent;
+    font-size: 60px;
+    margin: 10px auto;
+  }
+  .suggestions-complaints {
+    border: 1px solid transparent;
+    font-size: 60px;
+  }
+  .right-complaint > img {
+    width: 635px;
+    margin-right: 20px;
+  }
+  #message-text {
+    position: relative;
+    top: -10px;
+  }
+  .left-complaint > p {
+    margin-top: -15px;
+  }
+  #emaill-2 {
+    position: relative;
+    top: -10px;
+  }
+  .send {
+    position: relative;
+    top: -14px;
+  }
+}
+
+@media Screen and (max-width: 1350px) {
+  /* Content */
+  #content {
+    width: 1348px;
+    overflow: hidden;
+    border: 1px solid transparent;
+  }
+  .skill {
+    border: 1px solid transparent;
+    position: relative;
+    width: 1259px;
+    height: 600px;
+    margin: 70px auto;
+  }
+  #right-skill {
+    border: 1px solid transparent;
+    width: 473px;
+    height: 450px;
+    margin-top: 70px;
+    right: 35px;
+  }
+  .title-skill {
+    font-size: 40px;
+  }
+  .border-bottom-skill {
+    width: 473px;
+    margin-right: 0;
+  }
+  .des-skill {
+    width: 473px;
+    font-size: 29px;
+    margin-top: 10px;
+    margin-right: 0;
+  }
+  .see-curses {
+    width: 220px;
+    height: 60px;
+    border-radius: 10px;
+    line-height: 62px;
+    margin-right: 2px;
+    font-size: 25px;
+    text-indent: 18px;
+  }
+  .see-curses > img {
+    width: 30px;
+    margin-right: 17px;
+    margin-top: 15px;
+  }
+  .laptop-vector-skill {
+    width: 650px;
+    margin-left: 50px;
+    margin-top: 35px;
+  }
+  .grouping {
+    border: 1px solid transparent;
+    font-size: 60px;
+  }
+  .grouping > p,
+  .developing > p {
+    margin: 20px auto;
+    margin-bottom: 0;
+  }
+  .developing {
+    border: 1px solid transparent;
+    width: 1275px;
+    height: 740px;
+    margin: 40px auto;
+    font-size: 60px;
+  }
+  .right-developing > img {
+    width: 550px;
+  }
+  .left-developing {
+    border: 1px solid transparent;
+    width: 550px;
+    height: 510px;
+    margin-top: 45px;
+    margin-left: 80px;
+  }
+  .develop {
+    width: 225px;
+    height: 230px;
+    border-radius: 15px;
+    margin-left: 20px;
+    font-size: 25px;
+  }
+  .back-img {
+    height: 110px;
+  }
+  .react > img {
+    width: 80px;
+    margin-top: 19px;
+  }
+  .html > img,
+  .css > img {
+    width: 60px;
+    margin-top: 19px;
+  }
+  .angular > img {
+    width: 65px;
+    margin-top: 19px;
+  }
+  .develop > h3 {
+    margin-top: 15px;
+    font-size: 23px;
+  }
+  .develop > p {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-right: 18px;
+  }
+  .develop > span {
+    bottom: 16px;
+    left: 10px;
+    font-size: 20px;
+  }
+  .go-ahead {
+    border: 1px solid transparent;
+    width: 1275px;
+    height: 680px;
+    margin: 0 auto;
+    font-size: 60px;
+  }
+  .go-ahead > p {
+    margin: 30px auto;
+  }
+  .left-ahead > img {
+    width: 540px;
+  }
+  .top-professors {
+    border: 1px solid transparent;
+    width: 1300px;
+    height: 740px;
+    font-size: 60px;
+    margin: 10px auto;
+  }
+  .right-side,
+  .left-side {
+    margin-right: 30px;
+  }
+  .suggestions-complaints {
+    border: 1px solid transparent;
+    font-size: 60px;
+    margin: 20px auto;
+    height: 620px;
+  }
+  .suggestions-complaints > p {
+    margin: 30px auto;
+  }
+  .right-complaint > img {
+    width: 595px;
+    margin-right: 20px;
+  }
+  .left-complaint {
+    margin-top: 80px;
+    margin-left: 30px;
+  }
+}
+
+@media Screen and (max-width: 1250px) {
+  /* Content */
+  #content {
+    width: 1248px;
+    overflow: hidden;
+    border: 1px solid transparent;
+  }
+  .skill {
+    border: 1px solid transparent;
+    position: relative;
+    width: 1159px;
+    height: 520px;
+    margin: 70px auto;
+  }
+  .laptop-vector-skill {
+    width: 600px;
+    margin-left: 60px;
+    margin-top: 45px;
+  }
+  .grouping {
+    border: 1px solid transparent;
+    font-size: 50px;
+    height: 490px;
+    margin: 10px auto;
+  }
+  .grouping > input {
+    border-radius: 13px;
+    width: 140px;
+    height: 55px;
+    bottom: 10px;
+  }
+  .developing {
+    border: 1px solid transparent;
+    width: 1175px;
+    height: 700px;
+    font-size: 50px;
+    margin: 20px auto;
+  }
+  .right-developing > img {
+    width: 520px;
+    margin-top: 50px;
+  }
+  .go-ahead {
+    border: 1px solid transparent;
+    width: 1175px;
+    height: 650px;
+    font-size: 50px;
+  }
+  .left-ahead > img {
+    width: 500px;
+  }
+  .right-ahead {
+    width: 440px;
+  }
+  .input-circle {
+    top: 120px;
+    right: 45px;
+  }
+  .top-professors {
+    border: 1px solid transparent;
+    width: 1200px;
+    height: 630px;
+    font-size: 50px;
+  }
+  .top-professors > p {
+    margin: 10px auto;
+  }
+  .right-side,
+  .left-side {
+    margin-right: 0;
+  }
+  .suggestions-complaints {
+    border: 1px solid transparent;
+    font-size: 50px;
+    width: 1200px;
+    height: 600px;
+  }
+  #message-text {
+    position: relative;
+    top: 0px;
+  }
+  .left-complaint > p {
+    margin-top: 0px;
+  }
+  #emaill-2 {
+    position: relative;
+    top: -10px;
+  }
+  .send {
+    position: relative;
+    top: 0px;
+  }
+  .right-complaint > img {
+    width: 585px;
+    margin-right: 30px;
+  }
+}
+
+@media Screen and (max-width: 1150px) {
+  /* Content */
+  #content {
+    width: 1148px;
+    overflow: hidden;
+    border: 1px solid transparent;
+  }
+  .skill {
+    border: 1px solid transparent;
+    position: relative;
+    width: 1059px;
+    height: 520px;
+    margin: 70px auto;
+  }
+  #right-skill {
+    border: 1px solid transparent;
+    width: 423px;
+    height: 430px;
+    margin-top: 60px;
+    right: 35px;
+  }
+  .title-skill {
+    font-size: 35px;
+  }
+  .border-bottom-skill {
+    width: 423px;
+    height: 7px;
+  }
+  .des-skill {
+    width: 423px;
+    font-size: 26px;
+    margin-top: 9px;
+  }
+  .see-curses {
+    width: 200px;
+    height: 55px;
+    border-radius: 8px;
+    line-height: 58px;
+    font-size: 24px;
+  }
+  .see-curses > img {
+    width: 25px;
+    margin-right: 12px;
+    margin-top: 15px;
+  }
+  .laptop-vector-skill {
+    width: 550px;
+    margin-left: 50px;
+    margin-top: 50px;
+  }
+  .grouping {
+    border: 1px solid transparent;
+    font-size: 50px;
+    width: 1048px;
+    height: 490px;
+    margin: 5px auto;
+  }
+  .grouping > input {
+    border-radius: 11px;
+    width: 130px;
+    height: 50px;
+    right: 456px;
+  }
+  .developing {
+    border: 1px solid transparent;
+    width: 1075px;
+    height: 700px;
+    font-size: 50px;
+    margin: 50px auto;
+  }
+  .right-developing > img {
+    width: 500px;
+    margin-top: 50px;
+  }
+  .left-developing {
+    border: 1px solid transparent;
+    width: 520px;
+    height: 510px;
+    margin-top: 50px;
+    margin-left: 10px;
+  }
+  .go-ahead {
+    border: 1px solid transparent;
+    width: 1075px;
+    height: 550px;
+    font-size: 50px;
+  }
+  .left-ahead > img {
+    width: 450px;
+  }
+  .right-ahead {
+    width: 400px;
+    height: 250px;
+  }
+  .input-circle {
+    top: 121px;
+    right: 25px;
+  }
+  .top-professors {
+    border: 1px solid transparent;
+    width: 1100px;
+    height: 660px;
+    font-size: 50px;
+    margin: 10px auto;
+  }
+  .right-side,
+  .left-side {
+    position: relative;
+    border: 1px solid transparent;
+    float: right;
+    width: 535px;
+    height: 489px;
+    margin-right: 10px;
+    margin-top: 40px;
+  }
+  .professor {
+    width: 250px;
+    height: 160px;
+    margin-left: 12px;
+    margin-top: 70px;
+  }
+  .lecturer1 > img {
+    width: 105px;
+    top: 20px;
+  }
+  .lecturer3 > img {
+    width: 105px;
+    bottom: 136px;
+  }
+  .lecturer2 > img {
+    width: 105px;
+    top: 20px;
+    right: 86px;
+  }
+  .lecturer4 > img {
+    width: 105px;
+    bottom: 136px;
+    right: 86px;
+  }
+  .professor > h3 {
+    margin-top: 65px;
+  }
+  .big-professor {
+    width: 525px;
+    height: 390px;
+    margin-right: 5px;
+    margin-top: 70px;
+  }
+  .big-professor > img {
+    width: 175px;
+    bottom: 335px;
+    right: 185px;
+  }
+  .big-professor > h3 {
+    font-size: 35px;
+  }
+  .big-professor > h4 {
+    font-size: 28px;
+  }
+  .big-professor > p {
+    font-size: 26px;
+  }
+  .suggestions-complaints {
+    border: 1px solid transparent;
+    font-size: 50px;
+    width: 1100px;
+    height: 560px;
+    margin: 0 auto;
+  }
+  .right-complaint > img {
+    width: 545px;
+    transition: 0.2s;
+  }
+  .send {
+    position: relative;
+    top: -10px;
+    margin-right: 275px;
+    width: 110px;
+  }
+  .left-complaint {
+    width: 420px;
+    height: 310px;
+    margin-top: 50px;
+  }
+}
+
+@media Screen and (max-width: 1024px) {
+  /* Content */
+  #content {
+    border: 1px solid transparent;
+    width: 998px;
+    overflow: hidden;
+  }
+  .skill {
+    border: 1px solid transparent;
+    position: relative;
+    width: 900px;
+    height: 450px;
+    margin: 70px auto;
+  }
+  #right-skill {
+    border: 1px solid transparent;
+    width: 320px;
+    height: 360px;
+    margin-top: 60px;
+    right: 30px;
+  }
+  .title-skill {
+    font-size: 28px;
+  }
+  .border-bottom-skill {
+    width: 320px;
+    height: 6px;
+  }
+  .des-skill {
+    width: 320px;
+    font-size: 22px;
+    line-height: 35px;
+    margin-bottom: 10px;
+    margin-top: 7px;
+  }
+  .see-curses {
+    width: 150px;
+    height: 40px;
+    border-radius: 7px;
+    line-height: 43px;
+    font-size: 18px;
+    text-indent: 13px;
+  }
+  .see-curses > img {
+    width: 20px;
+    margin-right: 9px;
+    margin-top: 10px;
+  }
+  .laptop-vector-skill {
+    width: 450px;
+    margin-left: 50px;
+    margin-top: 55px;
+  }
+  .grouping {
+    border: 1px solid transparent;
+    font-size: 40px;
+    width: 948px;
+    height: 420px;
+    margin: 5px auto;
+  }
+  .group {
+    width: 190px;
+    height: 210px;
+    font-size: 30px;
+    line-height: 330px;
+    border-radius: 20px;
+  }
+  .group:nth-child(2) {
+    margin-right: 0;
+  }
+  .grouping > input {
+    border-radius: 10px;
+    width: 110px;
+    height: 40px;
+    right: 416px;
+    font-size: 25px;
+  }
+  .developing {
+    border: 1px solid transparent;
+    width: 975px;
+    height: 600px;
+    font-size: 40px;
+    margin: 50px auto;
+  }
+  .right-developing > img {
+    width: 450px;
+    margin-top: 50px;
+  }
+  .left-developing {
+    border: 1px solid transparent;
+    width: 460px;
+    height: 460px;
+    margin-top: 50px;
+    margin-left: 10px;
+  }
+  .develop {
+    width: 200px;
+    height: 210px;
+    margin-left: 20px;
+    font-size: 23px;
+  }
+  .back-img {
+    height: 100px;
+  }
+  .react > img {
+    width: 70px;
+  }
+  .html > img,
+  .css > img {
+    width: 55px;
+    margin-top: 19px;
+  }
+  .angular > img {
+    width: 60px;
+    margin-top: 19px;
+  }
+  .develop > h3 {
+    font-size: 21px;
+  }
+  .develop > p {
+    font-size: 17px;
+    margin-right: 14px;
+  }
+  .develop > span {
+    bottom: 11px;
+    left: 5px;
+  }
+  .go-ahead {
+    border: 1px solid transparent;
+    width: 975px;
+    height: 500px;
+    font-size: 40px;
+  }
+  .left-ahead > img {
+    width: 400px;
+  }
+  .right-ahead {
+    width: 350px;
+    height: 200px;
+  }
+  .right-ahead > h2,
+  .right-ahead > p {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 30px;
+  }
+  .right-ahead > p {
+    font-size: 25px;
+  }
+  #emaill {
+    font-size: 17px;
+    width: 260px;
+    height: 45px;
+    margin-top: 15px;
+  }
+  .input-circle {
+    background-size: 17px;
+    top: 95px;
+    right: 45px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+  }
+  .top-professors {
+    border: 1px solid transparent;
+    width: 975px;
+    height: 600px;
+    font-size: 40px;
+    margin: 10px auto;
+  }
+  .right-side,
+  .left-side {
+    border: 1px solid transparent;
+    float: right;
+    width: 470px;
+    height: 479px;
+    margin-right: 10px;
+    margin-top: 20px;
+  }
+  .professor {
+    width: 217px;
+    height: 160px;
+    margin-left: 12px;
+    margin-top: 70px;
+  }
+  .lecturer1 > img {
+    width: 95px;
+    top: 25px;
+    left: 75px;
+  }
+  .lecturer3 > img {
+    width: 95px;
+    bottom: 131px;
+    left: 75px;
+  }
+  .lecturer2 > img {
+    width: 95px;
+    top: 25px;
+    right: 76px;
+  }
+  .lecturer4 > img {
+    width: 95px;
+    bottom: 131px;
+    right: 76px;
+  }
+  .professor > h3 {
+    margin-top: 57px;
+  }
+  .big-professor {
+    width: 460px;
+    height: 390px;
+    margin-right: 5px;
+    margin-top: 70px;
+  }
+  .big-professor > img {
+    width: 165px;
+    bottom: 325px;
+    right: 160px;
+  }
+  .big-professor > h3 {
+    font-size: 30px;
+  }
+  .big-professor > h4 {
+    font-size: 25px;
+    text-indent: 81px;
+  }
+  .big-professor > p {
+    width: 300px;
+    font-size: 23px;
+    margin-right: 81px;
+  }
+  .suggestions-complaints {
+    border: 1px solid transparent;
+    font-size: 40px;
+    width: 900px;
+    height: 440px;
+    margin: 0 auto;
+  }
+  .right-complaint > img {
+    width: 405px;
+    margin-top: 20px;
+  }
+  .left-complaint {
+    width: 350px;
+    height: 250px;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  .left-complaint > h2 {
+    font-size: 23px;
+  }
+  #message-text {
+    font-size: 17px;
+    width: 250px;
+    height: 45px;
+  }
+  .left-complaint > p {
+    font-size: 23px;
+  }
+  #emaill-2 {
+    font-size: 17px;
+    width: 250px;
+    height: 45px;
+  }
+  .send {
+    background-size: 14px;
+    margin-right: 210px;
+    margin-top: 5px;
+    width: 90px;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+
+@media Screen and (max-width: 768px) {
+  /* Content */
+  #content {
+    border: 1px solid transparent;
+    width: 766px;
+    overflow: hidden;
+  }
+  .skill {
+    border: 1px solid transparent;
+    position: relative;
+    width: 668px;
+    height: 450px;
+    margin: 70px auto;
+  }
+  #right-skill {
+    border: 1px solid transparent;
+    width: 320px;
+    height: 360px;
+    margin-top: 60px;
+    right: 170px;
+  }
+  .laptop-vector-skill {
+    display: none;
+  }
+  .title-skill {
+    font-size: 27px;
+  }
+  .border-bottom-skill {
+    width: 320px;
+    height: 6px;
+  }
+  .des-skill {
+    text-align: center;
+    width: 320px;
+    font-size: 22px;
+    line-height: 35px;
+    margin-bottom: 10px;
+    margin-top: 7px;
+  }
+  .see-curses {
+    width: 150px;
+    height: 40px;
+    border-radius: 7px;
+    line-height: 43px;
+    font-size: 18px;
+    text-indent: 13px;
+    margin-right: 85px;
+  }
+  .see-curses > img {
+    width: 20px;
+    margin-right: 9px;
+    margin-top: 10px;
+  }
+  .grouping {
+    border: 1px solid transparent;
+    font-size: 40px;
+    width: 700px;
+    height: 420px;
+    margin: 5px auto;
+  }
+  .group {
+    width: 150px;
+    height: 210px;
+    font-size: 30px;
+    line-height: 330px;
+    border-radius: 20px;
+  }
+  .group:nth-child(2) {
+    margin-right: 0;
+  }
+  .grouping > input {
+    border-radius: 10px;
+    width: 110px;
+    height: 40px;
+    right: 296px;
+    font-size: 25px;
+  }
+  .developing {
+    border: 1px solid transparent;
+    width: 700px;
+    height: 600px;
+    font-size: 40px;
+    margin: 50px auto;
+  }
+  .right-developing > img {
+    display: none;
+  }
+  .left-developing {
+    border: 1px solid transparent;
+    width: 100%;
+    height: 460px;
+    margin: 50px auto;
+  }
+  .develop {
+    width: 290px;
+    height: 220px;
+    margin-left: 40px;
+    font-size: 23px;
+  }
+  .back-img {
+    height: 100px;
+  }
+  .react > img {
+    width: 70px;
+  }
+  .html > img,
+  .css > img {
+    width: 55px;
+    margin-top: 19px;
+  }
+  .angular > img {
+    width: 60px;
+    margin-top: 19px;
+  }
+  .develop > h3 {
+    font-size: 21px;
+  }
+  .develop > p {
+    font-size: 17px;
+    margin-right: 14px;
+    margin-top: 20px;
+  }
+  .develop > span {
+    bottom: 11px;
+    left: 5px;
+  }
+  .go-ahead {
+    border: 1px solid transparent;
+    width: 700px;
+    height: 500px;
+    font-size: 40px;
+  }
+  .left-ahead > img {
+    width: 300px;
+    margin-left: 20px;
+  }
+  .right-ahead {
+    width: 300px;
+    height: 200px;
+    margin-right: 20px;
+  }
+  .right-ahead > h2,
+  .right-ahead > p {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 30px;
+  }
+  .right-ahead > p {
+    font-size: 25px;
+  }
+  #emaill {
+    font-size: 17px;
+    width: 260px;
+    height: 45px;
+    margin-top: 15px;
+  }
+  .input-circle {
+    background-size: 17px;
+    top: 95px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+  }
+  .top-professors {
+    border: 1px solid transparent;
+    width: 700px;
+    height: 500px;
+    font-size: 45px;
+    margin: 5px auto;
+  }
+  .right-side,
+  .left-side {
+    border: 1px solid transparent;
+    float: right;
+    width: 348px;
+    height: 409px;
+    margin: 10px auto;
+  }
+  .professor {
+    width: 157px;
+    height: 120px;
+    margin-left: 12px;
+    margin-top: 70px;
+  }
+  .lecturer1 > img {
+    width: 75px;
+    top: 32px;
+    left: 56px;
+  }
+  .lecturer3 > img {
+    width: 75px;
+    bottom: 111px;
+    left: 56px;
+  }
+  .lecturer2 > img {
+    width: 75px;
+    top: 32px;
+    right: 50px;
+  }
+  .lecturer4 > img {
+    width: 75px;
+    bottom: 111px;
+    right: 50px;
+  }
+  .professor > h3 {
+    margin-top: 43px;
+    font-size: 24px;
+  }
+  .professor > p {
+    margin-top: 5px;
+    font-size: 20px;
+  }
+  .big-professor {
+    width: 325px;
+    height: 320px;
+    margin: 70px auto;
+    margin-bottom: 0;
+  }
+  .big-professor > img {
+    width: 125px;
+    bottom: 260px;
+    right: 100px;
+  }
+  .big-professor > h3 {
+    font-size: 26px;
+  }
+  .big-professor > h4 {
+    font-size: 22px;
+    text-indent: 34px;
+  }
+  .big-professor > p {
+    width: 254px;
+    font-size: 20px;
+    margin-right: 34px;
+  }
+  .suggestions-complaints {
+    border: 1px solid transparent;
+    font-size: 40px;
+    width: 700px;
+    height: 440px;
+    margin: 0 auto;
+  }
+  .right-complaint > img {
+    display: none;
+  }
+  .left-complaint {
+    width: 350px;
+    height: 250px;
+    margin-top: 20px;
+    margin-left: 170px;
+  }
+  .left-complaint > h2 {
+    font-size: 23px;
+  }
+  #message-text {
+    font-size: 17px;
+    width: 250px;
+    height: 45px;
+  }
+  .left-complaint > p {
+    font-size: 23px;
+  }
+  #emaill-2 {
+    font-size: 17px;
+    width: 250px;
+    height: 45px;
+  }
+  .send {
+    background-size: 14px;
+    margin-right: 210px;
+    margin-top: 5px;
+    width: 90px;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+
+@media Screen and (max-width: 414px) {
+  /* Content */
+  #content {
+    border: 1px solid transparent;
+    width: 411px;
+    overflow: hidden;
+  }
+  .skill {
+    display: none;
+  }
+  #res-skill {
+    display: block;
+    background: url("../../../Assets/images/Group 306.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    width: 100%;
+    height: 250px;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+  .h2-title {
+    position: relative;
+    top: 60px;
+    right: 125px;
+    color: #ffffff;
+    width: 150px;
+    height: 20px;
+    font-size: 27px;
+    line-height: 40px;
+    text-align: center;
+  }
+  .see-curses {
+    border: 3px solid #ffffff;
+    background: transparent;
+    width: 150px;
+    height: 40px;
+    margin-top: 130px;
+    margin-right: 125px;
+    border-radius: 7px;
+    line-height: 40px;
+    font-size: 18px;
+    text-indent: 10px;
+  }
+  .see-curses > img {
+    width: 20px;
+    margin-right: 7px;
+    margin-top: 7px;
+  }
+  .right-developing > img,
+  .left-ahead > img,
+  .right-complaint > img {
+    display: none;
+  }
+  .grouping {
+    border: 1px solid transparent;
+    font-size: 25px;
+    width: 352px;
+    height: 225px;
+    margin: 0 auto;
+  }
+  .group {
+    width: 70px;
+    height: 80px;
+    font-size: 17px;
+    line-height: 128px;
+    border-radius: 13px;
+    margin-right: 10px;
+    margin-top: 20px;
+  }
+  .group:nth-child(2) {
+    margin-right: 0;
+  }
+  .grouping > input {
+    border-radius: 50px;
+    width: 70px;
+    height: 30px;
+    right: 141px;
+    font-size: 15px;
+  }
+  .math {
+    background-size: 30px;
+    margin-right: 0;
+  }
+  .technology {
+    background-size: 40px;
+  }
+  .chemistry {
+    background-size: 25px;
+  }
+  .physics {
+    background-size: 30px;
+  }
+  .developing {
+    border: 1px solid transparent;
+    width: 352px;
+    height: 450px;
+    font-size: 25px;
+    margin: 5px auto;
+  }
+  .left-developing {
+    border: 1px solid transparent;
+    width: 350px;
+    height: 360px;
+    margin-top: 20px;
+    margin-left: 0;
+  }
+  .develop {
+    width: 143px;
+    height: 160px;
+    margin-left: 20px;
+  }
+  .back-img {
+    height: 80px;
+  }
+  .react > img {
+    width: 60px;
+    margin-top: 13px;
+  }
+  .html > img,
+  .css > img {
+    width: 48px;
+    margin-top: 13px;
+  }
+  .angular > img {
+    width: 53px;
+    margin-top: 10px;
+  }
+  .develop > h3 {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .develop > p {
+    font-size: 12px;
+    margin-right: 14px;
+    margin-top: 8px;
+  }
+  .develop > span {
+    background-size: 13px;
+    width: 40px;
+    font-size: 15px;
+    bottom: 4px;
+    left: 4px;
+  }
+  .go-ahead {
+    border: 1px solid transparent;
+    width: 352px;
+    height: 300px;
+    font-size: 25px;
+  }
+  .go-ahead > p {
+    margin: 20px;
+  }
+  .right-ahead {
+    width: 320px;
+    height: 185px;
+    margin: 15px;
+  }
+  .right-ahead > h2,
+  .right-ahead > p {
+    font-size: 25px;
+  }
+  #emaill {
+    font-size: 15px;
+  }
+  .input-circle {
+    top: 89px;
+    right: 30px;
+  }
+  .top-professors {
+    border: 1px solid transparent;
+    width: 352px;
+    height: 900px;
+    font-size: 25px;
+    margin: 5px auto;
+  }
+  .right-side,
+  .left-side {
+    border: 1px solid transparent;
+    float: right;
+    width: 350px;
+    height: 409px;
+    margin: 0 auto;
+  }
+  .professor {
+    width: 157px;
+    height: 120px;
+    margin-left: 12px;
+    margin-top: 70px;
+  }
+  .lecturer1 > img {
+    width: 75px;
+    top: 32px;
+    left: 56px;
+  }
+  .lecturer3 > img {
+    width: 75px;
+    bottom: 111px;
+    left: 56px;
+  }
+  .lecturer2 > img {
+    width: 75px;
+    top: 32px;
+    right: 53px;
+  }
+  .lecturer4 > img {
+    width: 75px;
+    bottom: 111px;
+    right: 53px;
+  }
+  .professor > h3 {
+    margin-top: 43px;
+    font-size: 24px;
+  }
+  .professor > p {
+    margin-top: 5px;
+    font-size: 20px;
+  }
+  .big-professor {
+    width: 325px;
+    height: 320px;
+    margin: 70px auto;
+    margin-bottom: 0;
+  }
+  .big-professor > img {
+    width: 125px;
+    bottom: 260px;
+    right: 100px;
+  }
+  .big-professor > h3 {
+    font-size: 26px;
+  }
+  .big-professor > h4 {
+    font-size: 22px;
+    text-indent: 34px;
+  }
+  .big-professor > p {
+    width: 254px;
+    font-size: 20px;
+    margin-right: 34px;
+  }
+  .suggestions-complaints {
+    border: 1px solid transparent;
+    font-size: 25px;
+    width: 352px;
+    height: 380px;
+    margin: 0 auto;
+  }
+  .left-complaint {
+    width: 320px;
+    height: 250px;
+    margin: 5px 16px;
+    margin-bottom: 0;
+  }
+  #message-text {
+    font-size: 15px;
+    margin-top: 15px;
+  }
+  .left-complaint > p {
+    margin-top: 6px;
+  }
+  #emaill-2 {
+    font-size: 15px;
+    margin-top: 14px;
+  }
+  .send {
+    margin-top: 10px;
+    width: 75px;
+    text-indent: 10px;
+  }
+}
+
+@media Screen and (max-width: 375px) {
+  /* Content */
+  #content {
+    border: 1px solid transparent;
+    width: 373px;
+    overflow: hidden;
+  }
+  .skill {
+    display: none;
+  }
+  #res-skill {
+    display: block;
+    background: url("../../../Assets/images/Group 306.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    width: 100%;
+    height: 250px;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+  .h2-title {
+    position: relative;
+    top: 50px;
+    right: 105px;
+    color: #ffffff;
+    width: 150px;
+    height: 20px;
+    font-size: 27px;
+    line-height: 40px;
+    text-align: center;
+  }
+  .see-curses {
+    border: 3px solid #ffffff;
+    background: transparent;
+    width: 150px;
+    height: 40px;
+    margin-top: 130px;
+    margin-right: 105px;
+    border-radius: 7px;
+    line-height: 40px;
+    font-size: 18px;
+    text-indent: 10px;
+  }
+  .see-curses > img {
+    width: 20px;
+    margin-right: 7px;
+    margin-top: 7px;
+  }
+  .right-developing > img,
+  .left-ahead > img,
+  .right-complaint > img {
+    display: none;
+  }
+  .grouping {
+    border: 1px solid transparent;
+    font-size: 25px;
+    width: 352px;
+    height: 225px;
+    margin: 0 auto;
+  }
+  .group {
+    width: 70px;
+    height: 80px;
+    font-size: 17px;
+    line-height: 128px;
+    border-radius: 13px;
+    margin-right: 10px;
+    margin-top: 20px;
+  }
+  .group:nth-child(2) {
+    margin-right: 0;
+  }
+  .grouping > input {
+    border-radius: 50px;
+    width: 70px;
+    height: 30px;
+    right: 141px;
+    font-size: 15px;
+  }
+  .math {
+    background-size: 30px;
+    margin-right: 0;
+  }
+  .technology {
+    background-size: 40px;
+  }
+  .chemistry {
+    background-size: 25px;
+  }
+  .physics {
+    background-size: 30px;
+  }
+  .developing {
+    border: 1px solid transparent;
+    width: 352px;
+    height: 450px;
+    font-size: 25px;
+    margin: 5px auto;
+  }
+  .left-developing {
+    border: 1px solid transparent;
+    width: 350px;
+    height: 360px;
+    margin-top: 20px;
+    margin-left: 0;
+  }
+  .develop {
+    width: 143px;
+    height: 160px;
+    margin-left: 20px;
+  }
+  .back-img {
+    height: 80px;
+  }
+  .react > img {
+    width: 60px;
+    margin-top: 13px;
+  }
+  .html > img,
+  .css > img {
+    width: 48px;
+    margin-top: 13px;
+  }
+  .angular > img {
+    width: 53px;
+    margin-top: 10px;
+  }
+  .develop > h3 {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .develop > p {
+    font-size: 12px;
+    margin-right: 14px;
+    margin-top: 8px;
+  }
+  .develop > span {
+    background-size: 13px;
+    width: 40px;
+    font-size: 15px;
+    bottom: 4px;
+    left: 4px;
+  }
+  .go-ahead {
+    border: 1px solid transparent;
+    width: 352px;
+    height: 300px;
+    font-size: 25px;
+  }
+  .go-ahead > p {
+    margin: 20px;
+  }
+  .right-ahead {
+    width: 320px;
+    height: 185px;
+    margin: 15px;
+  }
+  .right-ahead > h2,
+  .right-ahead > p {
+    font-size: 25px;
+  }
+  #emaill {
+    font-size: 15px;
+  }
+  .input-circle {
+    top: 89px;
+    right: 30px;
+  }
+  .top-professors {
+    border: 1px solid transparent;
+    width: 352px;
+    height: 900px;
+    font-size: 25px;
+    margin: 5px auto;
+  }
+  .right-side,
+  .left-side {
+    border: 1px solid transparent;
+    float: right;
+    width: 350px;
+    height: 409px;
+    margin: 0 auto;
+  }
+  .professor {
+    width: 157px;
+    height: 120px;
+    margin-left: 12px;
+    margin-top: 70px;
+  }
+  .lecturer1 > img {
+    width: 75px;
+    top: 32px;
+    left: 56px;
+  }
+  .lecturer3 > img {
+    width: 75px;
+    bottom: 111px;
+    left: 56px;
+  }
+  .lecturer2 > img {
+    width: 75px;
+    top: 32px;
+    right: 53px;
+  }
+  .lecturer4 > img {
+    width: 75px;
+    bottom: 111px;
+    right: 53px;
+  }
+  .professor > h3 {
+    margin-top: 43px;
+    font-size: 24px;
+  }
+  .professor > p {
+    margin-top: 5px;
+    font-size: 20px;
+  }
+  .big-professor {
+    width: 325px;
+    height: 320px;
+    margin: 70px auto;
+    margin-bottom: 0;
+  }
+  .big-professor > img {
+    width: 125px;
+    bottom: 260px;
+    right: 100px;
+  }
+  .big-professor > h3 {
+    font-size: 26px;
+  }
+  .big-professor > h4 {
+    font-size: 22px;
+    text-indent: 34px;
+  }
+  .big-professor > p {
+    width: 254px;
+    font-size: 20px;
+    margin-right: 34px;
+  }
+  .suggestions-complaints {
+    border: 1px solid transparent;
+    font-size: 25px;
+    width: 352px;
+    height: 380px;
+    margin: 0 auto;
+  }
+  .left-complaint {
+    width: 320px;
+    height: 250px;
+    margin: 5px 16px;
+    margin-bottom: 0;
+  }
+  #message-text {
+    font-size: 15px;
+    margin-top: 15px;
+  }
+  .left-complaint > p {
+    margin-top: 6px;
+  }
+  #emaill-2 {
+    font-size: 15px;
+    margin-top: 14px;
+  }
+  .send {
+    margin-top: 10px;
+    width: 75px;
+    text-indent: 10px;
+  }
+}
+
+@media Screen and (max-width: 360px) {
+  /* Content */
+  #content {
+    border: 1px solid transparent;
+    width: 358px;
+    overflow: hidden;
+  }
+  .skill {
+    display: none;
+  }
+  #res-skill {
+    display: block;
+    background: url("../../../Assets/images/Group 306.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    width: 100%;
+    height: 250px;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+  .h2-title {
+    position: relative;
+    top: 50px;
+    right: 105px;
+    color: #ffffff;
+    width: 150px;
+    height: 20px;
+    font-size: 27px;
+    line-height: 40px;
+    text-align: center;
+  }
+  .see-curses {
+    border: 3px solid #ffffff;
+    background: transparent;
+    width: 150px;
+    height: 40px;
+    margin-top: 130px;
+    margin-right: 105px;
+    border-radius: 7px;
+    line-height: 40px;
+    font-size: 18px;
+    text-indent: 10px;
+  }
+  .see-curses > img {
+    width: 20px;
+    margin-right: 7px;
+    margin-top: 7px;
+  }
+  .right-developing > img,
+  .left-ahead > img,
+  .right-complaint > img {
+    display: none;
+  }
+  .grouping {
+    border: 1px solid transparent;
+    font-size: 25px;
+    width: 348px;
+    height: 225px;
+    margin: 0 auto;
+  }
+  .group {
+    width: 70px;
+    height: 80px;
+    font-size: 17px;
+    line-height: 128px;
+    border-radius: 13px;
+    margin-right: 10px;
+    margin-top: 20px;
+  }
+  .group:nth-child(2) {
+    margin-right: 0;
+  }
+  .grouping > input {
+    border-radius: 50px;
+    width: 70px;
+    height: 30px;
+    right: 141px;
+    font-size: 15px;
+  }
+  .math {
+    background-size: 30px;
+    margin-right: 0;
+  }
+  .technology {
+    background-size: 40px;
+  }
+  .chemistry {
+    background-size: 25px;
+  }
+  .physics {
+    background-size: 30px;
+  }
+  .developing {
+    border: 1px solid transparent;
+    width: 348px;
+    height: 450px;
+    font-size: 25px;
+    margin: 5px auto;
+  }
+  .left-developing {
+    border: 1px solid transparent;
+    width: 350px;
+    height: 360px;
+    margin-top: 20px;
+    margin-left: 0;
+  }
+  .develop {
+    width: 143px;
+    height: 160px;
+    margin-left: 20px;
+  }
+  .back-img {
+    height: 80px;
+  }
+  .react > img {
+    width: 60px;
+    margin-top: 13px;
+  }
+  .html > img,
+  .css > img {
+    width: 48px;
+    margin-top: 13px;
+  }
+  .angular > img {
+    width: 53px;
+    margin-top: 10px;
+  }
+  .develop > h3 {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .develop > p {
+    font-size: 12px;
+    margin-right: 14px;
+    margin-top: 9px;
+  }
+  .develop > span {
+    background-size: 13px;
+    width: 40px;
+    font-size: 15px;
+    bottom: 4px;
+    left: 4px;
+  }
+  .go-ahead {
+    border: 1px solid transparent;
+    width: 348px;
+    height: 300px;
+    font-size: 25px;
+  }
+  .go-ahead > p {
+    margin: 20px;
+  }
+  .right-ahead {
+    width: 320px;
+    height: 185px;
+    margin: 15px;
+  }
+  .right-ahead > h2,
+  .right-ahead > p {
+    font-size: 25px;
+  }
+  #emaill {
+    font-size: 15px;
+  }
+  .input-circle {
+    top: 89px;
+    right: 30px;
+  }
+  .top-professors {
+    border: 1px solid transparent;
+    width: 348px;
+    height: 900px;
+    font-size: 25px;
+    margin: 5px auto;
+  }
+  .right-side,
+  .left-side {
+    border: 1px solid transparent;
+    float: right;
+    width: 350px;
+    height: 409px;
+    margin: 0 auto;
+  }
+  .professor {
+    width: 157px;
+    height: 120px;
+    margin-left: 12px;
+    margin-top: 70px;
+  }
+  .lecturer1 > img {
+    width: 75px;
+    top: 32px;
+    left: 56px;
+  }
+  .lecturer3 > img {
+    width: 75px;
+    bottom: 111px;
+    left: 56px;
+  }
+  .lecturer2 > img {
+    width: 75px;
+    top: 32px;
+    right: 53px;
+  }
+  .lecturer4 > img {
+    width: 75px;
+    bottom: 111px;
+    right: 53px;
+  }
+  .professor > h3 {
+    margin-top: 43px;
+    font-size: 24px;
+  }
+  .professor > p {
+    margin-top: 5px;
+    font-size: 20px;
+  }
+  .big-professor {
+    width: 325px;
+    height: 320px;
+    margin: 70px auto;
+    margin-bottom: 0;
+  }
+  .big-professor > img {
+    width: 125px;
+    bottom: 260px;
+    right: 100px;
+  }
+  .big-professor > h3 {
+    font-size: 26px;
+  }
+  .big-professor > h4 {
+    font-size: 22px;
+    text-indent: 34px;
+  }
+  .big-professor > p {
+    width: 254px;
+    font-size: 20px;
+    margin-right: 34px;
+  }
+  .suggestions-complaints {
+    border: 1px solid transparent;
+    font-size: 25px;
+    width: 348px;
+    height: 380px;
+    margin: 0 auto;
+  }
+  .left-complaint {
+    width: 320px;
+    height: 250px;
+    margin: 5px 16px;
+    margin-bottom: 0;
+  }
+  #message-text {
+    font-size: 15px;
+    margin-top: 15px;
+  }
+  .left-complaint > p {
+    margin-top: 6px;
+  }
+  #emaill-2 {
+    font-size: 15px;
+    margin-top: 14px;
+  }
+  .send {
+    margin-top: 10px;
+    width: 75px;
+    text-indent: 10px;
+  }
+}
+
+@keyframes skills {
+  0% {
+    opacity: 0;
+    margin-top: 120px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+}
+
+@keyframes laptop {
+  0% {
+    margin-top: 30px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0;
+    opacity: 1;
+  }
+}

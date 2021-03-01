@@ -1,0 +1,605 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: url("../../../../Assets/images/Group\ 230.svg") no-repeat 50% 9%;
+  background-size: 112%;
+}
+
+@font-face {
+  font-family: "yek";
+  src: url("../../../../Assets/fonts/yek.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "yekan_bakh";
+  src: url("../../../../Assets/fonts/YekanBakh_Bold.ttf") format("truetype");
+}
+
+/* #main_holder {
+    border: 1px solid red;
+    margin-right: -700px; 
+     position: absolute; 
+     top: 100%;
+    margin: 0 auto;
+    right: 51.0%;
+    width: 100%;
+    height: 1000px;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    overflow: hidden;
+} */
+
+/* 
+#shape1 {
+    position: absolute;
+    top: -19px;
+    left: -18px;
+    width: 606px;
+    height: 678px;
+}
+
+#shape2 {
+    position: absolute;
+    width: 597px;
+    height: 559px;
+    top: 97px;
+    right: -68px;
+} */
+
+.shape1_holder {
+  /* border: 1px solid red; */
+  background: url("../../../../Assets/images/Path 62.svg") no-repeat 0% 0%;
+  background-size: 606px !important;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 606px;
+  height: 678px;
+}
+
+.shape2_holder {
+  /* border: 1px solid red; */
+  background: url("../../../../Assets/images/Path 62.svg") no-repeat 0% 0%;
+  background-size: 400px !important;
+  position: absolute;
+  bottom: 0px;
+  right: -20px;
+  width: 400px;
+  height: 448px;
+  transform: rotate(180deg);
+}
+
+#form_holder {
+  /* border: 1px solid red; */
+  background: #ffffff;
+  width: 465px;
+  height: 560px;
+  border-radius: 28px;
+  transform: translateX(50%) translateY(-50%);
+  position: absolute;
+  top: 53%;
+  right: 50%;
+  direction: rtl;
+  font-size: 25px;
+  box-shadow: 0px 3px 10px 2px #cccccc;
+}
+
+.userNameTextHolder {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: flex-start;
+  font-family: "yek";
+  padding-right: 70px;
+  color: #707070;
+  position: relative;
+  top: -30px;
+}
+
+.userNameInputHolder1 {
+  /* border: 1px solid red; */
+  position: relative;
+  bottom: 13px;
+}
+
+.userNameInputHolder2 {
+  border-radius: 15px;
+  background: url("../../../../Assets/images/Profilee.svg") 4% no-repeat #e9e9e9;
+  background-size: 15px;
+  width: 356px;
+  direction: ltr;
+  margin-right: 65px;
+}
+
+.userNameInputHolder2 > input {
+  width: 75%;
+  height: 41px;
+  margin-left: 47px;
+  /* border: 1px solid red; */
+  background: #e9e9e9;
+  color: #b2b2b2;
+  font-family: "yek";
+  font-size: 18px;
+  border: none;
+}
+
+input::placeholder {
+  color: #b2b2b2;
+  font-family: "yek";
+  font-size: 18px;
+}
+
+/* passsssssss */
+
+.passWordTextHolder > p {
+  margin-block-start: 0em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.passWordTextHolder {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: flex-start;
+  font-family: "yek";
+  padding-right: 70px;
+  color: #707070;
+  display: block;
+  position: relative;
+  left: 170px;
+}
+
+.passWordInputHolder1 {
+  /* border: 1px solid red; */
+  position: relative;
+  bottom: 13px;
+}
+
+.passWordInputHolder2 {
+  border-radius: 15px;
+  background: url("../../../../Assets/images/Profilee.svg") 4% no-repeat #e9e9e9;
+  background-size: 15px;
+  width: 356px;
+  direction: ltr;
+  margin-right: 65px;
+}
+
+.passWordInputHolder2 > input::placeholder {
+  direction: rtl;
+}
+
+.passWordInputHolder2 > input {
+  width: 75%;
+  height: 41px;
+  margin-left: 47px;
+  /* border: 1px solid red; */
+  background: #e9e9e9;
+  color: #b2b2b2;
+  font-family: "yek";
+  font-size: 18px;
+  border: none;
+}
+
+input::placeholder {
+  font-family: "yek";
+}
+
+.userNameInputHolder2 > input {
+  direction: rtl;
+}
+
+.passWordInputHolder2 > input.emailInputInReg::placeholder {
+  direction: ltr;
+}
+
+.section1 {
+  /* border: 1px solid red; */
+  position: relative;
+  bottom: -85px;
+}
+
+.section2 {
+  /* border: 1px solid red; */
+  position: relative;
+  bottom: -90px;
+}
+
+.section3 {
+  /* border: 1px solid red; */
+  position: relative;
+  bottom: -95px;
+}
+
+.section4 {
+  /* border: 1px solid red; */
+  position: relative;
+  bottom: -100px;
+}
+
+#menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid transparent;
+  width: 1579px;
+  height: 120px;
+  direction: rtl;
+  font-family: "yek";
+}
+
+.menu-logo img {
+  margin: 10px;
+  margin-right: 19px;
+  float: right;
+  width: 55px;
+  height: 55px;
+}
+
+ul {
+  list-style: none;
+}
+
+.menu-tab {
+  border: 1px solid transparent;
+  width: 740px;
+  height: 110px;
+  display: inline-block;
+  margin-top: -20px;
+  position: relative;
+  left: 472px;
+  top: 10px;
+}
+
+.menu-tab li {
+  display: inline-block;
+  font-size: 24px;
+  margin-left: 45px;
+  margin-top: 35px;
+  color: #777;
+}
+
+.menu-tab li:nth-child(1) {
+  display: inline-block;
+  font-size: 24px;
+  margin-left: 45px;
+  margin-top: 35px;
+  color: #444;
+}
+
+.border-bottom {
+  border-radius: 30px;
+  width: 24px;
+  height: 8px;
+  position: relative;
+  bottom: 1px;
+  right: 6px;
+  background: linear-gradient(
+    0deg,
+    rgba(156, 90, 247, 1) 0%,
+    rgba(70, 91, 234, 1) 100%
+  );
+}
+
+#search-holder {
+  width: 398px;
+  height: 71px;
+  border: 1px solid transparent;
+  float: left;
+  position: absolute;
+  left: 25px;
+  top: 10px;
+  font-family: "yek";
+}
+
+#search-box {
+  background: url("../../../../Assets/images/Iconly-Light-Search.svg") no-repeat
+    9px 10px;
+  background-color: #7d74e2;
+  font-family: yek;
+  font-size: 20px;
+  color: transparent;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  float: left;
+  transition: 0.5s;
+  text-align: right;
+  padding-right: 21px;
+  padding-left: 21px;
+  position: relative;
+  float: left;
+  text-indent: 25px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+#search-box:focus {
+  color: white;
+  transition: 0.5s;
+  width: 315px;
+  cursor: text;
+}
+
+#user {
+  background: url("../../../../Assets/images/Iconly-Light-Profile.svg")
+    no-repeat 8px 8px;
+  background-color: #7d74e2;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-top: 5px;
+  border: none;
+  float: left;
+  margin-left: 10px;
+}
+
+.little-des {
+  color: white;
+  transform: rotate(270deg);
+  font-size: 25px;
+  position: absolute;
+  line-height: 10px;
+  top: 198px;
+  right: 272px;
+  width: 242px;
+}
+
+.forgetPass {
+  /* border: 1px solid red; */
+  padding-right: 65px;
+  position: relative;
+}
+.forgetPass > input {
+  position: relative;
+  bottom: -102px;
+  left: 225px;
+}
+
+.forgetPass > p {
+  /* border: 1px solid red; */
+  text-decoration: none;
+  color: #4985ec;
+  font-family: "yek";
+  font-size: 18px;
+  display: inline-block;
+  position: relative;
+  left: 200px;
+  bottom: -80px;
+  left: 130px;
+  bottom: -75px;
+}
+
+.forgetPass > a {
+  /* border: 1px solid red; */
+  text-decoration: none;
+  color: #4985ec;
+  font-family: "yek";
+  font-size: 18px;
+}
+
+.exclamation {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  /* border: 1px solid red; */
+  position: relative;
+  top: 7px;
+  background: url("../../../../Assets/images/Iconly-Bold-Tick Square.svg");
+  background-size: 15px;
+}
+
+.signup {
+  width: 100px;
+  height: 32px;
+  position: relative;
+  bottom: 3px;
+  border-radius: 10px;
+  font-family: "yek";
+  font-size: 20px;
+  padding: 5px 5px 5px 2px;
+  text-align: center;
+  display: inline-block;
+  color: white;
+  font-weight: 900;
+  background: linear-gradient(#665aee, #895af4);
+  background-size: 25px;
+  cursor: pointer;
+}
+
+.signin {
+  border: 2px solid#665AEE;
+  width: 70px;
+  height: 28px;
+  border-radius: 10px;
+  font-family: "yek";
+  font-size: 20px;
+  padding: 5px;
+  text-align: center;
+  display: inline-block;
+  font-weight: 900;
+  color: #665aee;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.buttons_holder {
+  /* border: 1px solid red; */
+  position: relative;
+  bottom: -100px;
+  padding-right: 141px;
+  left: 67px;
+}
+
+.formInnerHolder {
+  /* border: 1px solid red; */
+  position: relative;
+  left: 10px;
+}
+
+.pwRegister {
+  background: url("../../../../Assets/images/lockk.svg") 3% no-repeat #e9e9e9;
+  background-size: 18px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.checkbox {
+  display: inline-block;
+}
+
+.checkbox > input {
+  position: relative;
+  top: 4px;
+}
+
+.buttons_holder > a {
+  cursor: default;
+  text-decoration: none;
+}
+
+.showPass1 {
+  /* border: 1px solid red; */
+  width: 36px;
+  height: 41px;
+  display: inline-block;
+  float: right;
+  background: url("../../../../Assets/images/Group 223.svg") no-repeat 50%;
+  background-size: 23px;
+}
+
+.showPass2 {
+  /* border: 1px solid red; */
+  width: 36px;
+  height: 41px;
+  display: inline-block;
+  float: right;
+  background: url("../../../../Assets/images/Group 223.svg") no-repeat 50%;
+  background-size: 23px;
+}
+
+.hidepass {
+  background: url("../../../../Assets/images/Iconly-Bold-Show.svg") no-repeat
+    50%;
+  width: 36px;
+  height: 41px;
+  display: inline-block;
+  float: right;
+  background-size: 18px;
+}
+
+.hidepass2 {
+  background: url("../../../../Assets/images/Iconly-Bold-Show.svg") no-repeat
+    50%;
+  width: 36px;
+  height: 41px;
+  display: inline-block;
+  float: right;
+  background-size: 18px;
+}
+.header_text_holder {
+  text-align: center;
+  font-family: "yek";
+  font-size: 30px;
+  color: #895af4;
+  position: relative;
+  top: 70px;
+  display: none;
+}
+.top_header {
+  /* border:1px solid red; */
+  display: none;
+  width: 100%;
+  height: 40px;
+  position: relative;
+  top: 30px;
+}
+.ith {
+  /* border: 1px solid red; */
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+.purse {
+  float: left;
+  margin-left: 50px;
+  background: url("../../../../Assets/images/Group\ 68.svg") no-repeat;
+  background-size: 30px;
+}
+.bahr {
+  position: relative;
+  left: 560px;
+  width: 60px;
+  font-size: 30px;
+  color: #895af4;
+  left: 563px;
+}
+.header_button {
+  float: right;
+  margin-right: 50px;
+  background: url("../../../../Assets/images/Category.svg") no-repeat;
+  background-size: 30px;
+}
+.drop_down {
+  background: white;
+  font-family: "yek";
+  font-size: 25px;
+  width: 100%;
+  height: 55%;
+  position: absolute;
+  z-index: 5;
+  color: #777;
+  display: none;
+}
+.back {
+  background: url("../../../../Assets/images/Iconly-Bold-Arrow\ -\ Left\ Circle.svg")
+    no-repeat;
+  background-size: 40px;
+  width: 40px;
+  height: 40px;
+  /* border: 1px solid red; */
+  position: relative;
+  top: 40px;
+  left: 40px;
+  cursor: pointer;
+}
+.dropItems {
+  text-align: center;
+  position: relative;
+  top: 50px;
+}
+.sel {
+  color: #895af4;
+}
+.dropItemss {
+  text-align: center;
+  position: relative;
+  top: 75px;
+}
+.dropItemss > img {
+  position: relative;
+  right: 13px;
+  top: 6px;
+  width: 20px;
+  height: 20px;
+}
+.lineForHome {
+  background: #895af4;
+  display: block;
+  width: 40px;
+  height: 4px;
+  border-radius: 10px;
+  position: relative;
+  left: 662px;
+  top: 45px;
+}
+@media only screen and (max-width: 1366px) {
+  .shape1_holder,
+  .shape2_holder {
+    display: none;
+  }
+}

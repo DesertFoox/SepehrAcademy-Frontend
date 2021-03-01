@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "yek";
+  src: url("../../../../Assets/fonts/yek.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "yekan_bakh";
+  src: url("../../../../Assets/fonts/YekanBakh_Bold.ttf") format("truetype");
+}
+
+.md6L {
+  width: 29.0625rem !important;
+  margin-top: 13rem !important;
+  font-family: "yek";
+  
+}
+
+.roundedformL {
+  border-radius: 25px !important;
+  height: 300px !important;
+  width: 450px !important;
+  margin-left: 428px !important;
+}
+.usernameinput {
+  border-radius: 15px !important;
+  background: #e9e9e9 !important;
+  color: #b2b2b2 !important;
+  border: none !important;
+  background-image: url("../../../../Assets/images/Profilee.svg") !important;
+  background-position: 15px !important;
+  background-repeat: no-repeat !important;
+  background-size: 15px !important;
+}
+.passwordinput {
+  border-radius: 15px !important;
+  background: #e9e9e9 !important;
+  color: #b2b2b2 !important;
+  border: none !important;
+  background-image: url("../../../../Assets/images/lockk.svg") !important;
+  background-position: 15px !important;
+  background-repeat: no-repeat !important;
+  background-size: 15px !important;
+}
+input::placeholder {
+  color: #b2b2b2 !important;
+  font-family: "yek" !important;
+}
+.usernametext {
+  margin-right: 4rem !important;
+}
+
+.signUpL {
+  font-size: 20px !important;
+  color: #665aee !important;
+  font-weight: 900 !important;
+  width: 7.5rem !important;
+  height: 2.7rem !important;
+  border-radius: 10px !important;
+  border: 1px solid #665aee !important;
+  cursor: pointer !important;
+  background: url("../../../../Assets/images/Iconly-Light-outline-Profile.svg");
+  line-height: 8px !important;
+  background-repeat: no-repeat !important;
+  background-size: 25px !important;
+  background-position: 4px !important;
+  background-color: transparent !important;
+}
+.signInL {
+  font-size: 20px !important;
+  color: white !important;
+  font-weight: 900 !important;
+  width: 5rem !important;
+  height: 2.8rem !important;
+  line-height: 8px !important;
+  border-radius: 10px !important;
+  /* border: 2px solid #665AEE !important; */
+  cursor: pointer !important;
+  background: linear-gradient(#5a5bed, #895af4);
+}
+.exclamation {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: 7px;
+  background: url("../../../../Assets/images/Info_Square.svg");
+  background-size: 15px;
+  margin-left: 7px;
+}
+a {
+  text-decoration: none;
+  color: #4985ec;
+  font-family: "yek";
+  font-size: 18px;
+}
+
+.forgetPassL {
+  position: absolute;
+  left: 238px;
+  top: 220px;
+}
+.invalidfeedbackemail{
+  margin-left: 240px;
+  margin-top: -20px !important;
+  
+}
+.invalidfeedbackpassL{
+  margin-left: 240px;
+  margin-top: -45px !important;
+  
+}
+@media only screen and (max-width: 1366px) {
+  .md6L {
+    margin-top: 5rem !important;
+  }
+}

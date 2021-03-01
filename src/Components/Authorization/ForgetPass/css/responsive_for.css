@@ -1,0 +1,71 @@
+@media only screen and (max-width: 1366px) {
+    #menu,#search-holder{display: none;}
+    .shape1_holder,.shape2_holder{display: none;}
+    body{background: none;}
+   #form_holder{height: 200px;top:50%}
+   .header_text_holder{display: block;}
+   .usernametext{font-size: 20px;}
+   .passwordtext{font-size: 20px;}
+   .userNameInputHolder2{height: 33px;}
+   .userNameInputHolder2>input{height: 22px;}
+   .passWordInputHolder2{height: 33px;}
+   .passWordInputHolder2>input{height: 22px;}
+   .top_header{display: inline-block;}
+   .passrepeat{position: relative;left:32px}
+   .forgetPass{position: relative;left: 40px;}
+   .signin{background-position: 5%;}
+   }
+   /* @media only screen and (max-width: 600px) {
+       #menu,#search-holder{display: none;}
+       .shape1_holder,.shape2_holder{display: none;}
+       body{background: none;}
+       .top_header{top: 150px;left:100px}
+       .header_text_holder{display: block;}
+       .header_text{position: relative;left: 100px;top: 110px;}
+      #form_holder{height: 450px;top:80%;left:-10%}
+      .usernametext{font-size: 20px;}
+      .passwordtext{font-size: 20px;}
+      .userNameInputHolder2{height: 33px;}
+      .userNameInputHolder2>input{height: 22px;}
+      .passWordInputHolder2{height: 33px;}
+      .passWordInputHolder2>input{height: 22px;}
+      .top_header{display: inline-block;}
+      .passrepeat{position: relative;left:32px}
+      .forgetPass{position: relative;left: 40px;}
+      } */
+      @media only screen and (max-width: 375px) {
+       #menu,#search-holder{display: none;}
+       .shape1_holder,.shape2_holder{display: none;}
+       body{background: none;}
+       .top_header{top: 150px;left:250px}
+       .header_text_holder{display: block;}
+       .header_text{position: relative;left: 250px;top: 110px;}
+       .formInnerHolder{position: relative;left: 45px; }
+      #form_holder{height: 200px;width: 302px;top: 45%;left: -30.5%}
+      .usernametext{font-size: 15px;}
+      .passwordtext{font-size: 15px;}
+      .userNameInputHolder2{height: 31px;}
+      .userNameInputHolder2>input{height: 29px;width: 180px;position: relative;top: -5px;}
+      .passWordInputHolder2{height: 31px;}
+      .passWordInputHolder2>input{height: 29px;width: 180px;position: relative;top: -5px;}
+      .top_header{display: inline-block;top: 20px;left: 5px;}
+      .passrepeat{position: relative;left:32px}
+      .forgetPass{position: relative;left: 78px;}
+      .hidepass{height:32px;background-position:51% 35% }
+      .hidepass2{height:32px;background-position:51% 35%}
+      .showPass1{height:32px;background-position:51% 35%}
+      .showPass2{height:32px;background-position:51% 35%}
+      .section1{position: relative;left: 100px;}
+      .userNameInputHolder2{width: 265px;}
+      .passWordInputHolder2{width:265px}
+      .section1{left: 43px;}
+      .section2{left: 43px;}
+      .section3{left: 43px;}
+      .section4{left: 43px;}
+      .signup{width: 84px;}
+      .signin{width: 50px; width: 105px;background-position: 5%;left: 130px;}
+      .buttons_holder{padding-right: 140px;}
+      .header_text_holder{display: inline-block;position: relative;top: -68px; right: 102px;}
+      
+      }
+      

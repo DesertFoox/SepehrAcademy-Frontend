@@ -1,0 +1,53 @@
+.nass {
+  color: #625bdf !important;
+  margin: 0 auto !important;
+}
+.mt65 {
+  margin-top: 8rem !important;
+}
+body {
+  overflow-y: visible !important;
+  /* Hide horizontal scrollbar */
+  background: url("../../../../Assets/images/back-set.png") !important;
+}
+
+@font-face {
+  font-family: "yek";
+  src: url("../../../../Assets/fonts/yek.ttf") format("truetype");
+}
+
+* {
+  font-family: "yek" !important;
+}
+.fonts {
+  font-family: "yek" !important;
+}
+.new-titles {
+  box-shadow: 1px 0px 13px !important;
+  border-radius: 30px !important;
+}
+
+.holder-content {
+  border-radius: 30px !important;
+  border: none !important;
+  box-shadow: 1px 0px 13px !important;
+}
+
+.content-img {
+  border-radius: 30px !important;
+}
+
+.text-p {
+  color: #757575 !important; 
+  font-size: 2rem !important;
+}
+
+.news {
+  background: url(../../../../Assets/images/news.png) no-repeat 43% 7%;
+}
+
+@media Screen and (max-width: 375px) {
+  .news {
+    background: url(../../../../Assets/images/news.png) no-repeat 28% 7%;
+  }
+}

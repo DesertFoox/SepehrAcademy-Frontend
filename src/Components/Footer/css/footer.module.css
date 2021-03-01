@@ -1,0 +1,525 @@
+#footer {
+  border: 1px solid transparent;
+  background: url("../../../Assets/images/too.png") no-repeat 50% 50%;
+  background-size: 100% 100%;
+}
+
+/* Top-Footer */
+
+.top-foot {
+  max-width: 1580px;
+  height: 420px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-bottom: 1px solid #5b26af;
+  border-radius: 20% 20% 0 0;
+}
+
+.top-foot > p {
+  text-align: center;
+  font-size: 30px;
+  padding-top: 30px;
+  padding-bottom: 0;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.social-media {
+  border: 1px solid transparent;
+  width: 410px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.social {
+  background: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  transform: rotate(45deg);
+  float: left;
+  margin: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: center;
+}
+.social:hover{
+  transform: rotate(0deg);
+}
+.social:hover > img{
+  transform: scale(1.02) rotate(0deg);
+}
+.social > img {
+  display: inline-block;
+  width: 105%;
+  transform: rotate(-45deg);
+  transition: 0.2s;
+}
+
+.blog,
+.phone-num {
+  width: 180px;
+  height: 210px;
+  font-size: 26px;
+  float: right;
+  line-height: 20px;
+  color: white;
+  margin-top: 35px;
+  margin-right: 120px;
+  font-weight: lighter;
+}
+
+.phone-num {
+  margin-right: 40px;
+}
+
+.blog > p,
+.phone-num > p,
+.address > p {
+  cursor: pointer;
+  font-weight: lighter;
+  margin-top: 20px;
+}
+
+.address {
+  width: 280px;
+  height: 210px;
+  font-size: 26px;
+  float: right;
+  line-height: 20px;
+  color: white;
+  margin-top: 35px;
+  margin-right: 80px;
+  font-weight: lighter;
+}
+
+.pic {
+  float: left;
+  width: 170px;
+  height: 200px;
+  margin-top: 30px;
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+.namad1 {
+  background: url("../../../Assets/images/logo.aspx.svg") no-repeat 50% 50%;
+  background-size: cover;
+  margin-left: 100px;
+}
+
+.namad2 {
+  background: url("../../../Assets/images/logo1.aspx.svg") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.namad3 {
+  background: url("../../../Assets/images/namad-1.svg") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+/* Bottom-Footer */
+
+.bottom-foot {
+  position: relative;
+  background: url("../../../Assets/images/bottomi.svg") no-repeat 50% 50%;
+  border: 1px solid #514baa;
+  background-size: cover;
+  height: 60px;
+}
+
+.bottom-foot > p {
+  text-align: center;
+  font-size: 20px;
+  color: #ffffff;
+  margin: 0;
+  margin-top: 16px;
+}
+
+/* Resposive */
+
+@media Screen and (max-width: 1450px) {
+  /* Footer */
+  .pic {
+    width: 137px;
+    height: 137px;
+    margin-top: 40px;
+    margin-left: 18px;
+  }
+}
+
+@media Screen and (max-width: 1350px) {
+  /* Footer */
+  .pic {
+    width: 120px;
+    height: 120px;
+    margin-top: 40px;
+    margin-left: 18px;
+  }
+}
+
+@media Screen and (max-width: 1250px) {
+  /* Footer */
+  .blog {
+    margin-right: 90px;
+  }
+
+  .phone-num {
+    margin-right: 30px;
+  }
+
+  .address {
+    margin-right: 60px;
+  }
+
+  .pic {
+    width: 100px;
+    margin-left: 28px;
+  }
+
+  .namad2 {
+    background-size: 130px;
+  }
+}
+
+@media Screen and (max-width: 1150px) {
+  /* Footer */
+  .blog {
+    margin-right: 60px;
+  }
+
+  .phone-num {
+    margin-right: 10px;
+  }
+
+  .address {
+    margin-right: 40px;
+  }
+}
+
+@media Screen and (max-width: 1024px) {
+  /* Footer */
+  .blog,
+  .phone-num {
+    width: 120px;
+    height: 210px;
+    margin-right: 40px;
+    font-size: 22px;
+  }
+
+  .phone-num {
+    margin-right: 5px;
+  }
+
+  .address {
+    width: 240px;
+    height: 210px;
+    margin-right: 45px;
+    font-size: 22px;
+  }
+}
+
+@media Screen and (max-width: 768px) {
+  /* Footer */
+  .blog,
+  .phone-num {
+    width: 120px;
+    height: 210px;
+    margin-right: 40px;
+    font-size: 22px;
+  }
+
+  .phone-num {
+    margin-right: 5px;
+  }
+
+  .address {
+    width: 240px;
+    height: 210px;
+    margin-right: 45px;
+    font-size: 22px;
+  }
+
+  .namad1,
+  .namad3 {
+    display: none;
+  }
+
+  .namad2 {
+    background-size: 130px;
+  }
+}
+
+@media Screen and (max-width: 414px) {
+  /* Footer */
+  .top-foot {
+    background: url("../../../Assets/images/took.png") no-repeat 50% 50%;
+    border-bottom: 1px solid #5b26af;
+    background-size: 100% 100%;
+    width: 412px;
+    height: 490px;
+    border-radius: 0;
+    padding-top: 20px;
+  }
+
+  .top-foot > p {
+    text-align: center;
+    font-size: 30px;
+    padding-top: 30px;
+    padding-bottom: 0;
+    margin-bottom: 5px;
+    color: #5b26af;
+  }
+
+  .social-media {
+    width: 364px;
+    margin: 0 auto;
+  }
+
+  .social {
+    border-radius: 16px;
+    margin: 13px 7.2px;
+    float: right;
+    box-shadow: 2px 1px 24px #ccc;
+  }
+
+  .social:nth-child(1) {
+    margin-right: 28px;
+  }
+
+  .blog,
+  .phone-num {
+    width: 70px;
+    height: 150px;
+    font-size: 13px;
+    float: right;
+    line-height: 20px;
+    color: white;
+    margin-top: 60px;
+    margin-right: 15px;
+    font-weight: lighter;
+  }
+
+  .phone-num {
+    margin-right: 20px;
+  }
+
+  .address {
+    width: 140px;
+    height: 110px;
+    font-size: 13px;
+    margin-top: 60px;
+    margin-right: 40px;
+  }
+
+  .pic {
+    float: left;
+    width: 90px;
+    height: 90px;
+    margin-top: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+
+  .namad1 {
+    background-size: 80px;
+    margin-left: 10px;
+    margin-top: 50px;
+  }
+
+  .namad2 {
+    background-size: 80px;
+    margin-top: 50px;
+  }
+
+  .namad3 {
+    background-size: 80px;
+  }
+
+  .bottom-foot > p {
+    text-align: center;
+    font-size: 15px;
+  }
+}
+
+@media Screen and (max-width: 375px) {
+  /* Footer */
+  .top-foot {
+    background: url("../../../Assets/images/took.png") no-repeat 50% 50%;
+    border-bottom: 1px solid #5b26af;
+    background-size: 100% 100%;
+    width: 373px;
+    height: 490px;
+    border-radius: 0;
+  }
+
+  .top-foot > p {
+    text-align: center;
+    font-size: 30px;
+    padding-top: 30px;
+    padding-bottom: 0;
+    margin-bottom: 5px;
+    color: #5b26af;
+  }
+
+  .social-media {
+    width: 364px;
+    margin: 0 auto;
+  }
+
+  .social {
+    border-radius: 16px;
+    margin: 13px 7.2px;
+    float: right;
+    box-shadow: 2px 1px 24px #ccc;
+  }
+
+  .social:nth-child(1) {
+    margin-right: 28px;
+  }
+
+  .blog,
+  .phone-num {
+    width: 70px;
+    height: 150px;
+    font-size: 13px;
+    float: right;
+    line-height: 20px;
+    color: white;
+    margin-top: 60px;
+    margin-right: 15px;
+    font-weight: lighter;
+  }
+
+  .phone-num {
+    margin-right: 20px;
+  }
+
+  .address {
+    width: 140px;
+    height: 110px;
+    font-size: 13px;
+    margin-top: 60px;
+    margin-right: 40px;
+  }
+
+  .pic {
+    float: left;
+    width: 90px;
+    height: 90px;
+    margin-top: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+
+  .namad1 {
+    background-size: 80px;
+    margin-left: 10px;
+    margin-top: 50px;
+  }
+
+  .namad2 {
+    background-size: 80px;
+    margin-top: 50px;
+  }
+
+  .namad3 {
+    background-size: 80px;
+  }
+
+  .bottom-foot > p {
+    text-align: center;
+    font-size: 15px;
+  }
+}
+
+@media Screen and (max-width: 360px) {
+  /* Footer */
+  .top-foot {
+    background: url("../../../Assets/images/took.png") no-repeat 50% 50%;
+    border-bottom: 1px solid #5b26af;
+    background-size: 100% 100%;
+    width: 358px;
+    height: 490px;
+    border-radius: 0;
+  }
+
+  .top-foot > p {
+    text-align: center;
+    font-size: 30px;
+    padding-top: 30px;
+    padding-bottom: 0;
+    margin-bottom: 5px;
+    color: #5b26af;
+  }
+
+  .social-media {
+    width: 364px;
+    margin: 0 auto;
+  }
+
+  .social {
+    border-radius: 16px;
+    margin: 13px 7.2px;
+    float: right;
+    box-shadow: 2px 1px 24px #ccc;
+  }
+
+  .social:nth-child(1) {
+    margin-right: 28px;
+  }
+
+  .blog,
+  .phone-num {
+    width: 70px;
+    height: 150px;
+    font-size: 13px;
+    float: right;
+    line-height: 20px;
+    color: white;
+    margin-top: 60px;
+    margin-right: 15px;
+    font-weight: lighter;
+  }
+
+  .phone-num {
+    margin-right: 20px;
+  }
+
+  .address {
+    width: 140px;
+    height: 110px;
+    font-size: 13px;
+    margin-top: 60px;
+    margin-right: 40px;
+  }
+
+  .pic {
+    float: left;
+    width: 90px;
+    height: 90px;
+    margin-top: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+
+  .namad1 {
+    background-size: 80px;
+    margin-left: 10px;
+    margin-top: 50px;
+  }
+
+  .namad2 {
+    background-size: 80px;
+    margin-top: 50px;
+  }
+
+  .namad3 {
+    background-size: 80px;
+  }
+
+  .bottom-foot > p {
+    text-align: center;
+    font-size: 15px;
+  }
+}

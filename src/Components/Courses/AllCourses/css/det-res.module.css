@@ -1,0 +1,102 @@
+/*   courses css   */
+
+@media Screen and (max-width:1000px) {
+    .courses_holder {
+        width: 90%;
+    }
+    .courses_holder>.itemeholder>.items {
+        transform: scale(1);
+    }
+    .courses_holder>.itemeholder>.items>.description {
+        width: auto;
+        padding: 5px;
+    }
+    .courses_holder>.courses_header {
+        font-size: 25px;
+    }
+}
+
+@media Screen and (max-width:414px) {
+    .courses_holder>.courses_header {
+        font-size: 20px;
+        background-size: 25px;
+    }
+    .courses_holder>.itemeholder>.items>.picholder {
+        float: none;
+        width: 95%;
+        height: 150px;
+        margin: 0 auto;
+    }
+    .courses_holder>.itemeholder>.items>.description {
+        float: none;
+    }
+}
+
+@media Screen and (max-width:1600px) {
+    .leftdet {
+        width: 30%;
+    }
+    .leftdet>.holderdet {
+        width: 80%;
+    }
+    .leftdet>.holderdet>.priceholder>.itholder.det {
+        line-height: 200%;
+    }
+    .rightdet {
+        width: 69.5%;
+    }
+}
+
+/*   single courses css   */
+
+@media Screen and (max-width:1000px) {
+    .shape2_holder {
+        display: none;
+    }
+    #panel_holder {
+        width: 100%;
+        display: block;
+        position: static;
+        margin:auto;
+        top: 0;
+        right: 0;
+        transform: scale(0.8);
+        height: 1200px;
+    }
+    #panel_holder>.leftdet {
+        display: block;
+        width: 100%;
+        bottom: 0;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+    }
+    #panel_holder>.leftdet > .holderdet{
+        height: auto;
+    }
+    #panel_holder>.rightdet {
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        height: auto;
+    }
+}
+@media Screen and (max-width:414px) {
+    #panel_holder {
+        height: 815px;
+        
+    }
+    #panel_holder>.leftdet {
+        bottom: 15px;
+    }
+}
+@media Screen and (max-width:375px) {
+    #panel_holder {
+        height: 795px;
+        
+    }
+    #panel_holder>.leftdet {
+        bottom: 15px;
+    }
+}
