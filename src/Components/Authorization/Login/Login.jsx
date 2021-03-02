@@ -1,134 +1,111 @@
-import React, { Component } from "react";
+import React, { createRef, Fragment, useRef } from "react";
 import classes from "./css/login.module.css";
-import { Link ,Redirect} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Header from "../../Header/Header";
 import "./css/mdb_log.css";
 import "./css/mdb_res.css";
-import {
-  MDBRow,
-  MDBCol,
-  MDBBtn,
-  MDBCard,
-  MDBCardBody,
-  ToastContainer,
-} from "mdbreact";
+import { MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody } from "mdbreact";
+import { ToastContainer } from "react-toastify";
+
 import { LogInUser } from "../../services/api/Auth/login.api";
-import { getItem } from "../../services/storage/storage";
-class Login extends Component {
-  state = {
-    email: "",
-    password: "",
-    igLoggedin: false,
-  };
+import Forms from "../Form/Form";
+import { Formik, Form } from "formik";
+const Login = () => {
+  const yup = require("yup");
+  require("yup-password")(yup);
 
-  loginUser = async () => {
-    const user = {
-      email: this.state.email,
-      password: this.state.password,
+  const Validate = yup.object().shape({
+    email: yup.string().min(3).email().required("لطفا فیلد نام را پر کنید"),
+    password: yup.string().min(3).required("لطفا فیلد نام خانوادگی را پر کنید"),
+  });
+
+  //sending data to api
+  const LoginUser = async (data) => {
+    const users = {
+      email: data.email,
+      password: data.password,
     };
-    const Logindata = await LogInUser(user);
-    console.log(Logindata);
-    this.setState({ user: Logindata, igLoggedin: true });
+    const Logindata = await LogInUser(users);
   };
-  submitHandler = (event) => {
-    event.preventDefault();
+  return (
+    <Formik
+      initialValues={{ email: "", password: "" }}
+      validationSchema={Validate}
+      enableReinitialize={true}
+      onSubmit={(value) => LoginUser(value)}
+    >
+      {({ errors, handleChange, touched }) => {
+        return (
+          <Fragment>
+            <ToastContainer
+            />
 
-    event.target.className += " was-validated";
-  };
+            <div className={classes.shape1_holder}></div>
 
-  changeHandler = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
-  };
+            <div className={classes.shape2_holder}></div>
 
-  render() {
-    const { loginUser } = this;
-    return (
-      <React.Fragment>
-        <div className={classes.shape1_holder}></div>
+            <Header />
 
-        <div className={classes.shape2_holder}></div>
+            <div className="container">
+              <MDBRow>
+                <MDBCol className="md6L" md="6">
+                  <MDBCard className="roundedformL h-100 card">
+                    <MDBCardBody>
+                      <Form>
+                        <Forms
+                          InputType="email"
+                          labelText="ایمیل یا نام کاربری"
+                          className="form-control w-75 ml-5 mb-4 usernameinput px-5"
+                          InputName="email"
+                          changeHandler={handleChange}
+                          InputPlaceHolder="ایمیل خود را وارد کنید"
+                        />
 
-        <Header />
-
-        <div className="container">
-          <MDBRow>
-            <MDBCol className="md6L" md="6">
-              <MDBCard className="roundedformL h-100 card">
-                <MDBCardBody>
-                  <form
-                    className="needs-validation ml-1"
-                    onSubmit={this.submitHandler}
-                    noValidate
-                  >
-                    <p className="h4 text-right usernametext ">
-                      ایمیل یا نام کاربری
-                    </p>
-
-                    <input
-                      value={this.state.email}
-                      onChange={this.changeHandler}
-                      type="email"
-                      id="defaultFormRegisterConfirmEx"
-                      className="form-control w-75 ml-5 mb-4 usernameinput px-5"
-                      name="email"
-                      placeholder="ایمیل خود را وارد کنید"
-                      required
-                    />
-                    <div className="invalid-feedback invalidfeedbackemail">
-                      لطفا فیلد ایمیل را پر کنید{" "}
-                    </div>
-
-                    <p className="h4 text-right usernametext">رمزعبور</p>
-
-                    <input
-                      value={this.state.password}
-                      onChange={this.changeHandler}
-                      type="password"
-                      id="defaultFormRegisterConfirmEx2"
-                      className="form-control w-75 ml-5 mb-5 passwordinput px-5"
-                      name="password"
-                      placeholder="حداقل 8 کاراکتر"
-                      required
-                    />
-                    <div className="invalid-feedback invalidfeedbackpassL">
-                      لطفا فیلد رمز عبور را پر کنید{" "}
-                    </div>
-                    <div className="forgetPassL mt-2" dir="rtl">
-                      {" "}
-                      <div className="exclamation"></div>
-                      <Link to="/Forgetpass">رمزم رو فراموش کردم!</Link>
-                    </div>
-                    <div className="text-center py-4 mt-1">
-                      <Link to="/Register">
-                        <MDBBtn rounded outline color=" signUpL pl-4">
-                          ثبت نام
-                        </MDBBtn>
-                      </Link>
-                      <MDBBtn
-                        onClick={loginUser}
-                        type="submit"
-                        rounded
-                        outline
-                        color=" signInL"
-                      >
-                        ورود
-                      </MDBBtn>
-                    </div>
-                    <ToastContainer
-                      position="top-right"
-                      autoClose={5000}
-                      newestOnTop={true}
-                      rtl={true}
-                    ></ToastContainer>
-                  </form>
-                </MDBCardBody>
-              </MDBCard>
-            </MDBCol>
-          </MDBRow>
-        </div>
-      </React.Fragment>
-    );
-  }
-}
+                        {errors.email && touched.email && (
+                          <p className="redError">{errors.email}!</p>
+                        )}
+                        <Forms
+                          Inputvalue={Validate.password}
+                          InputType="password"
+                          labelText="رمزعبور"
+                          className="form-control w-75 ml-5 mb-5 passwordinput px-5"
+                          InputName="password"
+                          changeHandler={handleChange}
+                          InputPlaceHolder="حداقل 8 کاراکتر"
+                        />
+                        {errors.password && touched.password && (
+                          <p className="redError">{errors.password}!</p>
+                        )}
+                        <div className="forgetPassL mt-2" dir="rtl">
+                          <div className="exclamation"></div>
+                          <Link to="/Forgetpass">رمزم رو فراموش کردم!</Link>
+                        </div>
+                        <div className="text-center py-4 mt-1">
+                          <Link to="/Register">
+                            <MDBBtn rounded outline color=" signUpL pl-4">
+                              ثبت نام
+                            </MDBBtn>
+                          </Link>
+                          <MDBBtn
+                            type="submit"
+                            rounded
+                            outline
+                            color=" signInL"
+                          >
+                            ورود
+                          </MDBBtn>
+                        </div>
+                      </Form>
+                    </MDBCardBody>
+                  </MDBCard>
+                </MDBCol>
+              </MDBRow>
+            </div>
+          </Fragment>
+        );
+      }}
+    </Formik>
+  );
+};
 
 export default Login;

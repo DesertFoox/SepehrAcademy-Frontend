@@ -9,7 +9,6 @@ import {
   MDBBtn,
   MDBCard,
   MDBCardBody,
-  ToastContainer,
 } from "mdbreact";
 import { RegisterUser } from "../../services/api/Auth/Register.api";
 
@@ -176,12 +175,6 @@ class Register extends Component {
                         </MDBBtn>
                       </Link>
                     </div>
-                    <ToastContainer
-                      position="top-right"
-                      autoClose={5000}
-                      newestOnTop={true}
-                      rtl={true}
-                    ></ToastContainer>
                   </form>
                 </MDBCardBody>
               </MDBCard>

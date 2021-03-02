@@ -4,15 +4,11 @@ import { Link } from "react-router-dom";
 import Header from "../../Header/Header";
 import "./css/mdb_for.css";
 import {
-  MDBContainer,
   MDBRow,
   MDBCol,
   MDBBtn,
   MDBCard,
   MDBCardBody,
-  toast,
-  ToastContainer,
-  MDBIcon,
 } from "mdbreact";
 
 class ForgetPass extends Component {
@@ -25,10 +21,7 @@ class ForgetPass extends Component {
 
     event.target.className += " was-validated";
 
-    toast.error("یک فیلد خالی وجود دارد لطفا آن را پر کنید", {
-      rtl: true,
-      closeButton: true,
-    });
+
   };
 
   render() {
@@ -79,12 +72,7 @@ class ForgetPass extends Component {
                         بازیابی رمز
                       </MDBBtn>
                     </div>
-                    <ToastContainer
-                      position="top-right"
-                      autoClose={5000}
-                      newestOnTop={true}
-                      rtl={true}
-                    ></ToastContainer>
+
                   </form>
                 </MDBCardBody>
               </MDBCard>

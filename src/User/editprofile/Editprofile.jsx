@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import {
-
   MDBIcon,
   MDBBtn,
-  ToastContainer,
 } from "mdbreact";
 
 //styles
@@ -34,29 +32,6 @@ class Editprofile extends Component {
   };
 
   render() {
-    // const Validate = yup.object().shape({
-    //   fname: yup.string().required("لطفا فیلد نام را پر کنید").length(3),
-    //   lname: yup.string().required("لطفا فیلد نام خانوادگی را پر کنید"),
-    //   city: yup.string().required("لطفا فیلد شهر را پر کنید"),
-    //   email: yup.string().email().required("لطفا فیلد ایمیل را پر کنید"),
-    // });
-    // let validatechecker = () => {};
-    // onsubmit = (data) => {
-    //   console.log(data);
-    // };
-    // alert = (value) => {
-    //   Validate.validate(value)
-    //     .then((val) => {})
-    //     .catch((val) => {
-    //       toast.error(
-    //         <MDBIcon icon="exclamation-triangle" />,
-    //         "فیلد خالی وجود دارد.لطفا آن را پر کنید ",
-    //         {
-    //           autoClose: true,
-    //         }
-    //       );
-    //     });
-    // };
     const { fname, lname, email, date, classNameHandler, required } = this;
     return (
       <React.Fragment>
@@ -157,12 +132,6 @@ class Editprofile extends Component {
                   <MDBIcon far icon="check-square"brand  className="pr-1" />
                 </MDBBtn>
               </div>
-              <ToastContainer
-                position="top-right"
-                autoClose={5000}
-                newestOnTop={true}
-                rtl={true}
-              ></ToastContainer>
             </form>
           </div>
         </div>

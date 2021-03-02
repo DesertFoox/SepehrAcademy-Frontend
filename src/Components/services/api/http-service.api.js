@@ -1,6 +1,6 @@
 import axios from "axios";
 import { getItem } from "../storage/storage";
-
+import { toast } from 'react-toastify'
 axios.interceptors.response.use(
   (response) => {
     return response;
@@ -16,7 +16,16 @@ axios.interceptors.response.use(
     if (!expectedError) {
       // tweak it later
       // get error message from backend (see object of response later... maybe its changed)
-      console.log(error.response.data.message[0]);
+      console.log(error.response.data.message.message[0]);
+      toast.error(error.response.data.message.message[0].message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
     }
     return Promise.reject(error);
   }
