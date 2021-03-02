@@ -19,7 +19,7 @@ axios.interceptors.response.use(
       console.log(error.response.data.message.message[0]);
       toast.error(error.response.data.message.message[0].message, {
         position: "top-right",
-        autoClose: 5000,
+        autoClose: 4000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
