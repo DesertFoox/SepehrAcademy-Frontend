@@ -24,7 +24,6 @@ class AuthForm extends Component {
           className={className}
           name={InputName}
           placeholder={InputPlaceHolder}
-          required
         />
       </React.Fragment>
     );

@@ -16,6 +16,9 @@
 .roundedform {
   border-radius: 25px !important;
 }
+.mt-55{
+  margin-top: 7rem !important;
+}
 .usernameinput {
   border-radius: 15px !important;
   background: #e9e9e9 !important;
@@ -90,9 +93,7 @@ a {
 }
 
 .forgetPassR {
-  position: absolute;
-  left: 267px;
-  top: 400px;
+  margin-left: 185px;
   color: #3078f5;
 }
 
@@ -120,4 +121,9 @@ a {
 .invalidfeedbackpass2 {
   margin-left: 255px ;
   margin-top:-23px !important;
+}
+@media only screen and (max-width: 375px) {
+  .roundedform{
+    width: 100% !important;
+  }
 }

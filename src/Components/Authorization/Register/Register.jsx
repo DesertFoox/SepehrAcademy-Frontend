@@ -1,189 +1,173 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import classes from "./css/register.module.css";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Header from "../../Header/Header";
 import "./css/mdb_reg.css";
-import {
-  MDBRow,
-  MDBCol,
-  MDBBtn,
-  MDBCard,
-  MDBCardBody,
-} from "mdbreact";
+import { MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody } from "mdbreact";
 import { RegisterUser } from "../../services/api/Auth/Register.api";
+import { Form, Formik } from "formik";
+import Forms from "../Form/Form";
+const RegisterForm = () => {
+  const yup = require("yup");
+  require("yup-password")(yup);
 
-class Register extends Component {
-  state = {
-    fullName: "",
-    PhoneNumber: "",
-    birthday: "",
-    email: "",
-    nationalId: "",
-    password: "",
-    isRegister: false,
-  };
+  const Validate = yup.object().shape({
+    fullName: yup
+      .string()
+      .min(2, "نام شما کوتاه است")
+      .required("فیلد نام اجباریست لطفا آن را پر کنید"),
+    PhoneNumber: yup
+      .number("فرمت ورودی این فیلد باید عدد باشد")
+      .required("این فیلد اجباریست لطفا آن را پر کنید")
+      .min(11, "شماره باید 11 رقم باشد")
+      .max(11, "شماره باید 11 رقم باشد"),
+    birthday: yup
+      .date()
+      .required("این فیلد اجباریست لطفا آن را پر کنید")
+      .min(7, "تاریخ وارد شده شما اشتباه است")
+      .max(10, "بیشتر از این نمیتوانید تاریخ راوارد کنید"),
+    email: yup
+      .string()
+      .min(3)
+      .email("فرمت ایمیلی که وارد کرده اید اشتباه است")
+      .required("این فیلد اجباریست لطفا آن را پر کنید"),
+    nationalId: yup
+      .number("فرمت ورودی اشتباه اشت")
+      .required("این فیلد اجباریست لطفا آن را پر کنید")
+      .max(9, "کد ملی که وارد کردید اشتباه است"),
+    password: yup
+      .string()
+      .password()
+      .lowercase(1, "رمز شما باید یک حروف موچک داشته باشد")
+      .uppercase(1, "رمز شما باید یک حروف بزرگ داشته باشد")
+      .min(3, "رمز شما باید حدقال سه کارکتر داشته باشد")
+      .required("لطفا فیلد نام خانوادگی را پر کنید"),
+  });
 
-  submitHandler = (event) => {
-    event.preventDefault();
-
-    event.target.className += " was-validated";
-  };
-
-  changeHandler = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
-  };
-
-  registerUser = async () => {
+  const registerUser = async (data) => {
     const userRegister = {
-      fullName: this.state.fullName,
-      phoneNumber: this.state.PhoneNumber,
-      birthDate: this.state.birthday,
-      email: this.state.email,
-      nationalId: this.state.nationalId,
-      password: this.state.password,
+      fullName: data.firstname,
+      phoneNumber: data.PhoneNumber,
+      birthDate: data.birthday,
+      email: data.email,
+      nationalId: data.nationalId,
+      password: data.password,
     };
     const RegisterData = await RegisterUser(userRegister);
     this.setState({ RegisterData, isRegister: true });
   };
+  return (
+    <Fragment>
+      <Formik
+        initialValues={{ email: "", password: "" }}
+        validationSchema={Validate}
+        enableReinitialize={true}
+        onSubmit={(value) => registerUser(value)}
+      >
+        {({ errors, handleChange, touched }) => {
+          return (
+            <Fragment>
+              <div className={classes.shape1_holder}></div>
+
+              <div className={classes.shape2_holder}></div>
+
+              <Header />
+
+              <div className="container ">
+                <MDBRow>
+                  <div className="col mt-55" >
+                    <MDBCard className=" mx-auto  roundedform h-100 cards">
+                      <MDBCardBody>
+                        <Form>
+                          <Forms
+                            InputType="text"
+                            labelText="نام و نام خانوادگی"
+                            className="form-control w-75 ml-5 mb-4 usernameinput px-5"
+                            InputName="fullName"
+                            changeHandler={handleChange}
+                            InputPlaceHolder="نام و نام خانوادگی خود را وارد کنید"
+                          />
+                          <Forms
+                            InputType="number"
+                            labelText="شماره موبایل"
+                            className="form-control w-75 ml-5 mb-4 usernameinput px-5"
+                            InputName="phoneNumber"
+                            changeHandler={handleChange}
+                            InputPlaceHolder="شماره موبایل خود را وارد کنید"
+                          />
+                          <Forms
+                            InputType="email"
+                            labelText="ایمیل"
+                            className="form-control w-75 ml-5 mb-4 usernameinput px-5"
+                            InputName="email"
+                            changeHandler={handleChange}
+                            InputPlaceHolder="ایمیل خود را وارد کنید"
+                          />
+                          <Forms
+                            InputType="password"
+                            labelText="رمز عبور"
+                            className="form-control w-75 ml-5 mb-4 usernameinput px-5"
+                            InputName="password"
+                            changeHandler={handleChange}
+                            InputPlaceHolder=" رمز عبور خود را وارد کنید"
+                          />
+                          <Forms
+                            InputType="number"
+                            labelText="کد ملی"
+                            className="form-control w-75 ml-5 mb-4 usernameinput px-5"
+                            InputName="nationalcode"
+                            changeHandler={handleChange}
+                            InputPlaceHolder="  کد ملی خود را وارد کنید"
+                          />
+                          <Forms
+                            InputType="text"
+                            labelText="سال تولد"
+                            className="form-control w-75 ml-5 usernameinput px-5"
+                            InputName="birthdate"
+                            changeHandler={handleChange}
+                            InputPlaceHolder="   سال تولد خود را وارد کنید"
+                          />
+                          <div className="text-center mt-3">
+                            <div className="forgetPassR" dir="rtl">
+                              <div className="exclamationR">
+                                <input
+                                  className="checkbosinput"
+                                  type="checkbox"
+                                />
+                              </div>
+                              مرا به خاطر بسپار
+                            </div>
+                            <MDBBtn
+                              type="submit"
+                              rounded
+                              outline
+                              color=" signUpR pl-4"
+                            >
+                              ثبت نام
+                            </MDBBtn>
+                            <Link className="link" to="/Login">
+                              <MDBBtn rounded outline color=" signInR">
+                                ورود
+                              </MDBBtn>
+                            </Link>
+                          </div>
+                        </Form>
+                      </MDBCardBody>
+                    </MDBCard>
+                  </div>
+                </MDBRow>
+              </div>
+            </Fragment>
+          );
+        }}
+      </Formik>
+    </Fragment>
+  );
+};
+
+export default RegisterForm;
+class Register extends Component {
   render() {
-    return (
-      <div>
-        <div className={classes.shape1_holder}></div>
-
-        <div className={classes.shape2_holder}></div>
-
-        <Header />
-
-        <div className="container">
-          <MDBRow>
-            <MDBCol md="6 mx-auto md6R">
-              <MDBCard className="roundedform h-100 cards">
-                <MDBCardBody>
-                  <form
-                    className="needs-validation ml-1"
-                    onSubmit={this.submitHandler}
-                    noValidate
-                  >
-                    <p className="h4 text-right usernametext ">
-                      نام و نام خانوادگی{" "}
-                    </p>
-                    <input
-                      value={this.state.fullName}
-                      onChange={this.changeHandler}
-                      type="text"
-                      id="defaultFormRegisterConfirmEx"
-                      className="form-control w-75 ml-5 mb-4 usernameinput px-5"
-                      name="fullName"
-                      required
-                    />
-                    <div className="invalid-feedback  invalidfeedbackemail longinvalidtext">
-                      لطفا فیلد نام و نام خانوادگی را پر کنید{" "}
-                    </div>
-                    <p className="h4 text-right usernametext ">ایمیل </p>
-                    <input
-                      value={this.state.email}
-                      onChange={this.changeHandler}
-                      type="email"
-                      id="defaultFormRegisterConfirmEx2"
-                      className="form-control w-75 ml-5 usernameinput px-5"
-                      name="email"
-                      placeholder="ایمیل خود را وارد کنید"
-                      required
-                    />
-                    <div className="invalid-feedback invalidfeedbackemail">
-                      لطفا فیلد ایمیل را پر کنید
-                    </div>
-                    <p className="h4 text-right usernametext">رمزعبور</p>
-                    <input
-                      value={this.state.password}
-                      onChange={this.changeHandler}
-                      type="password"
-                      id="defaultFormRegisterConfirmEx3"
-                      className="form-control w-75 ml-5 passwordinput px-5"
-                      name="password"
-                      placeholder="حداقل 8 کاراکتر"
-                      required
-                    />{" "}
-                    <div className="invalid-feedback invalidfeedbackpass">
-                      لطفا فیلد رمزعبور را پر کنید
-                    </div>
-                    <p className="h4 text-right usernametext">شماره موبایل</p>
-                    <input
-                      value={this.state.phoneNumber}
-                      onChange={this.changeHandler}
-                      type="number"
-                      id="defaultFormRegisterConfirmEx3"
-                      className="form-control w-75 ml-5 passwordinput px-5"
-                      name="PhoneNumber"
-                      placeholder="حداقل 8 کاراکتر"
-                      required
-                    />
-                    <div className="invalid-feedback invalidfeedbackemail longinvalidtext">
-                      لطفا فیلد شماره موبایل را پر کنید
-                    </div>
-                    <p className="h4 text-right usernametext">کد ملی</p>
-                    <input
-                      value={this.state.nationalId}
-                      onChange={this.changeHandler}
-                      type="number"
-                      id="defaultFormRegisterConfirmEx4"
-                      className="form-control w-75 ml-5 mb-4 passwordinput px-5"
-                      name="nationalId"
-                      placeholder="کد ملی"
-                      required
-                    />
-                    <div className="invalid-feedback  invalidfeedbackpass ">
-                      شماره کد ملی را پر کنید
-                    </div>
-                    <p className="h4 text-right usernametext">سال تولد</p>
-                    <input
-                      value={this.state.birthday}
-                      onChange={this.changeHandler}
-                      type="datetime"
-                      id="defaultFormRegisterConfirmEx4"
-                      className="form-control w-75 ml-5 mb-4 passwordinput px-5"
-                      name="birthday"
-                      placeholder="حداقل 8 کاراکتر"
-                      required
-                    />{" "}
-                    <div className="invalid-feedback  invalidfeedbackemail ">
-                      شماره سال تولد را پر کنید
-                    </div>
-                    <div className="text-center py-4 mt-1">
-                      <div className="forgetPassR mt-2" dir="rtl">
-                        {" "}
-                        <div className="exclamationR">
-                          {" "}
-                          <input className="checkbosinput" type="checkbox" />
-                        </div>
-                        مرا به خاطر بسپار
-                      </div>
-                      <MDBBtn
-                        type="submit"
-                        rounded
-                        outline
-                        onClick={this.registerUser}
-                        color=" signUpR pl-4"
-                      >
-                        {/* {this.state.isRegister ? <Redirect to="/login"/> : ''} */}
-                        ثبت نام
-                      </MDBBtn>
-                      <Link className="link" to="/Login">
-                        {" "}
-                        <MDBBtn rounded outline color=" signInR">
-                          ورود
-                        </MDBBtn>
-                      </Link>
-                    </div>
-                  </form>
-                </MDBCardBody>
-              </MDBCard>
-            </MDBCol>
-          </MDBRow>
-        </div>
-      </div>
-    );
+    return <div></div>;
   }
 }
-
-export default Register;

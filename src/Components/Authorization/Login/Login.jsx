@@ -15,8 +15,8 @@ const Login = () => {
   require("yup-password")(yup);
 
   const Validate = yup.object().shape({
-    email: yup.string().min(3).email().required("لطفا فیلد نام را پر کنید"),
-    password: yup.string().min(3).required("لطفا فیلد نام خانوادگی را پر کنید"),
+    email: yup.string().min(3).email('فرمت ایمیلی که وارد کرده اید اشتباه است').required("لطفا فیلد نام را پر کنید"),
+    password: yup.string().min(3,'رمز شما باید حدقال سه کارکتر داشته باشد').required("لطفا فیلد نام خانوادگی را پر کنید"),
   });
 
   //sending data to api
@@ -48,7 +48,7 @@ const Login = () => {
 
             <div className="container">
               <MDBRow>
-                <MDBCol className="md6L" md="6">
+                <MDBCol className="md6L mx-auto" md="6">
                   <MDBCard className="roundedformL h-100 card">
                     <MDBCardBody>
                       <Form>
@@ -62,23 +62,23 @@ const Login = () => {
                         />
 
                         {errors.email && touched.email && (
-                          <p className="redError">{errors.email}!</p>
+                          <h5 style={{direction:'rtl'}} className="redError mb-2">{errors.email}!</h5>
                         )}
                         <Forms
                           Inputvalue={Validate.password}
                           InputType="password"
                           labelText="رمزعبور"
-                          className="form-control w-75 ml-5 mb-5 passwordinput px-5"
+                          className="form-control w-75 ml-5 mb-1 passwordinput px-5 mt-2"
                           InputName="password"
                           changeHandler={handleChange}
                           InputPlaceHolder="حداقل 8 کاراکتر"
                         />
                         {errors.password && touched.password && (
-                          <p className="redError">{errors.password}!</p>
+                          <h5 className="redError">{errors.password}!</h5>
                         )}
-                        <div className="forgetPassL mt-2" dir="rtl">
+                        <div className="forgetPassL d-flex justify-content-right mr-5 mt-2" dir="rtl">
                           <div className="exclamation"></div>
-                          <Link to="/Forgetpass">رمزم رو فراموش کردم!</Link>
+                          <Link to="/Forgetpass" >رمزم رو فراموش کردم!</Link>
                         </div>
                         <div className="text-center py-4 mt-1">
                           <Link to="/Register">

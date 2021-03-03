@@ -14,12 +14,9 @@
   font-family: "yek";
   
 }
-
 .roundedformL {
   border-radius: 25px !important;
   height: 300px !important;
-  width: 450px !important;
-  margin-left: 428px !important;
 }
 .usernameinput {
   border-radius: 15px !important;
@@ -94,11 +91,7 @@ a {
   font-size: 18px;
 }
 
-.forgetPassL {
-  position: absolute;
-  left: 238px;
-  top: 220px;
-}
+
 .invalidfeedbackemail{
   margin-left: 240px;
   margin-top: -20px !important;
