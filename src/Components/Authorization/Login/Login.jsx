@@ -1,4 +1,4 @@
-import React, { createRef, Fragment, useRef } from "react";
+import React, { Fragment } from "react";
 import classes from "./css/login.module.css";
 import { Link } from "react-router-dom";
 import Header from "../../Header/Header";
@@ -15,8 +15,15 @@ const Login = () => {
   require("yup-password")(yup);
 
   const Validate = yup.object().shape({
-    email: yup.string().min(3).email('فرمت ایمیلی که وارد کرده اید اشتباه است').required("لطفا فیلد نام را پر کنید"),
-    password: yup.string().min(3,'رمز شما باید حدقال سه کارکتر داشته باشد').required("لطفا فیلد نام خانوادگی را پر کنید"),
+    email: yup
+      .string()
+      .min(3)
+      .email("فرمت ایمیلی که وارد کرده اید اشتباه است")
+      .required("لطفا فیلد نام را پر کنید"),
+    password: yup
+      .string()
+      .min(3, "رمز شما باید حدقال سه کارکتر داشته باشد")
+      .required("لطفا فیلد نام خانوادگی را پر کنید"),
   });
 
   //sending data to api
@@ -37,8 +44,7 @@ const Login = () => {
       {({ errors, handleChange, touched }) => {
         return (
           <Fragment>
-            <ToastContainer
-            />
+            <ToastContainer />
 
             <div className={classes.shape1_holder}></div>
 
@@ -62,10 +68,14 @@ const Login = () => {
                         />
 
                         {errors.email && touched.email && (
-                          <h5 style={{direction:'rtl'}} className="redError mb-2">{errors.email}!</h5>
+                          <h5
+                            style={{ direction: "rtl" }}
+                            className="redError mb-2"
+                          >
+                            {errors.email}!
+                          </h5>
                         )}
                         <Forms
-                          Inputvalue={Validate.password}
                           InputType="password"
                           labelText="رمزعبور"
                           className="form-control w-75 ml-5 mb-1 passwordinput px-5 mt-2"
@@ -76,9 +86,12 @@ const Login = () => {
                         {errors.password && touched.password && (
                           <h5 className="redError">{errors.password}!</h5>
                         )}
-                        <div className="forgetPassL d-flex justify-content-right mr-5 mt-2" dir="rtl">
+                        <div
+                          className="forgetPassL d-flex justify-content-right mr-5 mt-2"
+                          dir="rtl"
+                        >
                           <div className="exclamation"></div>
-                          <Link to="/Forgetpass" >رمزم رو فراموش کردم!</Link>
+                          <Link to="/Forgetpass">رمزم رو فراموش کردم!</Link>
                         </div>
                         <div className="text-center py-4 mt-1">
                           <Link to="/Register">
