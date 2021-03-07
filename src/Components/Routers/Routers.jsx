@@ -41,14 +41,17 @@ class Routers extends Component {
           {/* end user Autthorization */}
 
           {/*User Zone*/}
-          {IsLogged('/User/Dashboard',Dashboard)}
-          {/* <Route exact path="/User/Dashboard" component={Dashboard} />
-          <Route exact path="/User/dashboard/myCourses" component={Dashboard} /> */}
+          {IsLogged('/user/dashboard',Dashboard)}
+          {IsLogged('/user/dashboard/myCourses',Dashboard)}
+
           {/*End User Zone*/}
 
           {/*Admin Zone*/}
           
           {/*Admin Zone*/}
+
+
+
           <Route exact path="/not-found" component={Notfound} />
           <Redirect to="/not-found"/>
           </Switch>

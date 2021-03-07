@@ -44,7 +44,7 @@ const Login = () => {
       {({ errors, handleChange, touched }) => {
         return (
           <Fragment>
-            <ToastContainer />
+            <ToastContainer limit={1}/>
 
             <div className={classes.shape1_holder}></div>
 

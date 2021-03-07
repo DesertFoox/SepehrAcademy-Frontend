@@ -9,11 +9,13 @@ import '../../Assets/Styles/login_signup/style.css'
 import '../../Assets/Styles/login_signup/login.css'
 import classes from "../../Components/Authorization/Login/css/login.module.css";
 import Header from "../../Components/Header/Header";
+import { ToastContainer } from "react-toastify";
 
 class Panel extends Component {
   render() {
     return (
       <React.Fragment>
+        <ToastContainer limit={1}/>
         <div className={classes.shape1_holder}></div>
 
         <div className={classes.shape2_holder}></div>
