@@ -66,7 +66,7 @@ class Rightside extends Component {
                 خیر
               </MDBBtn>
               <MDBBtn color="success" onClick={Logout}>
-                <Link to="/">بله</Link>
+                بله
               </MDBBtn>
             </MDBModalFooter>
           </MDBModal>

@@ -19,5 +19,9 @@ const removeItem = (key) => {
 const clearStorage = () => {
   localStorage.clear();
 };
+const getItemGeneric = (key) => {
+  if (localStorage.getItem(key)) return localStorage.getItem(key);
+  return false;
+};
 
-export { setItem, getItem, removeItem, clearStorage };
+export { setItem, getItem, removeItem, clearStorage, getItemGeneric };

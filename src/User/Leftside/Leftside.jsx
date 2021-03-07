@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 //files
 import Editprofile from "../editprofile/Editprofile";

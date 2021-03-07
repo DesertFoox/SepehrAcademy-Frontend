@@ -1,13 +1,15 @@
-import './App.css';
-import Router from '../Components/Routers/Routers'
-import AdminRouter from '../Admin-Area/Router'
-function App() {
-  return (
-    <div className="App">
-      <Router/>
-      <AdminRouter/>
-    </div>
-  );
-}
+import "./App.css";
+import Routers from "../Components/Routers/Routers";
+import AdminRouter from "../Admin-Area/Router";
+import UserRouter from "../Components/Routers/Protectedroutes";
+import {
+  getItem,
+  getItemGeneric,
+} from "../Components/services/storage/storage";
+const App = () => {
+  let IsLogged = getItem("token");
+  let IsAdmin = getItemGeneric("role");
+  return <div className="App">{IsLogged ? <UserRouter /> : <Routers />}</div>;
+};
 
 export default App;
