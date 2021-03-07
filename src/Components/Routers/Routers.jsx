@@ -19,7 +19,8 @@ import Dashboard from "../../User/Panelholder/Panel";
 import Editprofile from "../../User/editprofile/Editprofile";
 import MyCourses from "../../User/UserCourses/UserCourses";
 
-//
+//wrappers
+import IsLogged from '../wrappers/auth/isLogged'
 class Routers extends Component {
   state = {};
   render() {
@@ -40,24 +41,16 @@ class Routers extends Component {
           {/* end user Autthorization */}
 
           {/*User Zone*/}
-          <Route exact path="/User/Dashboard" component={Dashboard} />
-          <Route exact path="/User/dashboard/myCourses" component={Dashboard} />
+          {IsLogged('/User/Dashboard',Dashboard)}
+          {/* <Route exact path="/User/Dashboard" component={Dashboard} />
+          <Route exact path="/User/dashboard/myCourses" component={Dashboard} /> */}
           {/*End User Zone*/}
 
           {/*Admin Zone*/}
-          {/* <Route exact path="/Admin/Blogs" component={} />
-            <Route exact path="/Admin/Masters" component={} />
-
-            <Route exact path="/AddCourse" component={} />
-            <Route exact path="/AddUser" component={} />
-            <Route exact path="/AddBlog" component={} />
-            <Route exact path="/AddMaster" component={} />
-
-            <Route exact path="/EditCourse:id" component={} />
-            <Route exact path="/EditUser:Id" component={} />
-            <Route exact path="/EditBlog:id" component={} />
-            <Route exact path="/EditMaster:id" component={} /> */}
+          
           {/*Admin Zone*/}
+          <Route exact path="/not-found" component={Notfound} />
+          <Redirect to="/not-found"/>
           </Switch>
         </Router>
       </React.Fragment>

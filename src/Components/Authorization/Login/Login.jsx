@@ -6,7 +6,6 @@ import "./css/mdb_log.css";
 import "./css/mdb_res.css";
 import { MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody } from "mdbreact";
 import { ToastContainer } from "react-toastify";
-
 import { LogInUser } from "../../services/api/Auth/login.api";
 import Forms from "../Form/Form";
 import { Formik, Form } from "formik";
@@ -33,6 +32,7 @@ const Login = () => {
       password: data.password,
     };
     const Logindata = await LogInUser(users);
+    window.location = "/user/dashboard";
   };
   return (
     <Formik

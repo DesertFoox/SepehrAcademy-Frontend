@@ -62,7 +62,7 @@ body {
   /* border: 1px solid red; */
   background: url("../../../../Assets/images/Path 62.svg") no-repeat 0% 0%;
   background-size: 400px !important;
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   right: -20px;
   width: 400px;

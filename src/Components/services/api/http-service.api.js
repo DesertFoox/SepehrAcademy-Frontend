@@ -6,20 +6,15 @@ axios.interceptors.response.use(
     return response;
   },
   async (error) => {
-    // check if error is expected from backend
     const expectedError =
       error.response &&
       error.response.state >= 400 &&
       error.response.status < 500;
 
-    // if error doesnt expected when we log it
     if (error.response && error.response.status == 401) {
-      console.log("asd");
       toast.error("ایمیل یا کد ملی شما قبلا در سیستم وارد شده است");
     }
     if (!expectedError) {
-      // tweak it later
-      // get error message from backend (see object of response later... maybe its changed)
       console.log(error.response.data.message.message[0]);
       toast.error(error.response.data.message.message[0].message, {
         position: "top-right",

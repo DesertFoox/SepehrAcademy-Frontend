@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import classes from "../Authorization/Login/css/login.module.css";
 import { Link } from "react-router-dom";
+
+//check is log
+import { getItem } from "../services/storage/storage";
 class Header extends Component {
   state = {};
   render() {
     return (
       <React.Fragment>
         {/* <!-- header --> */}
-        
+
         <div id={classes.menu}>
           <div className={classes["menu-logo"]}>
             <img src={require("../../Assets/images/hpgraph-1.svg").default} />
@@ -28,7 +31,7 @@ class Header extends Component {
         </div>
         <div id={classes["search-holder"]}>
           <input id={classes["search-box"]} type="search" />
-          <Link to="/user/dashboard">
+          <Link to={getItem("token") ? "user/dashboard" : "/login"}>
             <div id={classes.user}></div>
           </Link>
           <p className={classes["little-des"]}> میان هزاران دوره ی آنلاین</p>
