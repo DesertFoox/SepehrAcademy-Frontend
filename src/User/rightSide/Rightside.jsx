@@ -40,7 +40,7 @@ class Rightside extends Component {
           <MDBBtn color="" type="button " className="btn btnmenus mb-4 my_cour">
             <Link to="/user/dashboard/Mycourses">دوره های من</Link>
           </MDBBtn>
-          <MDBBtn color="" type="button" className="btn btnmenus mb-4 singup">
+          <MDBBtn color="" onClick={()=> console.log('asd')} type="button" className="btn btnmenus mb-4 singup">
             <Link to="/Courses">ثبت نام دوره ها</Link>
           </MDBBtn>
           <MDBBtn color="" type="button" className="btn btnmenus mb-4 edit ">
