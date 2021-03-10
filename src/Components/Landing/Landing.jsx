@@ -21,7 +21,7 @@ class Landing extends Component {
     return (
       <React.Fragment>
         <div className={det.shape1_holder}></div>
-        <Header />
+        <Header mgr={"5px"}/>
         <div id={base["center-holder"]}>
           <div id={content["content"]}>
             <ResSkill />

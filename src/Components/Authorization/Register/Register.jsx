@@ -54,8 +54,6 @@ const RegisterForm = () => {
       password: data.password,
     };
     const regstatus = await RegisterUser(userRegister);
-
-    if (regstatus.status == 200) alert("complete");
   };
   return (
     <Formik

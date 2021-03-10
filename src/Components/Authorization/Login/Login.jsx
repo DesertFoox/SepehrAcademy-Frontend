@@ -26,13 +26,13 @@ const Login = () => {
   });
 
   //sending data to api
-  const LoginUser = async (data) => {
+  const LoginUser = async (data,error) => {
     const users = {
       email: data.email,
       password: data.password,
     };
     const Logindata = await LogInUser(users);
-    window.location = "/user/dashboard";
+
   };
   return (
     <Formik
@@ -44,7 +44,7 @@ const Login = () => {
       {({ errors, handleChange, touched }) => {
         return (
           <Fragment>
-            <ToastContainer limit={1}/>
+            <ToastContainer limit={1} />
 
             <div className={classes.shape1_holder}></div>
 

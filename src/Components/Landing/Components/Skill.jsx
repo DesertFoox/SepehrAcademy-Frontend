@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 //Styles
-import content from '../css/content.module.css';
+import content from "../css/content.module.css";
 
 class Skill extends Component {
   render() {
@@ -21,7 +21,7 @@ class Skill extends Component {
               هستند.
             </p>
             <div className={content["see-curses"]}>
-              مشاهده دوره ها
+              <a className="sadawsd" href="#Developing"> مشاهده دوره ها</a>
               <img src={require("../../../Assets/images/down.svg").default} />
             </div>
           </div>

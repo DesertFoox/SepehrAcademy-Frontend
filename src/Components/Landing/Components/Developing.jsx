@@ -6,7 +6,7 @@ class Developing extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className={content["developing"]}>
+        <div id="Developing" className={content["developing"]}>
           <p>دوره های درحال پیشرفت</p>
           <div className={content["right-developing"]}>
             <img src={require("../../../Assets/images/alonesit.svg").default} />

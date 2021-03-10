@@ -15,16 +15,7 @@ axios.interceptors.response.use(
       toast.error("ایمیل یا کد ملی شما قبلا در سیستم وارد شده است");
     }
     if (!expectedError) {
-      console.log(error.response.data.message.message[0]);
-      toast.error(error.response.data.message.message[0].message, {
-        position: "top-right",
-        autoClose: 4000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+     
     }
     return Promise.reject(error);
   }

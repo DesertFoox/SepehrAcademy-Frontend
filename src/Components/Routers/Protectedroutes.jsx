@@ -8,7 +8,7 @@ import Dashboard from "../../User/Panelholder/Panel";
 //wrappers
 import IsLogged from "../wrappers/auth/isLogged";
 import Landing from "../Landing/Landing";
-import Course from "../Courses/AllCourses/EachCourse/Course";
+import Course from "../Courses/SingleCourse/SingleCourse";
 import Courses from "../Courses/AllCourses/Courses";
 import AllBlogs from "../Blogs/AllBlogs/Blogs";
 import Singleblog from "../Blogs/SingleBlogs/SingleBlog";
@@ -21,7 +21,7 @@ class Routers extends Component {
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/Courses" component={Courses} />
-            <Route exact path="/Course:id?" component={Course} />
+            <Route exact path="/Course/:id" component={Course} />
             <Route exact path="/Blogs" component={AllBlogs} />
             <Route exact path="/Blog:id?" component={Singleblog} />
 

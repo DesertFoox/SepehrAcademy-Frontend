@@ -5,8 +5,11 @@ import { Link } from "react-router-dom";
 //check is log
 import { getItem } from "../services/storage/storage";
 class Header extends Component {
-  state = {};
+
   render() {
+    const headerBorder ={
+      right: this.props.mgr
+    }
     return (
       <React.Fragment>
         {/* <!-- header --> */}
@@ -19,7 +22,7 @@ class Header extends Component {
             <li className={`${classes.below} ${classes["1"]}`}>
               {" "}
               <Link to="/">خانه</Link>
-              <div className={classes["border-bottom"]}></div>
+              <div className={classes["border-bottom"]} style={headerBorder}></div>
             </li>
             <li className={`${classes.below} ${classes["1"]}`}>
               <Link to="/Courses">آموزش</Link>
