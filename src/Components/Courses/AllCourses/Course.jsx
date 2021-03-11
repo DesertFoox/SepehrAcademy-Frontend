@@ -5,10 +5,7 @@ import { MDBSpinner } from "mdbreact";
 
 const Course = ({ terms, Loading }) => {
   if (Loading) {
-    return (
-      <MDBSpinner className="mt-5" big />
-
-    );
+    return <MDBSpinner className="mt-5" big />;
   }
   return (
     <div className={det["itemeholder"]}>
@@ -25,7 +22,9 @@ const Course = ({ terms, Loading }) => {
             </button>
           </div>
           <div className={det["description"]}>
-            <h2><Link to={"/course/" + term._id}>{term.course.courseName}</Link></h2>
+            <h2>
+              <Link to={"/course/" + term._id}>{term.course.courseName}</Link>
+            </h2>
             <p> </p>
             <span className={det["mentor"]}>
               مدرس : {term.teacher.fullName}
@@ -34,8 +33,13 @@ const Course = ({ terms, Loading }) => {
             <span className={det["price"]}>{term.cost}</span>
             <span className="m-2">تومان</span>
             <br />
-            <p className="mb-5">{term.course.description}</p>
-            <span className={det["rate"]}>4.6</span>
+            <p className="">
+              {term.course.description.length > 100 &&
+                term.course.description.substr(0, 100) + "..."}
+            </p>
+            <span className={det["rate"]}>
+              {Math.floor(Math.random() * 4 + 1)}
+            </span>
           </div>
         </div>
       ))}

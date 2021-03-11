@@ -32,7 +32,7 @@ const Login = () => {
       password: data.password,
     };
     const Logindata = await LogInUser(users);
-
+    window.location = "/user/dashboard";
   };
   return (
     <Formik

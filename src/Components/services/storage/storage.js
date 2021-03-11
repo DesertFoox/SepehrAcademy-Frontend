@@ -26,4 +26,21 @@ const getItemGeneric = (key) => {
 const setItemGeneric = (key, value) => {
   localStorage.setItem(key, value);
 };
-export { setItem, getItem, removeItem, clearStorage, getItemGeneric,setItemGeneric };
+
+const getUserInformation = (key) => {
+  if (localStorage.getItem(key)) return localStorage.getItem(key);
+  return false;
+};
+const setUserInformation = (key, value) => {
+  localStorage.setItem(key, value);
+};
+export {
+  setItem,
+  getUserInformation,
+  setUserInformation,
+  getItem,
+  removeItem,
+  clearStorage,
+  getItemGeneric,
+  setItemGeneric,
+};

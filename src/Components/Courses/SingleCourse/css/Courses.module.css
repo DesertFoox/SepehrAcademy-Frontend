@@ -7,7 +7,6 @@
     left: -20px;
     width: 606px;
     height: 678px;
-    animation: anim6 1s normal forwards ease-in-out;
   }
   
   .shape2_holder {
@@ -20,7 +19,6 @@
     width: 400px;
     height: 450px;
     transform: rotate(180deg);
-    animation: anim6 1s normal forwards ease-in-out;
   }
 
 #panel_holder {
@@ -35,7 +33,6 @@
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     overflow: hidden;
-    animation: panel 1s normal forwards ease-in-out;
 }
 #right{
     float: right;

@@ -1,8 +1,6 @@
 import React from "react";
 import { MDBPagination, MDBPageItem, MDBPageNav } from "mdbreact";
 import { Fragment } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Pagination from "@material-ui/lab/Pagination";
 import { number } from "prop-types";
 
 const Paginations = ({ postsPerPage, totalPosts, paginate,allPages,currentPage }) => {

@@ -9,7 +9,7 @@ const singleCourse = (props) => {
   return (
     <div>
       <div className={det.shape1_holder}></div>
-      <Header />
+      <Header mgr={"93px"}/>
       <div id={det["panel_holder"]}>
         <CourseLeftSide LoadCourseId={props.match.params.id}/>
         <CourseRightSide />

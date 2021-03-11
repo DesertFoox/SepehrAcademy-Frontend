@@ -18,13 +18,7 @@ const CourseRightSide = (props) => {
     <React.Fragment>
       <div className={det["rightdet"]}>
         {Course.map((items) => (
-          <img
-            src={
-              items.course.image.lenght > 0
-                ? items.course.image
-                : "../../../../Assets/images/pic-det.jpg"
-            }
-          />
+          <img src={"http://localhost:3000/"+items.course.image} />
         ))}
       </div>
     </React.Fragment>

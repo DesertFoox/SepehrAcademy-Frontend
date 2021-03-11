@@ -50,8 +50,7 @@ body {
 }
 #name {
   color: #704ed4;
-  font-size: 30px;
-  top: 7px;
+  width: 100% !important;
   font-family: "yek";
 }
 .editprof {
