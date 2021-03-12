@@ -22,7 +22,10 @@ class Header extends Component {
             <li className={`${classes.below} ${classes["1"]}`}>
               {" "}
               <Link to="/">خانه</Link>
-              <div className={classes["border-bottom"]} style={headerBorder}></div>
+              <div
+                className={classes["border-bottom"]}
+                style={headerBorder}
+              ></div>
             </li>
             <li className={`${classes.below} ${classes["1"]}`}>
               <Link to="/Courses">آموزش</Link>
@@ -34,7 +37,13 @@ class Header extends Component {
         </div>
         <div id={classes["search-holder"]}>
           <input id={classes["search-box"]} type="search" />
-          <Link to={getItem("token") ? "user/dashboard" : "/login"}>
+          <Link
+            to={
+              getItem("token")
+                ? "user/dashboard/" + JSON.parse(getItem("userinf"))._id
+                : "/login"
+            }
+          >
             <div id={classes.user}></div>
           </Link>
           <p className={classes["little-des"]}> میان هزاران دوره ی آنلاین</p>

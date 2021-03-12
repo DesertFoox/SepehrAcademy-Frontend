@@ -3,6 +3,7 @@ import {
 
   ToastContainer,
 } from "mdbreact";
+import {Field} from 'formik'
 
 class EditprofileForm extends Component {
   render() {
@@ -22,15 +23,14 @@ class EditprofileForm extends Component {
         <label htmlFor="defaultFormRegisterNameEx" className="grey-text inputp">
           {label}
         </label>
-        <input
-          value={value}
-          onChange={onChange}
+        <Field
           name={name}
           type={type}
           id={id}
           className={this.props.classnames}
           placeholder={placeholder}
           required={required}
+          
         />
         <div className="invalid-feedback">
        لطفا فیلد {placeholder} را پر کنید

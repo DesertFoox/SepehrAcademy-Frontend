@@ -25,7 +25,7 @@ class Routers extends Component {
             <Route exact path="/Blogs" component={AllBlogs} />
             <Route exact path="/Blog:id?" component={Singleblog} />
 
-            {IsLogged("/user/dashboard", Dashboard)}
+            {IsLogged("/user/dashboard/:id", Dashboard)}
             {IsLogged("/user/dashboard/myCourses", Dashboard)}
             <Route component={Notfound} />
           </Switch>

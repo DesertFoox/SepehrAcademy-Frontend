@@ -16,19 +16,26 @@ import ProfileDetails from "../ProfileDetail/Profile";
 import Logout from "../../Components/wrappers/auth/LogOut";
 
 //api
-import { getUserInformation } from "../../Components/services/storage/storage";
 import { LogInUser } from "../../Components/services/api/Auth/login.api";
 
 //modal
 import UserDash from "../../Components/services/api/user/userdash.api";
 
+import { getUserInformation } from "../../Components/services/storage/storage";
 const Rightside = () => {
   const [states, SetState] = useState(false);
+  const [userId, setUserId] = useState(null);
+
+  useEffect(() => {
+    let user = JSON.parse(getUserInformation("userinf"));
+     setUserId(user._id)
+  }, [])
 
   const toggle = () => {
     SetState(!states);
   };
 
+  
   return (
     <React.Fragment>
       <ProfileDetails />
@@ -44,7 +51,13 @@ const Rightside = () => {
           <Link to="/Courses">ثبت نام دوره ها</Link>
         </MDBBtn>
         <MDBBtn color="" type="button" className="btn btnmenus mb-4 edit ">
-          <Link to="/user/dashboard">ویرایش پروفایل</Link>
+          <Link
+            to={
+              userId ? `/user/dashboard/${userId}` : `/user/dashboard/${0}`
+            }
+          >
+            ویرایش پروفایل
+          </Link>
         </MDBBtn>
         <MDBBtn
           color=""

@@ -11,9 +11,7 @@ axios.interceptors.response.use(
       error.response.state >= 400 &&
       error.response.status < 500;
 
-    if (error.response && error.response.status == 401) {
-      toast.error("ایمیل یا کد ملی شما قبلا در سیستم وارد شده است");
-    }
+
     if (!expectedError) {
      
     }

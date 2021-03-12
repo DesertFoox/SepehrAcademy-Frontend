@@ -11,19 +11,19 @@ import classes from "../../Components/Authorization/Login/css/login.module.css";
 import Header from "../../Components/Header/Header";
 import { ToastContainer } from "react-toastify";
 
-class Panel extends Component {
-  render() {
+const Panel =(props)=> {
+  console.log(props)
     return (
       <React.Fragment>
-        <ToastContainer limit={1}/>
+        <ToastContainer limit={1} />
         <div className={classes.shape1_holder}></div>
 
         <div className={classes.shape2_holder}></div>
-        <Header/>
+        <Header />
         <div className="container mt-5 bg-white " id={Classes.panel_holder}>
           <div className="row">
             <div className="col-lg-9">
-              <Leftside />
+              <Leftside usid={props.match.params.id} />
             </div>
             <div className="col-lg-3" id={Classes.right}>
               <Rightside />
@@ -33,6 +33,6 @@ class Panel extends Component {
       </React.Fragment>
     );
   }
-}
+
 
 export default Panel;
