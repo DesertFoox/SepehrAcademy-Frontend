@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { MDBIcon, MDBBtn } from "mdbreact";
 
 //styles
@@ -10,24 +10,22 @@ import EditprofForm from "./form/EditprofileForm copy";
 import { Formik, Form } from "formik";
 
 //api
-import UserDash from "../../Components/services/api/user/userdash.api";
-import Updateinf from '../../Components/services/api/user/updateinf.api'
+import Updateinf from "../../Components/services/api/user/updateinf.api";
 //storege
-import { clearStorage, getUserInformation } from "../../Components/services/storage/storage";
-
+import { getUserInformation } from "../../Components/services/storage/storage";
 
 const Editprofile = (props) => {
-
   const [initialState, setinitialState] = useState({
     userName: "",
     email: "",
     nationalid: "",
-    date:''
+    date: "",
+    number: "",
   });
-console.log(initialState)
+
   const UserInformation = async () => {
     let user = await JSON.parse(getUserInformation("userinf"));
-    console.log(user)
+    console.log(user);
     setinitialState((state) => ({
       ...state,
       userName: user.fullName,
@@ -37,10 +35,10 @@ console.log(initialState)
       number: user.phoneNumber,
     }));
   };
+
   useEffect(() => {
     UserInformation();
   }, []);
-  console.log(initialState);
 
   const yup = require("yup");
   require("yup-password")(yup);
@@ -65,7 +63,7 @@ console.log(initialState)
       .required("لطفا فیلد کد ملی را پر کنید"),
   });
 
-  const LoginUser = async (data, error) => {
+  const UpdateUser = async (data, error) => {
     const users = {
       email: data.email,
       birthDate: data.date,
@@ -74,17 +72,17 @@ console.log(initialState)
       phoneNumber: data.number,
     };
 
-    const Logindata = await Updateinf(users,props.id);
+    await Updateinf(users, props.match.params.id);
   };
-    
+
   return (
     <Formik
       initialValues={initialState}
       validationSchema={Validate}
       enableReinitialize={true}
-      onSubmit={(value) => LoginUser(value)}
+      onSubmit={(value) => UpdateUser(value)}
     >
-      {({values, errors, handleChange, touched }) => {
+      {({ values, errors, handleChange, touched }) => {
         return (
           <div className="row">
             <div className="col-lg-12 px-0">

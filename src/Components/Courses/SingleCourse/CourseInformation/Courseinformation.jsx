@@ -11,6 +11,7 @@ const CourseInformation = (props) => {
     const result = await EachTerm(props.LoadCourseId);
     setCourse([result]);
   };
+  
   const ConvertDateHandler = (date) => {
     const dateObj = new Date(date);
 

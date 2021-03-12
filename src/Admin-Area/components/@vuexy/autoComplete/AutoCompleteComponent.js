@@ -290,14 +290,14 @@ class Autocomplete extends React.Component {
 
   // Closes Suggestions if clicked outside container (On Blur Basically)
   handleExtenalClick = e => {
-    let { container } = this.refs
-    const { target } = e
-    if (target !== container && !container.contains(target)) {
-      this.setState({
-        showSuggestions: false
-      })
-      if (this.props.externalClick) this.props.externalClick(e)
-    }
+    // let { container } = this.refs
+    // const { target } = e
+    // if (target !== container && !container.contains(target)) {
+    //   this.setState({
+    //     showSuggestions: false
+    //   })
+    //   if (this.props.externalClick) this.props.externalClick(e)
+    // }
   }
 
   componentDidUpdate(prevProps, prevState) {

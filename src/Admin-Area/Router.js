@@ -9,11 +9,13 @@ import NotFound from "../Components/Landing/404/404";
 // Route-based code splitting
 const Home = lazy(() => import("./screens/Home"));
 
-const Page2 = lazy(() => import("./screens/Page2"));
-
-const login = lazy(() => import("./screens/login/Login"));
-
 const Dashboards = lazy(() => import("./screens/Dashboard/Dashboard"));
+
+const Courses = lazy(() => import("./screens/Admincourse"));
+
+const AddCourse = lazy(() => import("./screens/AddCourse"));
+
+const EditCourse = lazy(() => import("./screens/UpdateCourse"));
 
 // Set Layout and Component Using App Route
 const RouteConfig = ({
@@ -56,9 +58,17 @@ class AppRouter extends React.Component {
       // Set the directory path if you are deploying in sub-folder
       <Router history={history}>
         <Switch>
-          <AppRoute exact path="/admin/Dashboard/profile" component={Home} />
-          <AppRoute path="/admin/dashboard" component={Dashboards} />
-          <Route component={NotFound} />
+          <AppRoute
+            exact
+            path="/admin/Dashboard/profile/:id"
+            component={Home}
+          />
+          <AppRoute exact path="/admin/dashboard" component={Dashboards} />
+          <AppRoute exact path="/admin/courses" component={Courses} />
+          <AppRoute exact path="/admin/addcourse" component={AddCourse} />
+          <AppRoute exact path="/editcourse/:id" component={EditCourse} />
+          <Route exact path="/not-found" component={NotFound} />
+          <Redirect to="/not-found" />
         </Switch>
       </Router>
     );

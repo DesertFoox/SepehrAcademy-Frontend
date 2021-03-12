@@ -1,5 +1,4 @@
-
-import React from "react"
+import React, { useState, useEffect } from "react";
 import {
   Card,
   CardHeader,
@@ -8,162 +7,188 @@ import {
   FormGroup,
   Button,
   Label,
-  Col
-} from "reactstrap"
-import { Formik, Field, Form } from "formik"
+  Col,
+} from "reactstrap";
+import { MDBIcon, MDBBtn } from "mdbreact";
+import { getUserInformation } from "../../Components/services/storage/storage";
+import { Formik, Field, Form } from "formik";
+import UpdateinfAdmin from "../../Components/services/api/Admin-area/auth/profilex.api";
 
-import * as Yup from "yup"
-const formSchema = Yup.object().shape({
-  required: Yup.string().required("Required"),
-  email: Yup.string()
-    .email("Invalid email")
-    .required("Required"),
-  number: Yup.number().required("Required"),
-  url: Yup.string()
-    .url()
-    .required("Required"),
-  date: Yup.date().required("Required"),
-  minlength: Yup.string()
-    .min(4, "Too Short!")
-    .required("Required"),
-  maxlength: Yup.string()
-    .max(5, "Too Long!")
-    .required("Required")
-})
-const Home = () => {
-  
+import * as Yup from "yup";
+import EditprofForm from "../../Components/Authorization/Form/Form";
+const Home = (props) => {
+  const [initialState, setinitialState] = useState({
+    userName: "",
+    email: "",
+    nationalid: "",
+    date: "",
+    number: "",
+  });
+  const Validate = Yup.object().shape({
+    userName: Yup.string().min(3).required("لطفا فیلد نام را پر کنید"),
+    date: Yup.string()
+      .min(4, "سال تولد شما باید حدقال سه کارکتر داشته باشد")
+      .required("لطفا فیلد نام خانوادگی را پر کنید"),
+    email: Yup.string()
+      .min(3, "رمز شما باید حدقال سه کارکتر داشته باشد")
+      .required("لطفا فیلد نام خانوادگی را پر کنید"),
+    nationalid: Yup.string()
+      .min(3, "کد ملی شما باید حدقال سه کارکتر داشته باشد")
+      .required("لطفا فیلد کد ملی را پر کنید"),
+    number: Yup.string()
+      .min(3, "کد ملی شما باید حدقال سه کارکتر داشته باشد")
+      .required("لطفا فیلد کد ملی را پر کنید"),
+  });
+
+  const UserInformation = async () => {
+    let user = await JSON.parse(getUserInformation("userinf"));
+    setinitialState((state) => ({
+      ...state,
+      userName: user.fullName,
+      email: user.email,
+      date: user.birthDate,
+      nationalid: user.nationalId,
+      number: user.phoneNumber,
+    }));
+  };
+
+  const LoginUser = async (data, error) => {
+    const users = {
+      email: data.email,
+      birthDate: data.date,
+      fullName: data.userName,
+      nationalId: data.nationalid,
+      phoneNumber: data.number,
+    };
+
+    const Logindata = await UpdateinfAdmin(users, props.match.params.id);
+    
+  };
+  useEffect(() => {
+    UserInformation();
+  }, []);
   return (
+    <Card>
+      <CardHeader>
+        <CardTitle> Validation</CardTitle>
+      </CardHeader>
+      <CardBody>
+        <Formik
+          initialValues={initialState}
+          validationSchema={Validate}
+          enableReinitialize={true}
+          onSubmit={(value) => LoginUser(value)}
+        >
+          {({ values, errors, handleChange, touched }) => (
+            <Form>
+              <div className="row">
+                <div className="col-md-6 mb-3">
+                  <EditprofForm
+                    name="userName"
+                    type="text"
+                    id="defaultFormRegisterNameEx"
+                    classnames="form-control changeinput"
+                    label="نام و نام خانوادگی"
+                    placeholder="نام و نام خانوادگی"
+                    required="required"
+                    onChange={handleChange}
+                  />
 
-  <Card>
-    <CardHeader>
-      <CardTitle> Validation</CardTitle>
-    </CardHeader>
-    <CardBody>
-      <Formik
-        initialValues={{
-          required: "",
-          email: "",
-          url: "",
-          number: "",
-          date: "",
-          minlength: "",
-          maxlength: ""
-        }}
-        validationSchema={formSchema}
-      >
-        {({ errors, touched }) => (
-          <Form>
-            <FormGroup className="my-3">
-              <Label for="required">Name</Label>
-              <Field
-                name="required"
-                id="required"
-                className={`form-control ${errors.required &&
-                  touched.required &&
-                  "is-invalid"}`}
-              />
-              {errors.required && touched.required ? (
-                <div className="invalid-tooltip mt-25">{errors.required}</div>
-              ) : null}
-            </FormGroup>
-            <FormGroup className="my-3">
-              <Label for="email">Email</Label>
-              <Field
-                type="email"
-                name="email"
-                id="email"
-                className={`form-control ${errors.email &&
-                  touched.email &&
-                  "is-invalid"}`}
-              />
-              {errors.email && touched.email ? (
-                <div className="invalid-tooltip mt-25">{errors.email}</div>
-              ) : null}
-            </FormGroup>
-            <FormGroup className="my-3">
-              <Label for="url">Website URL</Label>
-              <Field
-                name="url"
-                id="url"
-                className={`form-control ${errors.url &&
-                  touched.url &&
-                  "is-invalid"}`}
-              />
-              {errors.url && touched.url ? (
-                <div className="invalid-tooltip mt-25">{errors.url}</div>
-              ) : null}
-            </FormGroup>
-            <FormGroup className="my-3">
-              <Label for="number">Number</Label>
-              <Field
-                name="number"
-                id="number"
-                className={`form-control ${errors.number &&
-                  touched.number &&
-                  "is-invalid"}`}
-              />
-              {errors.number && touched.number ? (
-                <div className="invalid-tooltip mt-25">{errors.number}</div>
-              ) : null}
-            </FormGroup>
-            <FormGroup className="my-3 ">
-              <Label for="date">Date</Label>
-              <Field
-                type="date"
-                name="date"
-                id="date"
-                className={`form-control ${errors.date &&
-                  touched.date &&
-                  "is-invalid"}`}
-              />
-              {errors.date && touched.date ? (
-                <div className="invalid-tooltip mt-25">{errors.date}</div>
-              ) : null}
-            </FormGroup>
-            <FormGroup className="my-3">
-              <Label for="minlength">
-                Min Length (Minimum 4 Characters)
-              </Label>
-              <Field
-                name="minlength"
-                id="minlength"
-                className={`form-control ${errors.minlength &&
-                  touched.minlength &&
-                  "is-invalid"}`}
-              />
-              {errors.minlength && touched.minlength ? (
-                <div className="invalid-tooltip mt-25">{errors.minlength}</div>
-              ) : null}
-            </FormGroup>
-            <FormGroup className="my-3">
-              <Label for="maxlength">
-                Max Length (Maximum 5 Characters)
-              </Label>
-              <Field
-                name="maxlength"
-                id="maxlength"
-                className={`form-control ${errors.maxlength &&
-                  touched.maxlength &&
-                  "is-invalid"}`}
-              />
-              {errors.maxlength && touched.maxlength ? (
-                <div className="invalid-tooltip mt-25">{errors.maxlength}</div>
-              ) : null}
-            </FormGroup>
-            <Col sm="12" className="text-center">
-              <Button color="primary" type="submit">
-                Submit
-              </Button>
-            </Col>
-
-            
-          </Form>
-        )}
-      </Formik>
-    </CardBody>
-  </Card>
+                  {errors.userName && touched.userName && (
+                    <h5 style={{ direction: "rtl" }} className="redError mb-2">
+                      {errors.userName}!
+                    </h5>
+                  )}
+                </div>
+                <div className="col-md-6 mb-3">
+                  <EditprofForm
+                    name="email"
+                    type="email"
+                    id="defaultFormRegisterLNameEx"
+                    classnames="form-control changeinput"
+                    placeholder="ایمیل"
+                    label="ایمیل"
+                    onChange={handleChange}
+                  />
+                  {errors.email && touched.email && (
+                    <h5 style={{ direction: "rtl" }} className="redError mb-2">
+                      {errors.email}!
+                    </h5>
+                  )}
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-6 mb-3">
+                  <EditprofForm
+                    name="nationalid"
+                    type="text"
+                    id="defaultFormRegisterEmailEx"
+                    classnames="form-control changeinput"
+                    placeholder="کد ملی"
+                    label="کد ملی"
+                    onChange={handleChange}
+                  />
+                  {errors.nationalid && touched.nationalid && (
+                    <h5 style={{ direction: "rtl" }} className="redError mb-2">
+                      {errors.nationalid}!
+                    </h5>
+                  )}
+                </div>
+                <div className="col-md-6 mb-3">
+                  <EditprofForm
+                    name="date"
+                    type="text"
+                    id="defaultFormRegisterdateEx"
+                    classnames="form-control changeinput"
+                    label="تاریخ تولد"
+                    placeholder="تاریخ تولد"
+                    onChange={handleChange}
+                  />
+                  {errors.date && touched.date && (
+                    <h5 style={{ direction: "rtl" }} className="redError mb-2">
+                      {errors.date}!
+                    </h5>
+                  )}
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-6 mb-3">
+                  <EditprofForm
+                    name="number"
+                    type="text"
+                    id="defaultFormRegisterdateEx"
+                    classnames="form-control changeinput"
+                    label="شماره"
+                    placeholder="شماره"
+                    onChange={handleChange}
+                  />
+                  {errors.date && touched.date && (
+                    <h5 style={{ direction: "rtl" }} className="redError mb-2">
+                      {errors.date}!
+                    </h5>
+                  )}
+                </div>
+              </div>
+              <div className="s">
+                <MDBBtn outline color="secondary" className="btn-md font bigg">
+                  لغو
+                  <MDBIcon far icon="window-close" brand className="pr-1" />
+                </MDBBtn>
+                <MDBBtn
+                  gradient="purple"
+                  className="btn-md font bigg"
+                  type="submit"
+                >
+                  ثبت تغییرات
+                  <MDBIcon far icon="check-square" brand className="pr-1" />
+                </MDBBtn>
+              </div>
+            </Form>
+          )}
+        </Formik>
+      </CardBody>
+    </Card>
   );
+};
 
-}
- 
 export default Home;

@@ -28,14 +28,14 @@ const Rightside = () => {
 
   useEffect(() => {
     let user = JSON.parse(getUserInformation("userinf"));
-     setUserId(user._id)
-  }, [])
+    setUserId(user._id);
+    console.log(user._id);
+  }, []);
 
   const toggle = () => {
     SetState(!states);
   };
 
-  
   return (
     <React.Fragment>
       <ProfileDetails />
@@ -52,9 +52,7 @@ const Rightside = () => {
         </MDBBtn>
         <MDBBtn color="" type="button" className="btn btnmenus mb-4 edit ">
           <Link
-            to={
-              userId ? `/user/dashboard/${userId}` : `/user/dashboard/${0}`
-            }
+            to={userId ? `/user/dashboard/${userId}` : `/user/dashboard/${0}`}
           >
             ویرایش پروفایل
           </Link>
