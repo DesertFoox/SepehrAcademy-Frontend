@@ -14,7 +14,6 @@ const Profile = () => {
   useEffect(() => {
     UserInformation();
   }, []);
-  console.log(userStatus);
 
   return (
     <React.Fragment>

@@ -26,13 +26,12 @@ const Login = () => {
   });
 
   //sending data to api
-  const LoginUser = async (data,error) => {
+  const LoginUser = async (data) => {
     const users = {
       email: data.email,
       password: data.password,
     };
-    const Logindata = await LogInUser(users);
-    window.location = "/user/dashboard";
+    await LogInUser(users);
   };
   return (
     <Formik

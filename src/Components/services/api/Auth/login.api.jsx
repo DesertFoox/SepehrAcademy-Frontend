@@ -16,8 +16,8 @@ export const LogInUser = async (user) => {
 
     //get user information
     const userinformation = result.data.result.studentModel;
-    console.log(userinformation);
     setUserInformation("userinf", JSON.stringify(userinformation));
+    window.location = `/user/dashboard/${userinformation._id}`;
   } catch (error) {
     console.log(error.response.data.message[0].message);
     toast.error(error.response.data.message[0].message, {

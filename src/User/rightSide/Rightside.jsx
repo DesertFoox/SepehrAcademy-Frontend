@@ -29,7 +29,6 @@ const Rightside = () => {
   useEffect(() => {
     let user = JSON.parse(getUserInformation("userinf"));
     setUserId(user._id);
-    console.log(user._id);
   }, []);
 
   const toggle = () => {

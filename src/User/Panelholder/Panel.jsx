@@ -12,7 +12,6 @@ import Header from "../../Components/Header/Header";
 import { ToastContainer } from "react-toastify";
 
 const Panel =(props)=> {
-  console.log(props)
     return (
       <React.Fragment>
         <ToastContainer limit={1} />

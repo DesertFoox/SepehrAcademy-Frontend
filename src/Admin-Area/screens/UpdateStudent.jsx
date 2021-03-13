@@ -10,9 +10,9 @@ import {
   Col,
 } from "reactstrap";
 import { Formik, Field, Form } from "formik";
-import UpdateCourse from "../../Components/services/api/Admin-area/Courses/UpdateCourse.api";
+import UpdateStudent from "../../Components/services/api/Admin-area/Courses/UpdateCourse.api";
 import * as Yup from "yup";
-import EachTerm from "../../Components/services/api/course/eachTerm.api";
+import GetUserById from "../../Components/services/api/Admin-area/user/UserbyId.api";
 const Home = (props) => {
   const [initialState, setinitialState] = useState({
     title: "",
@@ -24,7 +24,7 @@ const Home = (props) => {
     course: "",
   });
   const CourseInformation = async () => {
-    const user = await EachTerm(props.match.params.id);
+    const user = await GetUserById(props.match.params.id);
     setinitialState((state) => ({
       ...state,
       title: user.title,
@@ -68,7 +68,7 @@ const Home = (props) => {
       teacher: data.teacher,
       course: data.course,
     };
-    await UpdateCourse(course);
+    await UpdateStudent(course);
   };
 
   useEffect(() => {

@@ -47,6 +47,32 @@ const navigationConfig = [
       },
     ],
   },
+  {
+    id: "users",
+    title: "کاربران",
+    type: "collapse",
+    icon: <Icon.Home size={20} />,
+    badge: "warning",
+    badgeText: "2",
+    children: [
+      {
+        id: "analyticsDash",
+        title: "کاربران",
+        type: "item",
+        icon: <Icon.Circle size={12} />,
+        permissions: ["admin", "editor"],
+        navLink: "/admin/users",
+      },
+      {
+        id: "courses",
+        title: "اضافه کردن کاربر",
+        type: "item",
+        icon: <Icon.Circle size={12} />,
+        permissions: ["admin", "editor"],
+        navLink: "/admin/adduser",
+      },
+    ],
+  },
 ];
 
 export default navigationConfig;

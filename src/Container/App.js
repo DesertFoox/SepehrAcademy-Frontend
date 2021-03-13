@@ -9,7 +9,19 @@ import {
 const App = () => {
   let IsLogged = getItem("token");
   let IsAdmin = getItemGeneric("role");
-  return <div className="App"><AdminRouter/></div>;
+  return (
+    <div className="App">
+      {IsLogged ? (
+        IsAdmin == "student" ? (
+          <UserRouter />
+        ) : (
+          <AdminRouter />
+        )
+      ) : (
+        <Routers />
+      )}
+    </div>
+  );
 };
 
 export default App;

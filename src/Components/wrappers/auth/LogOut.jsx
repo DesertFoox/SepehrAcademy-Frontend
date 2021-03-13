@@ -1,8 +1,8 @@
 
-import { removeItem } from "../../services/storage/storage";
+import { clearStorage } from "../../services/storage/storage";
 
 const LogOut = () => {
-  removeItem("token");
+  clearStorage();
   window.location = "/";
 };
 

@@ -10,7 +10,7 @@ import {
   Col,
 } from "reactstrap";
 import { Formik, Field, Form } from "formik";
-import AddCourse from "../../Components/services/api/Admin-area/Courses/AddCourse.api";
+import AddCourse from "../../Components/services/api/Admin-area/Courses/CreateCourse.api";
 import { useHistory } from "react-router-dom";
 import * as Yup from "yup";
 const formSchema = Yup.object().shape({

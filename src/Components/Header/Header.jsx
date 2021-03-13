@@ -40,7 +40,7 @@ class Header extends Component {
           <Link
             to={
               getItem("token")
-                ? "user/dashboard/" + JSON.parse(getItem("userinf"))._id
+                ? "/user/dashboard/" + JSON.parse(getItem("userinf"))._id
                 : "/login"
             }
           >

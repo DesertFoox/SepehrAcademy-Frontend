@@ -25,7 +25,6 @@ const Editprofile = (props) => {
 
   const UserInformation = async () => {
     let user = await JSON.parse(getUserInformation("userinf"));
-    console.log(user);
     setinitialState((state) => ({
       ...state,
       userName: user.fullName,
@@ -72,7 +71,8 @@ const Editprofile = (props) => {
       phoneNumber: data.number,
     };
 
-    await Updateinf(users, props.match.params.id);
+    await Updateinf(users, props.id);
+    
   };
 
   return (
