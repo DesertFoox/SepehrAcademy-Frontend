@@ -10,69 +10,53 @@ import {
   Col,
 } from "reactstrap";
 import { Formik, Field, Form } from "formik";
-import UpdateStudent from "../../Components/services/api/Admin-area/Courses/UpdateCourse.api";
+import UpdateStudent from "../../Components/services/api/Admin-area/user/UpdateStudent.api";
 import * as Yup from "yup";
-import GetUserById from "../../Components/services/api/Admin-area/user/UserbyId.api";
+import UserbyId from "../../Components/services/api/Admin-area/user/UserbyId.api";
 const Home = (props) => {
   const [initialState, setinitialState] = useState({
-    title: "",
-    cost: "",
-    endDate: "",
-    startDate: "",
-    capacity: "",
-    teacher: "",
-    course: "",
+    fullName: "",
+    email: "",
+    nationalId: "",
+    phoneNumber: "",
+    birthDate: "",
   });
-  const CourseInformation = async () => {
-    const user = await GetUserById(props.match.params.id);
+  const Userinformations = async () => {
+    const user = await UserbyId(props.match.params.id);
     setinitialState((state) => ({
       ...state,
-      title: user.title,
-      cost: user.cost,
-      endDate: user.endDate,
-      startDate: user.startDate,
-      capacity: user.capacity,
-      teacher: user.teacher.fullName,
-      course: user.course.courseName,
+      fullName: user.fullName,
+      email: user.email,
+      phoneNumber: user.phoneNumber,
+      birthDate: user.birthDate
     }));
   };
   const formSchema = Yup.object().shape({
-    title: Yup.string("فرمت وارد شده اشتباه است")
+    fullName: Yup.string("فرمت وارد شده اشتباه است")
       .min(3, "اسم انتخاب شده کوتاه است")
       .required("این فیلد اجباریست"),
-    cost: Yup.number("فرمت وارد شده اشتباه است")
+    email: Yup.string("فرمت وارد شده اشتباه است")
       .min(3, "اسم انتخاب شده کوتاه است")
       .required("این فیلد اجباریست"),
-    endDate: Yup.string()
+    phoneNumber: Yup.number("فرمت وارد شده اشتباه است")
       .min(3, "اسم انتخاب شده کوتاه است")
       .required("این فیلد اجباریست"),
-    startDate: Yup.string()
-      .min(3, "اسم انتخاب شده کوتاه است")
-      .required("این فیلد اجباریست"),
-    capacity: Yup.number("فرمت وارد شده اشتباه است")
-      .min(3, "اسم انتخاب شده کوتاه است")
-      .required("این فیلد اجباریست"),
-    teacher: Yup.string().required("این فیلد اجباریست"),
-    course: Yup.string("فرمت وارد شده اشتباه است")
-      .min(3, "اسم انتخاب شده کوتاه است")
-      .required("این فیلد اجباریست"),
+    birthDate: Yup.string().required("این فیلد اجباریست"),
   });
 
-  const UpdateCourse = async (data) => {
+  const UpdateStudents = async (data) => {
     const course = {
-      title: data.title,
-      cost: data.cost,
-      endDate: data.endDate,
-      startDate: data.startDate,
-      capacity: data.capacity,
-      teacher: data.teacher,
-      course: data.course,
+      fullName: data.fullName,
+      email: data.email,
+      birthDate: data.birthDate,
+      phoneNumber: data.phoneNumber,
     };
-    await UpdateStudent(course);
+    console.log(data)
+    await UpdateStudent(course, props.match.params.id);
   };
 
   useEffect(() => {
-    CourseInformation();
+    Userinformations();
   }, []);
   return (
     <Card>
@@ -84,110 +68,62 @@ const Home = (props) => {
           initialValues={initialState}
           enableReinitialize={true}
           validationSchema={formSchema}
-          onSubmit={(value) => UpdateCourse(value)}
+          onSubmit={(value) => UpdateStudents(value)}
         >
           {({ errors, touched }) => (
             <Form>
               <FormGroup className="my-3">
-                <Label for="title">نام دوره</Label>
+                <Label for="fullName">نام کاربر</Label>
                 <Field
-                  name="title"
+                  name="fullName"
                   id="required"
-                  className={`form-control ${
-                    errors.title && touched.title && "is-invalid"
-                  }`}
+                  className={`form-control ${errors.fullName && touched.fullName && "is-invalid"
+                    }`}
                 />
-                {errors.title && touched.title ? (
-                  <div className="invalid-tooltip mt-25">{errors.title}</div>
+                {errors.fullName && touched.fullName ? (
+                  <div className="invalid-tooltip mt-25">{errors.fullName}</div>
                 ) : null}
               </FormGroup>
               <FormGroup className="my-3">
-                <Label for="cost">قیمت</Label>
+                <Label for="email">ایمیل</Label>
                 <Field
-                  type="text"
-                  name="cost"
+                  type="email"
+                  name="email"
                   id="cost"
-                  className={`form-control ${
-                    errors.cost && touched.cost && "is-invalid"
-                  }`}
+                  className={`form-control ${errors.email && touched.email && "is-invalid"
+                    }`}
                 />
-                {errors.cost && touched.cost ? (
-                  <div className="invalid-tooltip mt-25">{errors.cost}</div>
+                {errors.email && touched.email ? (
+                  <div className="invalid-tooltip mt-25">{errors.email}</div>
                 ) : null}
               </FormGroup>
               <FormGroup className="my-3">
-                <Label for="url">تاریخ پایان</Label>
+                <Label for="birthDate">تاریخ</Label>
                 <Field
-                  name="endDate"
-                  id="endDate"
-                  className={`form-control ${
-                    errors.endDate && touched.endDate && "is-invalid"
-                  }`}
+                  name="birthDate"
+                  id="birthDate"
+                  className={`form-control ${errors.nationalId && touched.birthDate && "is-invalid"
+                    }`}
                 />
-                {errors.url && touched.url ? (
-                  <div className="invalid-tooltip mt-25">{errors.endDate}</div>
-                ) : null}
-              </FormGroup>
-              <FormGroup className="my-3">
-                <Label for="startDate">شروع دوره</Label>
-                <Field
-                  name="startDate"
-                  id="startDate"
-                  className={`form-control ${
-                    errors.startDate && touched.startDate && "is-invalid"
-                  }`}
-                />
-                {errors.startDate && touched.startDate ? (
-                  <div className="invalid-tooltip mt-25">
-                    {errors.startDate}
-                  </div>
+                {errors.birthDate && touched.birthDate ? (
+                  <div className="invalid-tooltip mt-25">{errors.birthDate}</div>
                 ) : null}
               </FormGroup>
               <FormGroup className="my-3 ">
-                <Label for="date">ظرفیت</Label>
+                <Label for="phoneNumber">شماره موبایل</Label>
                 <Field
                   type="text"
-                  name="capacity"
+                  name="phoneNumber"
                   id="capacity"
-                  className={`form-control ${
-                    errors.capacity && touched.capacity && "is-invalid"
-                  }`}
+                  className={`form-control ${errors.phoneNumber && touched.phoneNumber && "is-invalid"
+                    }`}
                 />
-                {errors.capacity && touched.capacity ? (
-                  <div className="invalid-tooltip mt-25">{errors.capacity}</div>
+                {errors.phoneNumber && touched.phoneNumber ? (
+                  <div className="invalid-tooltip mt-25">{errors.phoneNumber}</div>
                 ) : null}
               </FormGroup>
-              <FormGroup className="my-3">
-                <Label for="teacher">نام استاد</Label>
-                <Field
-                  name="teacher"
-                  id="teacher"
-                  className={`form-control ${
-                    errors.teacher && touched.teacher && "is-invalid"
-                  }`}
-                />
-                {errors.teacher && touched.teacher ? (
-                  <div className="invalid-tooltip mt-25">{errors.teacher}</div>
-                ) : null}
-              </FormGroup>
-              <FormGroup className="my-3">
-                <Label for="course">نام کورس</Label>
-                <Field
-                  name="course"
-                  id="course"
-                  className={`form-control ${
-                    errors.course && touched.course && "is-invalid"
-                  }`}
-                />
-                {errors.course && touched.course ? (
-                  <div className="invalid-tooltip mt-25">{errors.course}</div>
-                ) : null}
-              </FormGroup>
-              <Col sm="12" className="text-center">
-                <Button color="primary" type="submit">
-                  Submit
-                </Button>
-              </Col>
+    
+              <button className="btn btn-success" type="submit">ثبت</button>
             </Form>
           )}
         </Formik>

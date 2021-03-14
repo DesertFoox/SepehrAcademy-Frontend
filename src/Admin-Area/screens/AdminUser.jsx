@@ -24,38 +24,38 @@ const AdminCourse = () => {
   const data = {
     columns: [
       {
-        label: "عکس محصول",
-        field: "image",
+        label: "نام کاربر",
+        field: "username",
         sort: "asc",
         width: 150,
       },
       {
-        label: "نام محصول",
-        field: "courseName",
+        label: "ایمیل کاربر",
+        field: "userEmail",
         sort: "asc",
         width: 270,
       },
       {
-        label: "کد محصول",
-        field: "_id",
+        label: "کدملی کاربر",
+        field: "nationalid",
         sort: "asc",
         width: 200,
       },
       {
-        label: "تاریخ",
-        field: "startDate",
+        label: "ایدی کاربر",
+        field: "_id",
         sort: "asc",
         width: 100,
       },
       {
-        label: "مدرس",
-        field: "teacher",
+        label: "شماره کارببر",
+        field: "userphone",
         sort: "asc",
         width: 150,
       },
       {
-        label: "وضعیت",
-        field: "title",
+        label: "وضعیت کاربر",
+        field: "userRole",
         sort: "asc",
         width: 100,
       },
@@ -66,7 +66,15 @@ const AdminCourse = () => {
         width: 100,
       },
     ],
-    rows: []
+    rows: user.map(users => ({
+      username:users.fullName,
+      userEmail:users.email,
+      nationalid:users.nationalId,
+      _id:users._id,
+      userphone:users.phoneNumber,
+      userRole:users.role,
+      pos:<Link to={`/edituser/${users._id}`}><button className="btn btn-primary" >تغییر</button></Link>
+    }))
   };
 
   const LoadUser = async () => {

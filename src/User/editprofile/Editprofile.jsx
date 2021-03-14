@@ -62,7 +62,8 @@ const Editprofile = (props) => {
       .required("لطفا فیلد کد ملی را پر کنید"),
   });
 
-  const UpdateUser = async (data, error) => {
+  const UpdateUser = async (data, e) => {
+    // e.preventDefault();
     const users = {
       email: data.email,
       birthDate: data.date,

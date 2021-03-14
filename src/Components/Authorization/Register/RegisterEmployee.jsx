@@ -6,11 +6,11 @@ import "./css/mdb_reg.css";
 import { MDBRow, MDBBtn, MDBCard, MDBCardBody, MDBSelect } from "mdbreact";
 import { ToastContainer } from "react-toastify";
 
-import { RegisterUser } from "../../services/api/Auth/Register.api";
+import { EmployeeRegister } from "../../services/api/Auth/RegisterEmployee.api";
 import { Form, Formik } from "formik";
 import Forms from "../Form/Form";
 
-const RegisterForm = () => {
+const AdminRegister = () => {
   const yup = require("yup");
   require("yup-password")(yup);
 
@@ -42,23 +42,28 @@ const RegisterForm = () => {
       .password()
       .min(3, "رمز شما باید حدقال سه کارکتر داشته باشد")
       .required("این فیلد اجباریست لطفا آن را پر کنید"),
-
+    address: yup
+      .string()
+      .min(3, "رمز شما باید حدقال سه کارکتر داشته باشد")
+      .required("این فیلد اجباریست لطفا آن را پر کنید"),
+    role: yup.string().required("این فیلد اجباریست لطفا آن را پر کنید"),
   });
 
-  const regUser = async (data) => {
-    const userRegister = {
+  const regAdmin = async (data) => {
+    const AdminRegister = {
       fullName: data.fullName,
       phoneNumber: data.PhoneNumber,
       birthDate: data.birthday,
       email: data.email,
       nationalId: data.nationalId,
       password: data.password,
+      address: data.address,
+      role: data.role,
     };
-    const regstatus = await RegisterUser(userRegister);
-    console.log(userRegister)
+    const regstatus = await EmployeeRegister(AdminRegister);
+    console.log(AdminRegister);
   };
   return (
-
     <Formik
       initialValues={{
         fullName: "",
@@ -67,10 +72,12 @@ const RegisterForm = () => {
         email: "",
         nationalId: "",
         password: "",
+        address: "",
+        role: "",
       }}
       validationSchema={Validate}
       enableReinitialize={true}
-      onSubmit={(value) => regUser(value)}
+      onSubmit={(value) => regAdmin(value)}
     >
       {({ errors, handleChange, touched }) => {
         return (
@@ -184,6 +191,38 @@ const RegisterForm = () => {
                             {errors.birthday}!
                           </h5>
                         )}
+                        <Forms
+                          InputType="text"
+                          labelText=" آدرس "
+                          className="form-control w-75 ml-5 usernameinput px-5"
+                          InputName="address"
+                          changeHandler={handleChange}
+                          InputPlaceHolder="    آدرس خود را وارد کنید"
+                        />
+                        {errors.address && touched.address && (
+                          <h5
+                            style={{ direction: "rtl" }}
+                            className="redError mb-2"
+                          >
+                            {errors.address}!
+                          </h5>
+                        )}
+                        <Forms
+                          InputType="text"
+                          labelText=" وضعیت کاربر "
+                          className="form-control w-75 ml-5 usernameinput px-5"
+                          InputName="role"
+                          changeHandler={handleChange}
+                          InputPlaceHolder="    وضعیت خود را وارد کنید"
+                        />
+                        {errors.role && touched.role && (
+                          <h5
+                            style={{ direction: "rtl" }}
+                            className="redError mb-2"
+                          >
+                            {errors.role}!
+                          </h5>
+                        )}
                         <div className="text-center mt-3">
                           <div className="forgetPassR" dir="rtl">
                             <div className="exclamationR">
@@ -202,8 +241,8 @@ const RegisterForm = () => {
                           >
                             ثبت نام
                           </MDBBtn>
-                          <Link className="link" to="/Login">
-                            <MDBBtn rounded outline color=" signInR">
+                          <Link className="link" to="/admin/login">
+                            <MDBBtn rounded outline color="signInR">
                               ورود
                             </MDBBtn>
                           </Link>
@@ -221,4 +260,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default AdminRegister;

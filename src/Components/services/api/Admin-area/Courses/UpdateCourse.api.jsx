@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const MainUrl = process.env.REACT_APP_PUBLIC_PATH;
  const UpdateCourse = async (Course,courseid) => {
   try {
-    await http.post(MainUrl + `term/${courseid}`, Course);
+    await http.put(MainUrl + `term/${courseid}`, Course);
     toast.success("تغییرات با موفقیت اعمال شد");
   } catch (error) {
     toast.error(error.response.data.message[0].message, {

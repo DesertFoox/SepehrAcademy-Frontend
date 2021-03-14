@@ -17,6 +17,10 @@ import Course from "../Courses/SingleCourse/SingleCourse";
 //user Autthorization
 import LoginPage from "../Authorization/Login/Login";
 import RegisterPage from "../Authorization/Register/Register";
+
+import AdminLogin from "../Authorization/Login/LoginEmployee";
+import AdminRegisterPage from "../Authorization/Register/RegisterEmployee";
+
 import ForgetpassPage from "../Authorization/ForgetPass/Forget";
 
 //User Zone
@@ -47,6 +51,9 @@ class Routers extends Component {
             {/* user Autthorization */}
             <Route exact path="/Login" component={LoginPage} />
             <Route exact path="/Register" component={RegisterPage} />
+            {/* Admin Autthorization */}
+            <Route exact path="/admin/login" component={AdminLogin} />
+            <Route exact path="/admin/register" component={AdminRegisterPage} />            
             <Route exact path="/Forgetpass" component={ForgetpassPage} />
             {/* end user Autthorization */}
 

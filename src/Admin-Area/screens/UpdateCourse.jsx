@@ -183,11 +183,7 @@ const Home = (props) => {
                   <div className="invalid-tooltip mt-25">{errors.course}</div>
                 ) : null}
               </FormGroup>
-              <Col sm="12" className="text-center">
-                <Button color="primary" type="submit">
-                  Submit
-                </Button>
-              </Col>
+             <button className="btn btn-success" type="submit">ثبت</button>
             </Form>
           )}
         </Formik>
