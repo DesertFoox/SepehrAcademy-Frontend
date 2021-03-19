@@ -3,7 +3,13 @@ import classes from "./css/register.module.css";
 import { Link } from "react-router-dom";
 import Header from "../../Header/Header";
 import "./css/mdb_reg.css";
-import { MDBRow, MDBBtn, MDBCard, MDBCardBody, MDBSelect } from "mdbreact";
+import {
+  MDBRow,
+  MDBBtn,
+  MDBCard,
+  MDBCardBody,
+  MDBSelect,
+} from "../../../Assets/mdbreact/mdbreact";
 import { ToastContainer } from "react-toastify";
 
 import { RegisterUser } from "../../services/api/Auth/Register.api";
@@ -42,7 +48,6 @@ const RegisterForm = () => {
       .password()
       .min(3, "رمز شما باید حدقال سه کارکتر داشته باشد")
       .required("این فیلد اجباریست لطفا آن را پر کنید"),
-
   });
 
   const regUser = async (data) => {
@@ -55,10 +60,9 @@ const RegisterForm = () => {
       password: data.password,
     };
     const regstatus = await RegisterUser(userRegister);
-    console.log(userRegister)
+    console.log(userRegister);
   };
   return (
-
     <Formik
       initialValues={{
         fullName: "",

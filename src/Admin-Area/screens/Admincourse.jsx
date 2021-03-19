@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { MDBDataTable, MDBBtn } from "mdbreact";
+import { MDBDataTable, MDBBtn } from "../../Assets/mdbreact/mdbreact";
 import getTermInf from "../../Components/services/api/course/term.api";
 import { Card, CardHeader, CardTitle, CardBody } from "reactstrap";
 

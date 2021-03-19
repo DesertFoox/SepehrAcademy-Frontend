@@ -1,14 +1,24 @@
 import React from "react";
-import { MDBPagination, MDBPageItem, MDBPageNav } from "mdbreact";
+import {
+  MDBPagination,
+  MDBPageItem,
+  MDBPageNav,
+} from "../../Assets/mdbreact/mdbreact";
 import { Fragment } from "react";
 import { number } from "prop-types";
 
-const Paginations = ({ postsPerPage, totalPosts, paginate,allPages,currentPage }) => {
+const Paginations = ({
+  postsPerPage,
+  totalPosts,
+  paginate,
+  allPages,
+  currentPage,
+}) => {
   const pageNumber = [];
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumber.push(i);
   }
-  
+
   return (
     <Fragment>
       <div className="row mx-auto">
@@ -22,7 +32,7 @@ const Paginations = ({ postsPerPage, totalPosts, paginate,allPages,currentPage }
           {pageNumber.map((number) => (
             <MDBPageItem key={number}>
               <MDBPageNav
-                onClick={()=> paginate(number)}
+                onClick={() => paginate(number)}
                 className={[
                   "page-link",
                   number === currentPage ? "colored" : "",
@@ -37,7 +47,6 @@ const Paginations = ({ postsPerPage, totalPosts, paginate,allPages,currentPage }
           </MDBPageItem>
         </MDBPagination>
       </div>
-     
     </Fragment>
   );
 };

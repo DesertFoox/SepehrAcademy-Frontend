@@ -10,10 +10,13 @@ import {
   Col,
 } from "reactstrap";
 import { Formik, Field, Form } from "formik";
-import UpdateStudent from "../../Components/services/api/Admin-area/user/UpdateStudent.api";
+import UpdateStudent from "../../Components/services/api/Admin-area/user/UpdateStudentAdmin.api";
 import * as Yup from "yup";
 import UserbyId from "../../Components/services/api/Admin-area/user/UserbyId.api";
+
 const Home = (props) => {
+
+
   const [initialState, setinitialState] = useState({
     fullName: "",
     email: "",
@@ -28,7 +31,8 @@ const Home = (props) => {
       fullName: user.fullName,
       email: user.email,
       phoneNumber: user.phoneNumber,
-      birthDate: user.birthDate
+      birthDate: user.birthDate,
+      nationalId: user.nationalId,
     }));
   };
   const formSchema = Yup.object().shape({
@@ -42,6 +46,7 @@ const Home = (props) => {
       .min(3, "اسم انتخاب شده کوتاه است")
       .required("این فیلد اجباریست"),
     birthDate: Yup.string().required("این فیلد اجباریست"),
+    nationalId: Yup.string().required("این فیلد اجباریست"),
   });
 
   const UpdateStudents = async (data) => {
@@ -50,11 +55,12 @@ const Home = (props) => {
       email: data.email,
       birthDate: data.birthDate,
       phoneNumber: data.phoneNumber,
+      nationalId: data.nationalId,
     };
-    console.log(data)
+    console.log(data);
     await UpdateStudent(course, props.match.params.id);
   };
-
+  
   useEffect(() => {
     Userinformations();
   }, []);
@@ -77,8 +83,9 @@ const Home = (props) => {
                 <Field
                   name="fullName"
                   id="required"
-                  className={`form-control ${errors.fullName && touched.fullName && "is-invalid"
-                    }`}
+                  className={`form-control ${
+                    errors.fullName && touched.fullName && "is-invalid"
+                  }`}
                 />
                 {errors.fullName && touched.fullName ? (
                   <div className="invalid-tooltip mt-25">{errors.fullName}</div>
@@ -90,8 +97,9 @@ const Home = (props) => {
                   type="email"
                   name="email"
                   id="cost"
-                  className={`form-control ${errors.email && touched.email && "is-invalid"
-                    }`}
+                  className={`form-control ${
+                    errors.email && touched.email && "is-invalid"
+                  }`}
                 />
                 {errors.email && touched.email ? (
                   <div className="invalid-tooltip mt-25">{errors.email}</div>
@@ -102,11 +110,14 @@ const Home = (props) => {
                 <Field
                   name="birthDate"
                   id="birthDate"
-                  className={`form-control ${errors.nationalId && touched.birthDate && "is-invalid"
-                    }`}
+                  className={`form-control ${
+                    errors.nationalId && touched.birthDate && "is-invalid"
+                  }`}
                 />
                 {errors.birthDate && touched.birthDate ? (
-                  <div className="invalid-tooltip mt-25">{errors.birthDate}</div>
+                  <div className="invalid-tooltip mt-25">
+                    {errors.birthDate}
+                  </div>
                 ) : null}
               </FormGroup>
               <FormGroup className="my-3 ">
@@ -115,15 +126,33 @@ const Home = (props) => {
                   type="text"
                   name="phoneNumber"
                   id="capacity"
-                  className={`form-control ${errors.phoneNumber && touched.phoneNumber && "is-invalid"
-                    }`}
+                  className={`form-control ${
+                    errors.phoneNumber && touched.phoneNumber && "is-invalid"
+                  }`}
                 />
                 {errors.phoneNumber && touched.phoneNumber ? (
-                  <div className="invalid-tooltip mt-25">{errors.phoneNumber}</div>
+                  <div className="invalid-tooltip mt-25">
+                    {errors.phoneNumber}
+                  </div>
                 ) : null}
               </FormGroup>
-    
-              <button className="btn btn-success" type="submit">ثبت</button>
+              <FormGroup className="my-3 ">
+                <Label for="nationalId">کد ملی</Label>
+                <Field
+                  type="text"
+                  name="nationalId"
+                  id="capacity"
+                  className={`form-control ${
+                    errors.nationalId && touched.nationalId && "is-invalid"
+                  }`}
+                />
+                {errors.nationalId && touched.nationalId ? (
+                  <div className="invalid-tooltip mt-25">
+                    {errors.nationalId}
+                  </div>
+                ) : null}
+              </FormGroup>
+              <input className="btn btn-success" type="submit" value="ثبت" />
             </Form>
           )}
         </Formik>

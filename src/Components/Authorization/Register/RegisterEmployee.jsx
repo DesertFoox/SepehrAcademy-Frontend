@@ -3,7 +3,13 @@ import classes from "./css/register.module.css";
 import { Link } from "react-router-dom";
 import Header from "../../Header/Header";
 import "./css/mdb_reg.css";
-import { MDBRow, MDBBtn, MDBCard, MDBCardBody, MDBSelect } from "mdbreact";
+import {
+  MDBRow,
+  MDBBtn,
+  MDBCard,
+  MDBCardBody,
+  MDBSelect,
+} from "../../../Assets/mdbreact/mdbreact";
 import { ToastContainer } from "react-toastify";
 
 import { EmployeeRegister } from "../../services/api/Auth/RegisterEmployee.api";

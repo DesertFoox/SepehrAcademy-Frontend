@@ -1,35 +1,45 @@
-import React, { Suspense, lazy } from "react";
-import { Router, Switch, Route, Redirect } from "react-router-dom";
-import { history } from "./history";
-import Spinner from "./components/@vuexy/spinner/Loading-spinner";
-import { ContextLayout } from "./core/utils/context/Layout";
-import VerticalLayout from "./layouts/VerticalLayout";
-import "../Admin-Area/index.scss";
-import NotFound from "../Components/Landing/404/404";
+import React, { Suspense, lazy } from 'react'
+import { Router, Switch, Route, Redirect } from 'react-router-dom'
+import { history } from './history'
+import Spinner from './components/@vuexy/spinner/Loading-spinner'
+import { ContextLayout } from './core/utils/context/Layout'
+import VerticalLayout from './layouts/VerticalLayout'
+import '../Admin-Area/index.scss'
+import NotFound from '../Components/Landing/404/404'
 //User Zone
-import Dashboard from "../User/Panelholder/Panel";
+import Dashboard from '../User/Panelholder/Panel'
 //wrappers
-import IsLogged from "../Components/wrappers/auth/isLogged";
-import Landing from "../Components/Landing/Landing";
-import Course from "../Components/Courses/SingleCourse/SingleCourse";
-import Courses from "../Components/Courses/AllCourses/Courses";
-import AllBlogs from "../Components/Blogs/AllBlogs/Blogs";
-import Singleblog from "../Components/Blogs/SingleBlogs/SingleBlog";
-
+import IsLogged from '../Components/wrappers/auth/isLogged'
+import Landing from '../Components/Landing/Landing'
+import Course from '../Components/Courses/SingleCourse/SingleCourse'
+import Courses from '../Components/Courses/AllCourses/Courses'
+import AllBlogs from '../Components/Blogs/AllBlogs/Blogs'
+import Singleblog from '../Components/Blogs/SingleBlogs/SingleBlog'
+import AddKourse from './screens/Addkourse'
+import DeleteKourse from './screens/DeleteKours'
 // Route-based code splitting
-const Home = lazy(() => import("./screens/Home"));
+const Home = lazy(() => import('./screens/Home'))
 
-const Dashboards = lazy(() => import("./screens/Dashboard/Dashboard"));
+const Dashboards = lazy(() => import('./screens/Dashboard/Dashboard'))
 
-const AdminCourses = lazy(() => import("./screens/Admincourse"));
+const AdminCourses = lazy(() => import('./screens/Admincourse'))
 
-const AddCourse = lazy(() => import("./screens/AddCourse"));
+const AddCourse = lazy(() => import('./screens/AddCourse'))
 
-const EditCourse = lazy(() => import("./screens/UpdateCourse"));
+const EditCourse = lazy(() => import('./screens/UpdateCourse'))
 
-const Users = lazy(() => import("./screens/AdminUser"));
+const Users = lazy(() => import('./screens/AdminUser'))
 
-const UpdateStudent = lazy(() => import("./screens/UpdateStudent"));
+const UpdateStudent = lazy(() => import('./screens/UpdateStudent'))
+
+const Kourses = lazy(() => import('./screens/Kourses'))
+
+const EditKourses = lazy(() => import('./screens/Editkourse'))
+
+const Adminblog = lazy(() => import('./screens/AdminBlog'))
+const Blogedit = lazy(() => import('./screens/editblog'))
+
+
 
 // Set Layout and Component Using App Route
 const RouteConfig = ({
@@ -51,20 +61,20 @@ const RouteConfig = ({
                   <Component {...props} />
                 </Suspense>
               </VerticalLayout>
-            );
+            )
           }}
         </ContextLayout.Consumer>
-      );
+      )
     }}
   />
-);
+)
 // const mapStateToProps = state => {
 //   return {
 //     user: state.auth.login.userRole
 //   }
 // }
 
-const AppRoute = RouteConfig;
+const AppRoute = RouteConfig
 
 class AppRouter extends React.Component {
   render() {
@@ -85,6 +95,14 @@ class AppRouter extends React.Component {
 
           <AppRoute exact path="/admin/users" component={Users} />
           <AppRoute exact path="/edituser/:id" component={UpdateStudent} />
+          <AppRoute exact path="/admin/kourses" component={Kourses} />
+          <AppRoute exact path="/editkourse/:id" component={EditKourses} />
+
+          <AppRoute exact path="/admin/blogs" component={Adminblog} />
+          <AppRoute exact path="/editblog/:id" component={Blogedit} />
+
+
+          <Route exact path="/admin/addkourse" component={AddKourse} />
 
           <Route exact path="/" component={Landing} />
           <Route exact path="/Courses" component={Courses} />
@@ -92,15 +110,15 @@ class AppRouter extends React.Component {
           <Route exact path="/Blogs" component={AllBlogs} />
           <Route exact path="/Blog:id?" component={Singleblog} />
 
-          {IsLogged("/user/dashboard/:id", Dashboard)}
-          {IsLogged("/user/dashboard/myCourses", Dashboard)}
+          {IsLogged('/user/dashboard/:id', Dashboard)}
+          {IsLogged('/user/dashboard/myCourses', Dashboard)}
 
           <Route exact path="/not-found" component={NotFound} />
           <Redirect to="/not-found" />
         </Switch>
       </Router>
-    );
+    )
   }
 }
 
-export default AppRouter;
+export default AppRouter

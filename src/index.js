@@ -7,8 +7,8 @@ import "./Assets/Styles/cssrest.css";
 //mdb
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
-import "mdbreact/dist/css/mdb.css";
-import "mdbreact/dist/css/mdb.rtl.min.css";
+import "./Assets/mdbreact/mdbreact/dist/css/mdb.css"
+import "./Assets/mdbreact/mdbreact/dist/css/mdb.rtl.min.css"
 //
 import "./Assets/Styles/font.css";
 import "./Assets/Styles/Toast.css";

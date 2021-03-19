@@ -4,7 +4,13 @@ import { Link } from "react-router-dom";
 import Header from "../../Header/Header";
 import "./css/mdb_log.css";
 import "./css/mdb_res.css";
-import { MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody } from "mdbreact";
+import {
+  MDBRow,
+  MDBCol,
+  MDBBtn,
+  MDBCard,
+  MDBCardBody,
+} from "../../../Assets/mdbreact/mdbreact";
 import { ToastContainer } from "react-toastify";
 import { LogInUser } from "../../services/api/Auth/login.api";
 import Forms from "../Form/Form";

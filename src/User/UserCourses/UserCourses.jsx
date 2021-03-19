@@ -7,7 +7,7 @@ import {
   MDBRow,
   MDBIcon,
   MDBBtn,
-} from "mdbreact";
+} from "../../Assets/mdbreact/mdbreact";
 
 //styles
 import "../../Assets/Styles/login_signup/login.css";

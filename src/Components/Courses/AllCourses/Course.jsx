@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import det from "./css/det.module.css";
-import { MDBSpinner } from "mdbreact";
+import { MDBSpinner } from "../../../Assets/mdbreact/mdbreact";
 
 const Course = ({ terms, Loading }) => {
   if (Loading) {
@@ -11,9 +11,7 @@ const Course = ({ terms, Loading }) => {
     <div className={det["itemeholder"]}>
       {terms.map((term) => (
         <div key={term.id} className={det["items"]}>
-          <div className={det["picholder"]}>
-            <img src={term.course.image} />
-          </div>
+          <div className={det["picholder"]}></div>
           <div className={det["sign-btn"]}>
             <button>
               <Link className="sadawsd" to={"/course/" + term._id}>

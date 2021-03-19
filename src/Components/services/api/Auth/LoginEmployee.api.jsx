@@ -17,7 +17,7 @@ export const EmployeeLogin = async (adminData) => {
     //get user information
     const userinformation = result.data.result.studentModel;
     setUserInformation("userinf", JSON.stringify(userinformation));
-    window.location = `/admin`;
+    window.location = `/admin/dashboard`;
     // window.location = `/user/dashboard/${userinformation._id}`;
   } catch (error) {
     console.log(error.response.data.message[0].message);

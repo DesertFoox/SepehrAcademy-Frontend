@@ -9,7 +9,7 @@ import {
   Label,
   Col,
 } from "reactstrap";
-import { MDBIcon, MDBBtn } from "mdbreact";
+import { MDBIcon, MDBBtn } from "../../Assets/mdbreact/mdbreact";
 import { getUserInformation } from "../../Components/services/storage/storage";
 import { Formik, Field, Form } from "formik";
 import UpdateinfAdmin from "../../Components/services/api/Admin-area/auth/profilex.api";
@@ -62,7 +62,6 @@ const Home = (props) => {
     };
 
     const Logindata = await UpdateinfAdmin(users, props.match.params.id);
-    
   };
   useEffect(() => {
     UserInformation();

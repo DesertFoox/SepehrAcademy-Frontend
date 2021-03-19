@@ -10,19 +10,30 @@ import {
   Col,
 } from "reactstrap";
 import { Formik, Field, Form } from "formik";
-import UpdateCourse from "../../Components/services/api/Admin-area/Courses/UpdateCourse.api";
+import UpdateCourses from "../../Components/services/api/Admin-area/Courses/UpdateCourse.api";
 import * as Yup from "yup";
 import EachTerm from "../../Components/services/api/course/eachTerm.api";
+import GetTeachers from "../../Components/services/api/course/term.api";
+import { Fragment } from "react";
 const Home = (props) => {
-  const [initialState, setinitialState] = useState({
-    title: "",
-    cost: "",
-    endDate: "",
-    startDate: "",
-    capacity: "",
-    teacher: "",
-    course: "",
-  });
+  const [initialState, setinitialState] = useState([
+    {
+      title: "",
+      cost: "",
+      endDate: "",
+      startDate: "",
+      capacity: "",
+      teacher: "",
+      course: "",
+      teacher_id: "",
+    },
+  ]);
+  const [teachers, setTeacher] = useState([]);
+  const GetAllUsers = async () => {
+    let users = await GetTeachers();
+    setTeacher(users);
+  };
+
   const CourseInformation = async () => {
     const user = await EachTerm(props.match.params.id);
     setinitialState((state) => ({
@@ -33,6 +44,7 @@ const Home = (props) => {
       startDate: user.startDate,
       capacity: user.capacity,
       teacher: user.teacher.fullName,
+      teacher_id: user.teacher._id,
       course: user.course.courseName,
     }));
   };
@@ -68,16 +80,17 @@ const Home = (props) => {
       teacher: data.teacher,
       course: data.course,
     };
-    await UpdateCourse(course);
+    await UpdateCourses(props.match.params.id,course);
   };
 
   useEffect(() => {
     CourseInformation();
+    GetAllUsers();
   }, []);
   return (
     <Card>
       <CardHeader>
-        <CardTitle> </CardTitle>
+        <CardTitle>تغییر دوره {initialState.title}</CardTitle>
       </CardHeader>
       <CardBody>
         <Formik
@@ -86,7 +99,7 @@ const Home = (props) => {
           validationSchema={formSchema}
           onSubmit={(value) => UpdateCourse(value)}
         >
-          {({ errors, touched }) => (
+          {({ errors, touched, setFieldValue }) => (
             <Form>
               <FormGroup className="my-3">
                 <Label for="title">نام دوره</Label>
@@ -159,13 +172,20 @@ const Home = (props) => {
               </FormGroup>
               <FormGroup className="my-3">
                 <Label for="teacher">نام استاد</Label>
-                <Field
+                <select
                   name="teacher"
-                  id="teacher"
-                  className={`form-control ${
+                  onChange={(event) =>
+                    setFieldValue("teacher", event.target.value)
+                  }
+                  style={{ height: "3em" }}
+                  className={`form-control form-control-sm ${
                     errors.teacher && touched.teacher && "is-invalid"
                   }`}
-                />
+                >
+                  {initialState.map((items) => (
+                    <option value={items.teacher_id}>{items.teacher}</option>
+                  ))}
+                </select>
                 {errors.teacher && touched.teacher ? (
                   <div className="invalid-tooltip mt-25">{errors.teacher}</div>
                 ) : null}
@@ -183,7 +203,10 @@ const Home = (props) => {
                   <div className="invalid-tooltip mt-25">{errors.course}</div>
                 ) : null}
               </FormGroup>
-             <button className="btn btn-success" type="submit">ثبت</button>
+              {teachers.map((teacher) => console.log(teacher.teacher))}
+              <button className="btn btn-success" type="submit">
+                ثبت
+              </button>
             </Form>
           )}
         </Formik>

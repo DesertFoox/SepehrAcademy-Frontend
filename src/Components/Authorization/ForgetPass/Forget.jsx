@@ -3,7 +3,13 @@ import classes from "./css/forgetpass.module.css";
 import Header from "../../Header/Header";
 import Forms from "../Form/Form.jsx";
 import "./css/mdb_for.css";
-import { MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody } from "mdbreact";
+import {
+  MDBRow,
+  MDBCol,
+  MDBBtn,
+  MDBCard,
+  MDBCardBody,
+} from "../../../Assets/mdbreact/mdbreact";
 import { Formik, Form } from "formik";
 import { Fragment } from "react";
 import { ToastContainer } from "react-toastify";

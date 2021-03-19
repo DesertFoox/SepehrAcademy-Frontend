@@ -6,7 +6,7 @@ import {
   MDBModal,
   MDBModalHeader,
   MDBModalFooter,
-} from "mdbreact";
+} from "../../Assets/mdbreact/mdbreact";
 
 //css
 import "../css/Courses.css";

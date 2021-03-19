@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { MDBIcon, MDBBtn } from "mdbreact";
+import { MDBIcon, MDBBtn } from "../../Assets/mdbreact/mdbreact";
 
 //styles
 import "../css/Courses.css";
@@ -73,7 +73,6 @@ const Editprofile = (props) => {
     };
 
     await Updateinf(users, props.id);
-    
   };
 
   return (

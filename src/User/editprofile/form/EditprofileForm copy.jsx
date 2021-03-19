@@ -1,9 +1,6 @@
 import React, { Component, useState } from "react";
-import {
-
-  ToastContainer,
-} from "mdbreact";
-import {Field} from 'formik'
+import { ToastContainer } from "../../../Assets/mdbreact/mdbreact";
+import { Field } from "formik";
 
 class EditprofileForm extends Component {
   render() {
@@ -30,13 +27,10 @@ class EditprofileForm extends Component {
           className={this.props.classnames}
           placeholder={placeholder}
           required={required}
-          
         />
         <div className="invalid-feedback">
-       لطفا فیلد {placeholder} را پر کنید
+          لطفا فیلد {placeholder} را پر کنید
         </div>
-
-    
       </React.Fragment>
     );
   }
