@@ -7,25 +7,17 @@ import { getUserInformation } from "../../Components/services/storage/storage";
 const navigationConfig = [
   {
     id: "dashboard",
-    title: "حساب کاربری",
+    title: "داشبورد",
     type: "item",
     icon: <Icon.Home size={20} />,
     permissions: ["admin", "editor"],
     navLink: "/admin/dashboard",
   },
   {
-    id: "home",
-    title: "پروفایل",
-    type: "item",
-    icon: <Icon.Home size={20} />,
-    permissions: ["admin", "editor"],
-    navLink: `/admin/Dashboard/profile/:id`,
-  },
-  {
     id: "dropdown",
     title: "دوره ها",
     type: "collapse",
-    icon: <Icon.Home size={20} />,
+    icon: <Icon.Book size={20} />,
     badge: "warning",
     badgeText: "2",
     children: [
@@ -51,7 +43,7 @@ const navigationConfig = [
     id: "Course",
     title: "کورس ها",
     type: "collapse",
-    icon: <Icon.Home size={20} />,
+    icon: <Icon.Book size={20} />,
     badge: "warning",
     badgeText: "2",
     children: [
@@ -77,7 +69,7 @@ const navigationConfig = [
     id: "users",
     title: "کاربران",
     type: "collapse",
-    icon: <Icon.Home size={20} />,
+    icon: <Icon.User size={20} />,
     badge: "warning",
     badgeText: "2",
     children: [
@@ -89,21 +81,13 @@ const navigationConfig = [
         permissions: ["admin", "editor"],
         navLink: "/admin/users",
       },
-      {
-        id: "courses",
-        title: "اضافه کردن کاربر",
-        type: "item",
-        icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
-        navLink: "/admin/adduser",
-      },
     ],
   },
   {
     id: "blogs",
     title: "بلاگ",
     type: "collapse",
-    icon: <Icon.Home size={20} />,
+    icon: <Icon.PenTool size={20} />,
     badge: "warning",
     badgeText: "2",
     children: [

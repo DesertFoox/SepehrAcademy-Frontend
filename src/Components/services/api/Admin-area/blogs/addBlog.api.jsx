@@ -2,10 +2,10 @@ import http from "../../http-service.api";
 
 import { toast } from "react-toastify";
 const MainUrl = process.env.REACT_APP_PUBLIC_PATH;
-const AddKourse = async (Kourse) => {
+const CreateBlog = async (Blog) => {
   try {
-    await http.post(MainUrl + "course/add", Kourse);
-    toast.success("کورس شما با موفقیت ساخته شد");
+    await http.post(MainUrl + "news/", Blog);
+    toast.success("بلاگ شما با موفقیت ساخته شد");
   } catch (error) {
     toast.error(error.response.data.message[0].message, {
       position: "top-right",
@@ -18,4 +18,4 @@ const AddKourse = async (Kourse) => {
     });
   }
 };
-export default AddKourse;
+export default CreateBlog;

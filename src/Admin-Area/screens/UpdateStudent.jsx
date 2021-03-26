@@ -57,7 +57,7 @@ const Home = (props) => {
       phoneNumber: data.phoneNumber,
       nationalId: data.nationalId,
     };
-    console.log(data);
+    console.log(course);
     await UpdateStudent(course, props.match.params.id);
   };
   

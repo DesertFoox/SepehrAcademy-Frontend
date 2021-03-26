@@ -73,7 +73,7 @@ const AdminKourse = () => {
         courseName: item.courseName,
         _id: item._id,
         startDate: ConvertDateHandler(item.createDate),
-        description: item.description,
+        description: item.description.substr(0,25) + "...",
         terms: item.terms.length,
         pos: (
           <div>
@@ -118,7 +118,9 @@ const AdminKourse = () => {
         <CardTitle>دوره ها</CardTitle>
       </CardHeader>
       <CardBody>
-        <MDBDataTable striped bordered small data={data} />{" "}
+        <div className="container">
+        <MDBDataTable striped bordered small data={data} />
+        </div>
       </CardBody>
     </Card>
   );

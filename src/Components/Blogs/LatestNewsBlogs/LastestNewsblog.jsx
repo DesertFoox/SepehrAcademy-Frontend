@@ -1,54 +1,52 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
+import getBlogs from "../../services/api/Admin-area/blogs/getBlogs.api";
+import { Link } from "react-router-dom";
+const LastestNews = () => {
+  const [LastNews, setLastNews] = useState([]);
+  const [filteredNews, setfilteredNews] = useState();
 
-class LastestNews extends Component {
-  render() {
-    return (
-      <React.Fragment>
-        <div className="row mt-5">
-          <div className="col-lg-6 col-sm-12">
-            <h2 className="text-center mt-2 newakh">جدیدترین اخبار</h2>
-            <ul className=" mt-5 text-center new-titles   p-5 w-100 mx-auto">
-              <li className="font-weight-normal mt-3  mb-5">
-                <h3>خرید لامبورگینی توسط ارمین ساکت</h3>
-              </li>
-              <li className="font-weight-normal mt-5 ">
-                <h3>خرید لامبورگینی توسط ارمین ساکت</h3>
-              </li>
-              <li className="font-weight-normal mt-5 ">
-                <h3>خرید لامبورگینی توسط ارمین ساکت</h3>
-              </li>
-              <li className="font-weight-normal mt-5 ">
-                <h3>خرید لامبورگینی توسط ارمین ساکت</h3>
-              </li>
-              <li className="font-weight-normal mt-5 ">
-                <h3>خرید لامبورگینی توسط ارمین ساکت</h3>
-              </li>
-            </ul>
-          </div>
-          <div className="col-lg-6 col-sm-12">
-            <h2 className="text-center mt-2 newakh">جدیدترین اخبار</h2>
-            <ul className=" mt-5 text-center new-titles  bg-light  p-5 w-100 mx-auto">
-              <li className="font-weight-normal mt-3 mb-5">
-                <h3>خرید لامبورگینی توسط ارمین ساکت</h3>
-              </li>
-              <li className="font-weight-normal mt-5">
-                <h3>خرید لامبورگینی توسط ارمین ساکت</h3>
-              </li>
-              <li className="font-weight-normal mt-5">
-                <h3>خرید لامبورگینی توسط ارمین ساکت</h3>
-              </li>
-              <li className="font-weight-normal mt-5">
-                <h3>خرید لامبورگینی توسط ارمین ساکت</h3>
-              </li>
-              <li className="font-weight-normal mt-5">
-                <h3>خرید لامبورگینی توسط ارمین ساکت</h3>
-              </li>
-            </ul>
-          </div>
+  const Getblog = async () => {
+    let news = await getBlogs();
+    setLastNews(news);
+    let res = LastNews.filter((item) => item.title.length > 8);
+    setfilteredNews(res);
+  };
+  
+  
+
+  useEffect(() => {
+    Getblog();
+  }, [filteredNews]);
+  return (
+    <React.Fragment>
+      <div className="row mt-5">
+        <div className="col-lg-6 col-sm-12">
+          <h2 className="text-center mt-2 newakh">جدیدترین اخبار</h2>
+          <ul className=" mt-5 text-center new-titles w-100 mx-auto">
+            {filteredNews &&
+              filteredNews.map((item) => (
+                <li className="font-weight-normal  px-3 py-4 mt-3 ">
+                  <h3>
+                    <Link to={`/Blog/${item._id}`}>{item.title}</Link>
+                  </h3>
+                </li>
+              ))}
+          </ul>
         </div>
-      </React.Fragment>
-    );
-  }
-}
+        <div className="col-lg-6 col-sm-12">
+          <h2 className="text-center mt-2 newakh">جدیدترین اخبار</h2>
+          <ul className=" mt-5 text-center new-titles  bg-light   w-100 mx-auto">
+            {filteredNews &&
+              filteredNews.map((item) => (
+                <li className="font-weight-normal  px-3 py-4 mt-3 ">
+                  <h3>{item.title}</h3>
+                </li>
+              ))}
+          </ul>
+        </div>
+      </div>
+    </React.Fragment>
+  );
+};
 
 export default LastestNews;

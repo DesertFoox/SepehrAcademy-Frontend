@@ -17,8 +17,8 @@ class SidebarHeader extends Component {
         <ul className="nav navbar-nav flex-row">
           <li className="nav-item mr-auto">
             <NavLink to="/" className="navbar-brand">
-              <div className="brand-logo" />
-              <h2 className="brand-text mb-0">Vuexy</h2>
+              <img src={require('../../../../../Assets/images/eagle.jpg').default} className="brand-logo" />
+              <h6 className="brand-text mb-0">Salar</h6>
             </NavLink>
           </li>
           <li className="nav-item nav-toggle">

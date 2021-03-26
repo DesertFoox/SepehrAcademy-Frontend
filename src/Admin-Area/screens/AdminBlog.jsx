@@ -42,12 +42,6 @@ const AdminBlog = () => {
         width: 200,
       },
       {
-        label: "تاریخ",
-        field: "startDate",
-        sort: "asc",
-        width: 100,
-      },
-      {
         label: "موضوع",
         field: "moz",
         sort: "asc",
@@ -70,9 +64,8 @@ const AdminBlog = () => {
       image: item.image,
       blogName: item.title,
       _id: item._id,
-      startDate: ConvertDateHandler(item.startDate),
       moz: item.category,
-      des: item.text,
+      des: item.text.substr(0, 60) + "...",
       pos: (
         <div>
           <MDBBtn onClick={() => Deleteterm(item)} rounded color="danger">
@@ -117,7 +110,10 @@ const AdminBlog = () => {
         <CardTitle>دوره ها</CardTitle>
       </CardHeader>
       <CardBody>
+        <div className="container">
         <MDBDataTable striped bordered small data={data} />{" "}
+
+        </div>
       </CardBody>
     </Card>
   );

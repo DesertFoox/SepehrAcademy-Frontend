@@ -5,7 +5,6 @@ const GetCourse = async () => {
   try {
     const result = await http.get(MainUrl + "course");
     const ResultData = result.data.result;
-    console.log(ResultData);
     return ResultData;
   } catch {
     return {};

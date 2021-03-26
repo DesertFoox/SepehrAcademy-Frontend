@@ -46,7 +46,7 @@ class Routers extends Component {
             <Route exact path="/Courses" component={Courses} />
             <Route exact path="/Course/:id" component={Course} />
             <Route exact path="/Blogs" component={Blogs} />
-            <Route exact path="/Blog:id?" component={Blog} />
+            <Route exact path="/Blog/:id" component={Blog} />
 
             {/* user Autthorization */}
             <Route exact path="/Login" component={LoginPage} />

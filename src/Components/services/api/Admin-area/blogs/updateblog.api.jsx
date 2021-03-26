@@ -6,7 +6,7 @@ const UpdateBlog = async (id, blog) => {
     try {
         const result = await http.put(MainUrl + `news/${id}`, blog);
         const ResultData = result.data.result;
-        toast.success("دوره با موفقیت اپدیت شد");
+        toast.success("بلاگ با موفقیت اپدیت شد");
         return ResultData;
     }
     catch (error) {

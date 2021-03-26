@@ -15,7 +15,10 @@ import * as Yup from "yup";
 import EachTerm from "../../Components/services/api/course/eachTerm.api";
 import GetTeachers from "../../Components/services/api/course/term.api";
 import { Fragment } from "react";
-const Home = (props) => {
+import getTerms from "../../Components/services/api/course/term.api";
+import getKourses from "../../Components/services/api/Admin-area/kourses/kourses.api";
+import { useHistory } from "react-router";
+const UpdateCourse = (props) => {
   const [initialState, setinitialState] = useState([
     {
       title: "",
@@ -28,11 +31,19 @@ const Home = (props) => {
       teacher_id: "",
     },
   ]);
-  const [teachers, setTeacher] = useState([]);
-  const GetAllUsers = async () => {
-    let users = await GetTeachers();
-    setTeacher(users);
+  const [Teachers, setTeacher] = useState([]);
+  const [kourse, setKourse] = useState([]);
+
+  const GetTeachers = async () => {
+    const Teache = await getTerms();
+    setTeacher(Teache);
   };
+
+  const Getcourses = async () => {
+    const Kours = await getKourses();
+    setKourse(Kours);
+  };
+
 
   const CourseInformation = async () => {
     const user = await EachTerm(props.match.params.id);
@@ -69,7 +80,7 @@ const Home = (props) => {
       .min(3, "اسم انتخاب شده کوتاه است")
       .required("این فیلد اجباریست"),
   });
-
+  let history = useHistory();
   const UpdateCourse = async (data) => {
     const course = {
       title: data.title,
@@ -80,12 +91,14 @@ const Home = (props) => {
       teacher: data.teacher,
       course: data.course,
     };
-    await UpdateCourses(props.match.params.id,course);
+    await UpdateCourses(course,props.match.params.id);
+    history.push('/admin/courses');
   };
 
   useEffect(() => {
     CourseInformation();
-    GetAllUsers();
+    GetTeachers();
+    Getcourses();
   }, []);
   return (
     <Card>
@@ -101,109 +114,145 @@ const Home = (props) => {
         >
           {({ errors, touched, setFieldValue }) => (
             <Form>
-              <FormGroup className="my-3">
-                <Label for="title">نام دوره</Label>
-                <Field
-                  name="title"
-                  id="required"
-                  className={`form-control ${
-                    errors.title && touched.title && "is-invalid"
-                  }`}
-                />
-                {errors.title && touched.title ? (
-                  <div className="invalid-tooltip mt-25">{errors.title}</div>
-                ) : null}
-              </FormGroup>
-              <FormGroup className="my-3">
-                <Label for="cost">قیمت</Label>
-                <Field
-                  type="text"
-                  name="cost"
-                  id="cost"
-                  className={`form-control ${
-                    errors.cost && touched.cost && "is-invalid"
-                  }`}
-                />
-                {errors.cost && touched.cost ? (
-                  <div className="invalid-tooltip mt-25">{errors.cost}</div>
-                ) : null}
-              </FormGroup>
-              <FormGroup className="my-3">
-                <Label for="url">تاریخ پایان</Label>
-                <Field
-                  name="endDate"
-                  id="endDate"
-                  className={`form-control ${
-                    errors.endDate && touched.endDate && "is-invalid"
-                  }`}
-                />
-                {errors.url && touched.url ? (
-                  <div className="invalid-tooltip mt-25">{errors.endDate}</div>
-                ) : null}
-              </FormGroup>
-              <FormGroup className="my-3">
-                <Label for="startDate">شروع دوره</Label>
-                <Field
-                  name="startDate"
-                  id="startDate"
-                  className={`form-control ${
-                    errors.startDate && touched.startDate && "is-invalid"
-                  }`}
-                />
-                {errors.startDate && touched.startDate ? (
-                  <div className="invalid-tooltip mt-25">
-                    {errors.startDate}
-                  </div>
-                ) : null}
-              </FormGroup>
-              <FormGroup className="my-3 ">
-                <Label for="date">ظرفیت</Label>
-                <Field
-                  type="text"
-                  name="capacity"
-                  id="capacity"
-                  className={`form-control ${
-                    errors.capacity && touched.capacity && "is-invalid"
-                  }`}
-                />
-                {errors.capacity && touched.capacity ? (
-                  <div className="invalid-tooltip mt-25">{errors.capacity}</div>
-                ) : null}
-              </FormGroup>
-              <FormGroup className="my-3">
-                <Label for="teacher">نام استاد</Label>
-                <select
-                  name="teacher"
-                  onChange={(event) =>
-                    setFieldValue("teacher", event.target.value)
-                  }
-                  style={{ height: "3em" }}
-                  className={`form-control form-control-sm ${
-                    errors.teacher && touched.teacher && "is-invalid"
-                  }`}
-                >
-                  {initialState.map((items) => (
-                    <option value={items.teacher_id}>{items.teacher}</option>
-                  ))}
-                </select>
-                {errors.teacher && touched.teacher ? (
-                  <div className="invalid-tooltip mt-25">{errors.teacher}</div>
-                ) : null}
-              </FormGroup>
-              <FormGroup className="my-3">
-                <Label for="course">نام کورس</Label>
-                <Field
-                  name="course"
-                  id="course"
-                  className={`form-control ${
-                    errors.course && touched.course && "is-invalid"
-                  }`}
-                />
-                {errors.course && touched.course ? (
-                  <div className="invalid-tooltip mt-25">{errors.course}</div>
-                ) : null}
-              </FormGroup>
-              {teachers.map((teacher) => console.log(teacher.teacher))}
+              <div className="row">
+                <div className="col-lg-6">
+                  <FormGroup className="my-3">
+                    <Label for="title">نام دوره</Label>
+                    <Field
+                      name="title"
+                      id="required"
+                      className={`form-control ${
+                        errors.title && touched.title && "is-invalid"
+                      }`}
+                    />
+                    {errors.title && touched.title ? (
+                      <div className="invalid-tooltip mt-25">
+                        {errors.title}
+                      </div>
+                    ) : null}
+                  </FormGroup>
+                </div>
+                <div className="col-lg-6">
+                  <FormGroup className="my-3">
+                    <Label for="cost">قیمت</Label>
+                    <Field
+                      type="text"
+                      name="cost"
+                      id="cost"
+                      className={`form-control ${
+                        errors.cost && touched.cost && "is-invalid"
+                      }`}
+                    />
+                    {errors.cost && touched.cost ? (
+                      <div className="invalid-tooltip mt-25">{errors.cost}</div>
+                    ) : null}
+                  </FormGroup>
+                </div>
+                <div className="col-lg-6">
+                  <FormGroup className="my-3">
+                    <Label for="url">تاریخ پایان</Label>
+                    <Field
+                      name="endDate"
+                      id="endDate"
+                      className={`form-control ${
+                        errors.endDate && touched.endDate && "is-invalid"
+                      }`}
+                    />
+                    {errors.url && touched.url ? (
+                      <div className="invalid-tooltip mt-25">
+                        {errors.endDate}
+                      </div>
+                    ) : null}
+                  </FormGroup>
+                </div>{" "}
+                <div className="col-lg-6">
+                  <FormGroup className="my-3">
+                    <Label for="startDate">شروع دوره</Label>
+                    <Field
+                      name="startDate"
+                      id="startDate"
+                      className={`form-control ${
+                        errors.startDate && touched.startDate && "is-invalid"
+                      }`}
+                    />
+                    {errors.startDate && touched.startDate ? (
+                      <div className="invalid-tooltip mt-25">
+                        {errors.startDate}
+                      </div>
+                    ) : null}
+                  </FormGroup>
+                </div>{" "}
+                <div className="col-lg-6">
+                  <FormGroup className="my-3 ">
+                    <Label for="date">ظرفیت</Label>
+                    <Field
+                      type="text"
+                      name="capacity"
+                      id="capacity"
+                      className={`form-control ${
+                        errors.capacity && touched.capacity && "is-invalid"
+                      }`}
+                    />
+                    {errors.capacity && touched.capacity ? (
+                      <div className="invalid-tooltip mt-25">
+                        {errors.capacity}
+                      </div>
+                    ) : null}
+                  </FormGroup>
+                </div>
+                <div className="col-lg-6">
+                  <FormGroup className="my-3">
+                    <Label for="teacher">نام استاد</Label>
+                    <select
+                      name="teacher"
+                      id="teacher"
+                      onChange={(event) =>
+                        setFieldValue("teacher", event.target.value)
+                      }
+                      className={`form-control ${
+                        errors.teacher && touched.teacher && "is-invalid"
+                      }`}
+                    >
+                      {Teachers.map((item) => (
+                        <option value={item.teacher._id}>
+                          {item.teacher.fullName}
+                        </option>
+                      ))}
+                    </select>
+                    {errors.teacher && touched.teacher ? (
+                      <div className="invalid-tooltip mt-25">
+                        {errors.teacher}
+                      </div>
+                    ) : null}
+                  </FormGroup>
+                </div>
+                <div className="col-lg-6">
+                  <FormGroup className="my-3">
+                    <Label for="course">نام کورس</Label>
+                    <select
+                      name="course"
+                      id="course"
+                      onChange={(event) =>
+                        setFieldValue("course", event.target.value)
+                      }
+                      className={`form-control ${
+                        errors.course && touched.course && "is-invalid"
+                      }`}
+                    >
+                      {kourse.map((item) => (
+                        <option value={item._id}>{item.courseName}</option>
+                      ))}
+                    </select>
+                    {errors.course && touched.course ? (
+                      <div className="invalid-tooltip mt-25">
+                        {errors.course}
+                      </div>
+                    ) : null}
+                  </FormGroup>
+                </div>
+              </div>
+
+              {Teachers.map((teacher) => console.log(teacher.teacher))}
               <button className="btn btn-success" type="submit">
                 ثبت
               </button>
@@ -215,4 +264,4 @@ const Home = (props) => {
   );
 };
 
-export default Home;
+export default UpdateCourse;

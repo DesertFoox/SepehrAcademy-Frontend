@@ -52,13 +52,13 @@ const AdminCourse = () => {
         label: "ایمیل کاربر",
         field: "userEmail",
         sort: "asc",
-        width: 270,
+        width: 100,
       },
       {
         label: "کدملی کاربر",
         field: "nationalid",
         sort: "asc",
-        width: 200,
+        width: 100,
       },
       {
         label: "ایدی کاربر",
@@ -95,7 +95,7 @@ const AdminCourse = () => {
       user &&
       user.map((users) => ({
         username: users.fullName,
-        userEmail: users.email,
+        userEmail: users.email.substr(0,30) + "...",
         nationalid: users.nationalId,
         _id: users._id,
         userphone: users.phoneNumber,
@@ -129,18 +129,17 @@ const AdminCourse = () => {
     setUser(res);
   };
 
-
   const DeleteUser = async (myterm) => {
     const originalPosts = user;
 
     const posts = user.filter((p) => p._id !== myterm._id);
     setUser(posts);
     try {
-      await http.delete(MainUrl + "term/" + myterm._id);
+      await http.delete(MainUrl + "student/" + myterm._id);
       toast.success("   کاربر با موفقیت حذف شد");
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
-        toast.error("این دوره از لیست کاربر قبلا پاک شده است");
+        toast.error("این کاربر از لیست کاربر قبلا پاک شده است");
       setUser(originalPosts);
     }
   };
@@ -151,7 +150,9 @@ const AdminCourse = () => {
     const posts = user.filter((p) => p._id !== userId);
     setUser(posts);
     try {
-      await http.post(MainUrl + `term/removeStudentFromTerm/${userId}`, { termId: myterm });
+      await http.post(MainUrl + `term/removeStudentFromTerm/${userId}`, {
+        termId: myterm,
+      });
       toast.success("دوره از لیست کاربر با موفقیت حذف شد");
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
@@ -161,7 +162,7 @@ const AdminCourse = () => {
   };
   //  شروع دوره ها
 
-  const AddToCourse = async (termId) => {
+  const AddToCourse = async (userId,termId) => {
     const add = await AddStudentToCourse(userId, termId);
   };
   const termdata = {
@@ -189,11 +190,21 @@ const AdminCourse = () => {
     rows: allTermFilter.map((item) => ({
       courseName: item.course.courseName,
       teacher: item.teacher.fullName,
-      pos: !item.flag ? <MDBBtn onClick={() => DeleteUserFromCourse(item._id)} rounded color="danger"> {console.log(item._id)}
-        حذف
-    </MDBBtn> : <MDBBtn rounded color="success" onClick={() => AddToCourse(item._id)}>
-        اضافه کردن
-    </MDBBtn>
+      pos: !item.flag ? (
+        <MDBBtn
+          onClick={() => DeleteUserFromCourse(item._id)}
+          rounded
+          color="danger"
+        >
+          {" "}
+          {console.log(item._id)}
+          حذف
+        </MDBBtn>
+      ) : (
+        <MDBBtn rounded color="success" onClick={() => AddToCourse(userId,item._id)}>
+          اضافه کردن
+        </MDBBtn>
+      ),
     })),
   };
   //  const LoadTerm = async () => {
@@ -203,26 +214,25 @@ const AdminCourse = () => {
   const toggle = async (userID) => {
     setModal(!modal);
     const res = await getTermInf();
-    const FilterCourses = res.filter((course) =>
-      !course.students.some(student => student._id === userID)
+    const FilterCourses = res.filter(
+      (course) => !course.students.some((student) => student._id === userID)
     );
-    const allTermsFlag = res.map(terms => {
-      const check = FilterCourses.some(filter => filter._id === terms._id)
+    const allTermsFlag = res.map((terms) => {
+      const check = FilterCourses.some((filter) => filter._id === terms._id);
       if (check) {
-        return { flag: true, ...terms }
-      }
-      else return { flag: false, ...terms }
-    })
-    setAllTermFilter(allTermsFlag)
+        return { flag: true, ...terms };
+      } else return { flag: false, ...terms };
+    });
+    setAllTermFilter(allTermsFlag);
     setUserID(userID);
     setTerm(res);
     setUserCheckTerm([FilterCourses]);
   };
-  console.log("s" + userCheckTerm)
+  console.log("s" + userCheckTerm);
   // پایان دوره ها
   useEffect(() => {
     LoadUser();
-  }, []);
+  }, [userCheckTerm]);
   return (
     <Card>
       <CardHeader>
@@ -243,7 +253,9 @@ const AdminCourse = () => {
         </MDBContainer>{" "}
       </CardHeader>
       <CardBody>
-        <MDBDataTable striped bordered small data={data} />{" "}
+        <div className="container">
+        <MDBDataTable striped bordered small data={data} />
+        </div>
       </CardBody>
     </Card>
   );

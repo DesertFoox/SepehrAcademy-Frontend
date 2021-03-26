@@ -23,7 +23,7 @@ class Routers extends Component {
             <Route exact path="/Courses" component={Courses} />
             <Route exact path="/Course/:id" component={Course} />
             <Route exact path="/Blogs" component={AllBlogs} />
-            <Route exact path="/Blog:id?" component={Singleblog} />
+            <Route exact path="/Blog/:id" component={Singleblog} />
 
             {IsLogged("/user/dashboard/:id", Dashboard)}
             {IsLogged("/user/dashboard/myCourses", Dashboard)}

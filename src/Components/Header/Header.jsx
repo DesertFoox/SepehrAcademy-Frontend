@@ -30,7 +30,7 @@ class Header extends Component {
             <li className={`${classes.below} ${classes["1"]}`}>
               <Link to="/Courses">آموزش</Link>
             </li>
-            <li className={`${classes.below} ${classes["1"]}`}> خدمات</li>
+            <li className={`${classes.below} ${classes["1"]}`}><Link to="/Blogs">مقالات</Link></li>
             <li className={`${classes.below} ${classes["1"]}`}> مالی</li>
             <li className={`${classes.below} ${classes["1"]}`}> تماس با ما</li>
           </ul>

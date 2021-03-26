@@ -58,6 +58,7 @@
     "react-dropzone": "^11.2.3",
     "react-feather": "^2.0.8",
     "react-flatpickr": "^3.9.1",
+    "react-google-recaptcha": "^2.1.0",
     "react-hammerjs": "^1.0.1",
     "react-hook-form": "^6.15.1",
     "react-id-swiper": "~2.4.0",

@@ -10,13 +10,13 @@ import NotFound from '../Components/Landing/404/404'
 import Dashboard from '../User/Panelholder/Panel'
 //wrappers
 import IsLogged from '../Components/wrappers/auth/isLogged'
+//routes
 import Landing from '../Components/Landing/Landing'
 import Course from '../Components/Courses/SingleCourse/SingleCourse'
 import Courses from '../Components/Courses/AllCourses/Courses'
 import AllBlogs from '../Components/Blogs/AllBlogs/Blogs'
 import Singleblog from '../Components/Blogs/SingleBlogs/SingleBlog'
-import AddKourse from './screens/Addkourse'
-import DeleteKourse from './screens/DeleteKours'
+
 // Route-based code splitting
 const Home = lazy(() => import('./screens/Home'))
 
@@ -33,11 +33,12 @@ const Users = lazy(() => import('./screens/AdminUser'))
 const UpdateStudent = lazy(() => import('./screens/UpdateStudent'))
 
 const Kourses = lazy(() => import('./screens/Kourses'))
-
+const AddKourse = lazy(() => import('./screens/Addkourse'))
 const EditKourses = lazy(() => import('./screens/Editkourse'))
 
 const Adminblog = lazy(() => import('./screens/AdminBlog'))
 const Blogedit = lazy(() => import('./screens/editblog'))
+const Addblog = lazy(() => import('./screens/AddBlog'))
 
 
 
@@ -100,9 +101,10 @@ class AppRouter extends React.Component {
 
           <AppRoute exact path="/admin/blogs" component={Adminblog} />
           <AppRoute exact path="/editblog/:id" component={Blogedit} />
+          <AppRoute exact path="/admin/addblog" component={Addblog} />
 
 
-          <Route exact path="/admin/addkourse" component={AddKourse} />
+          <AppRoute exact path="/admin/addkourses" component={AddKourse} />
 
           <Route exact path="/" component={Landing} />
           <Route exact path="/Courses" component={Courses} />
@@ -110,8 +112,8 @@ class AppRouter extends React.Component {
           <Route exact path="/Blogs" component={AllBlogs} />
           <Route exact path="/Blog:id?" component={Singleblog} />
 
-          {IsLogged('/user/dashboard/:id', Dashboard)}
-          {IsLogged('/user/dashboard/myCourses', Dashboard)}
+          <Route exact path="/user/dashboard/:id" component={Dashboard} />
+          <Route exact path="/user/dashboard/myCourses" component={Dashboard} />
 
           <Route exact path="/not-found" component={NotFound} />
           <Redirect to="/not-found" />
