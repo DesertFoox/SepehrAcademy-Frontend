@@ -1,23 +1,77 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "../../Authorization/Login/css/login.module.css";
 import Header from "../../Header/Header";
 import LastestNews from "../LatestNewsBlogs/LastestNewsblog";
 import "./css/Singleblog.css";
 import singlelog from "../../services/api/Admin-area/blogs/eachBlog.api";
 import { Fragment } from "react";
+import Comment from "../../Comment/Comment";
+import { MDBBadge, MDBBtn } from "../../../Assets/mdbreact/mdbreact";
+
 const Singleblog = (props) => {
   const [Blog, setBlog] = useState([]);
+  const [BlogComment, setBlogComment] = useState({
+    comments: "",
+  });
+  const [BlogUserNameComment, setBlogUserNameComment] = useState({
+    username: "",
+  });
+  const [userComment, setuserComment] = useState([
+    {
+      id: "",
+      username: "",
+      comments: "",
+      commentansewr: {
+        id: "",
+        username: "",
+        comments: "",
+      },
+    },
+  ]);
+
+  const CreateComment = () => {
+    setuserComment([
+      ...userComment,
+      {
+        id: Math.floor(Math.random() * 1000),
+        username: BlogUserNameComment.username,
+        comments: BlogComment.comments,
+        commentansewr: {
+          username: "",
+          comments: "",
+        },
+      },
+    ]);
+    setBlogComment({ comments: "" });
+    setBlogUserNameComment({ username: "" });
+  };
+
+  const CommentAnsewr = (id) => {
+    setuserComment([
+      ...userComment,
+      {
+        commentansewr: {
+          username: BlogUserNameComment.username,
+          comments: BlogComment.comments,
+        },
+      },
+    ]);
+    setBlogComment({ comments: "" });
+    setBlogUserNameComment({ username: "" });
+  };
+
   const singBlog = async () => {
     let res = await singlelog(props.match.params.id);
     setBlog([res]);
   };
+
   useEffect(() => {
     singBlog();
-  }, []);
+  }, [userComment]);
   return (
     <React.Fragment>
       <div className={classes.shape1_holder}></div>
-      <Header />
+      <Header mgr={"196px"} />
       <div className="container mt-5 fonts rtl">
         {Blog.map((item) => (
           <Fragment>
@@ -33,6 +87,67 @@ const Singleblog = (props) => {
                   <h4 className="card-text text-justify mb-5 text-p">
                     {item.text}
                   </h4>
+                  <Comment
+                    BlogComment={BlogComment.comments}
+                    BlogUserNameComment={BlogUserNameComment.username}
+                    setBlogComment={setBlogComment}
+                    setBlogUserNameComment={setBlogUserNameComment}
+                    CreateComment={CreateComment}
+                  />{" "}
+                  <div className="w-100">
+                    {userComment.map((item) =>
+                      item.username && item.comments ? (
+                        <Fragment>
+                          {" "}
+                          <div className="mb-3 comment p-3 col-lg-12 w-25 border">
+                            <div className="d-flex justify-content-start">
+                              <h3 className=" ">
+                                {item.username}
+                                <MDBBadge className="mr-3" color="primary">
+                                  نوشته{" "}
+                                </MDBBadge>
+                              </h3>{" "}
+                            </div>
+
+                            <div className="">
+                              <h5 className="text-justify">{item.comments}</h5>
+                            </div>
+                            <div className="d-flex justify-content-end">
+                              <MDBBtn
+                                onClick={CommentAnsewr(item.id)}
+                                color="success"
+                              >
+                                پاسخ
+                              </MDBBtn>
+                            </div>
+                          </div>
+                          {/* //comment ansewr */}
+                          <div className="d-flex justify-content-end">
+                            {userComment.map((its) => (
+                              <div className="mb-3 comment p-3 col-lg-12 w-25 border">
+                                <div className="d-flex justify-content-start">
+                                  <h3 className=" ">
+                                    {its.commentansewr.username}
+                                    <MDBBadge className="mr-3" color="success">
+                                      پاسخ به نوشته
+                                    </MDBBadge>
+                                  </h3>{" "}
+                                </div>
+
+                                <div className="">
+                                  <h5 className="text-justify">
+                                    {its.commentansewr.comments}
+                                  </h5>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </Fragment>
+                      ) : (
+                        ""
+                      )
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

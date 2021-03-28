@@ -38,16 +38,14 @@ body {
 }
 
 .text-p {
-  color: #757575 !important; 
+  color: #757575 !important;
   font-size: 2rem !important;
 }
-
-.news {
-  background: url(../../../../Assets/images/news.png) no-repeat 43% 7%;
+.comment {
+  transition: 0.3s;
+  border-radius: 1rem;
 }
-
-@media Screen and (max-width: 375px) {
-  .news {
-    background: url(../../../../Assets/images/news.png) no-repeat 28% 7%;
-  }
+.comment:hover {
+  box-shadow: 0 2px 30px 0 rgb(25 25 25 / 12%);
+  transform: scale(1.03);
 }

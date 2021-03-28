@@ -341,13 +341,13 @@ class NavbarUser extends React.PureComponent {
           <DropdownToggle tag="a" className="nav-link dropdown-user-link">
             <div className="user-nav d-sm-flex d-none">
               <span className="user-name text-bold-600">
-                {this.state.userStatus.length > 0
+                {/* {this.state.userStatus.length > 0
                   ? this.state.userStatus.map((user) =>
                       user.fullName.length > 6
                         ? user.fullName.substr(0, 6)
                         : user.fullName
                     )
-                  : "No Name Found"}
+                  : "No Name Found"} */}
               </span>
               <span className="user-status">Available</span>
             </div>

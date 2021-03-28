@@ -31,20 +31,6 @@
     .text-p {
         color: #757575;
     }
-
-    .news {
-        background: url(../../../../Assets/images/news.png) no-repeat 43% 7%;
-    }
-    @media Screen and (max-width:375px) {
-        .news {
-        background: url(../../../../Assets/images/news.png) no-repeat 28% 7%;
-        }
-    }
-    @media Screen and (max-width:550px) {
-        .news {
-        background: url(../../../../Assets/images/news.png) no-repeat 33% 7%;
-        }
-    }
     .blogs-bg{
         box-shadow: 0 0 5px #000000 !important;
         border-radius: 20px !important;
