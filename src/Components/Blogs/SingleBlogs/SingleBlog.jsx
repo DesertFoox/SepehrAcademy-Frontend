@@ -16,41 +16,28 @@ const Singleblog = (props) => {
   const [BlogUserNameComment, setBlogUserNameComment] = useState({
     username: "",
   });
-  const [userComment, setuserComment] = useState([
-    {
-      id: "",
-      username: "",
-      comments: "",
-      commentansewr: {
-        id: "",
-        username: "",
-        comments: "",
-      },
-    },
-  ]);
+  const [userComment, setuserComment] = useState([]);
 
   const CreateComment = () => {
     setuserComment([
       ...userComment,
       {
-        id: Math.floor(Math.random() * 1000),
+        _id: Math.floor(Math.random() * 100),
         username: BlogUserNameComment.username,
         comments: BlogComment.comments,
-        commentansewr: {
-          username: "",
-          comments: "",
-        },
       },
     ]);
     setBlogComment({ comments: "" });
     setBlogUserNameComment({ username: "" });
   };
 
-  const CommentAnsewr = (id) => {
+  const CommentAnsewr = (id, uname, uc) => {
     setuserComment([
       ...userComment,
       {
+        _id: id * 2,
         commentansewr: {
+          _id: id,
           username: BlogUserNameComment.username,
           comments: BlogComment.comments,
         },
@@ -76,7 +63,7 @@ const Singleblog = (props) => {
         {Blog.map((item) => (
           <Fragment>
             <h1 className="text-center news nass">{item.title}</h1>
-            <div className="row mt-5 w-100 mx-auto">
+            <div key={item._id} className="row mt-5 w-100 mx-auto">
               <div className="card col p-4 holder-content new-titles h-50">
                 <img
                   className="img-fluid content-img mb-4"
@@ -99,7 +86,10 @@ const Singleblog = (props) => {
                       item.username && item.comments ? (
                         <Fragment>
                           {" "}
-                          <div className="mb-3 comment p-3 col-lg-12 w-25 border">
+                          <div
+                            key={item.id}
+                            className="mb-3 comment p-3 col-lg-12 w-25 border"
+                          >
                             <div className="d-flex justify-content-start">
                               <h3 className=" ">
                                 {item.username}
@@ -114,7 +104,13 @@ const Singleblog = (props) => {
                             </div>
                             <div className="d-flex justify-content-end">
                               <MDBBtn
-                                onClick={CommentAnsewr(item.id)}
+                                onClick={() =>
+                                  CommentAnsewr(
+                                    item._id,
+                                    item.username,
+                                    item.comments
+                                  )
+                                }
                                 color="success"
                               >
                                 پاسخ
@@ -123,24 +119,34 @@ const Singleblog = (props) => {
                           </div>
                           {/* //comment ansewr */}
                           <div className="d-flex justify-content-end">
-                            {userComment.map((its) => (
-                              <div className="mb-3 comment p-3 col-lg-12 w-25 border">
-                                <div className="d-flex justify-content-start">
-                                  <h3 className=" ">
-                                    {its.commentansewr.username}
-                                    <MDBBadge className="mr-3" color="success">
-                                      پاسخ به نوشته
-                                    </MDBBadge>
-                                  </h3>{" "}
-                                </div>
+                            {userComment.map(
+                              (its) =>
+                                its.commentansewr &&
+                                its.commentansewr._id === item._id && (
+                                  <div
+                                    key={its.keyid}
+                                    className="mb-3 comment p-3 col-lg-12 w-25 border"
+                                  >
+                                    <div className="d-flex justify-content-start">
+                                      <h3 className=" ">
+                                        {its.commentansewr.username}
+                                        <MDBBadge
+                                          className="mr-3"
+                                          color="success"
+                                        >
+                                          پاسخ به نوشته
+                                        </MDBBadge>
+                                      </h3>{" "}
+                                    </div>
 
-                                <div className="">
-                                  <h5 className="text-justify">
-                                    {its.commentansewr.comments}
-                                  </h5>
-                                </div>
-                              </div>
-                            ))}
+                                    <div className="">
+                                      <h5 className="text-justify">
+                                        {its.commentansewr.comments}
+                                      </h5>
+                                    </div>
+                                  </div>
+                                )
+                            )}
                           </div>
                         </Fragment>
                       ) : (

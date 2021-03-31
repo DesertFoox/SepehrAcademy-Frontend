@@ -25,7 +25,7 @@ const LastestNews = () => {
           <ul className=" mt-5 text-center new-titles w-100 mx-auto">
             {filteredNews &&
               filteredNews.map((item) => (
-                <li className="font-weight-normal  px-3 py-4 mt-3 ">
+                <li key={item._id} className="font-weight-normal  px-3 py-4 mt-3 ">
                   <h3>
                     <Link to={`/Blog/${item._id}`}>{item.title}</Link>
                   </h3>
@@ -38,7 +38,7 @@ const LastestNews = () => {
           <ul className=" mt-5 text-center new-titles  bg-light   w-100 mx-auto">
             {filteredNews &&
               filteredNews.map((item) => (
-                <li className="font-weight-normal  px-3 py-4 mt-3 ">
+                <li key={item._id} className="font-weight-normal  px-3 py-4 mt-3 ">
                   <h3>{item.title}</h3>
                 </li>
               ))}
