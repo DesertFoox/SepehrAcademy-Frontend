@@ -109,6 +109,14 @@ const navigationConfig = [
       },
     ],
   },
+  {
+    id: "teachers",
+    title: "معلم ها",
+    type: "item",
+    icon: <Icon.List size={20} />,
+    permissions: ["admin", "editor"],
+    navLink: "/admin/teachers",
+  },
 ];
 
 export default navigationConfig;

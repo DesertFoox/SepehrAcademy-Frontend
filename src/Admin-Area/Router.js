@@ -33,12 +33,18 @@ const Users = lazy(() => import('./screens/AdminUser'))
 const UpdateStudent = lazy(() => import('./screens/UpdateStudent'))
 
 const Kourses = lazy(() => import('./screens/Kourses'))
+
 const AddKourse = lazy(() => import('./screens/Addkourse'))
+
 const EditKourses = lazy(() => import('./screens/Editkourse'))
 
 const Adminblog = lazy(() => import('./screens/AdminBlog'))
+
 const Blogedit = lazy(() => import('./screens/editblog'))
+
 const Addblog = lazy(() => import('./screens/AddBlog'))
+
+const teachers = lazy(() => import('./screens/AdminTeacher'))
 
 
 
@@ -102,6 +108,7 @@ class AppRouter extends React.Component {
           <AppRoute exact path="/admin/blogs" component={Adminblog} />
           <AppRoute exact path="/editblog/:id" component={Blogedit} />
           <AppRoute exact path="/admin/addblog" component={Addblog} />
+          <AppRoute exact path="/admin/teachers" component={teachers} />
 
 
           <AppRoute exact path="/admin/addkourses" component={AddKourse} />

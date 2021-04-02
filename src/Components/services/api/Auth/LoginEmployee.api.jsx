@@ -15,8 +15,9 @@ export const EmployeeLogin = async (adminData) => {
     setItemGeneric("role", decode.role);
 
     //get user information
-    const userinformation = result.data.result.studentModel;
-    console.log(userinformation);
+    console.log(result);
+
+    const userinformation = result.data.result;
 
     setUserInformation("adminuser", JSON.stringify(userinformation));
     window.location = `/admin/dashboard`;

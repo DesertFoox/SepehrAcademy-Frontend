@@ -116,6 +116,9 @@ const AdminKourse = () => {
     <Card>
       <CardHeader>
         <CardTitle>دوره ها</CardTitle>
+        <Link to="/admin/addkourses">
+        <MDBBtn color="primary px-4 py-2">ساخت کورس</MDBBtn>
+        </Link>
       </CardHeader>
       <CardBody>
         <div className="container">

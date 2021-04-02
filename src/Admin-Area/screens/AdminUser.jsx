@@ -254,7 +254,7 @@ const AdminCourse = () => {
       </CardHeader>
       <CardBody>
         <div className="container">
-        <MDBDataTable striped bordered small data={data} />
+        <MDBDataTable responsive	 striped bordered small data={data} />
         </div>
       </CardBody>
     </Card>

@@ -108,10 +108,13 @@ const AdminBlog = () => {
     <Card>
       <CardHeader>
         <CardTitle>دوره ها</CardTitle>
+        <Link to="/admin/addblog">
+        <MDBBtn color="primary px-4 py-2">ساخت بلاگ</MDBBtn>
+        </Link>
       </CardHeader>
       <CardBody>
         <div className="container">
-        <MDBDataTable striped bordered small data={data} />{" "}
+        <MDBDataTable responsive	 striped bordered small data={data} />{" "}
 
         </div>
       </CardBody>

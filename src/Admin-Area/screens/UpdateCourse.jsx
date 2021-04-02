@@ -31,6 +31,17 @@ const UpdateCourse = (props) => {
       teacher_id: "",
     },
   ]);
+  const ConvertDateHandler = (date) => {
+    const dateObj = new Date(date);
+
+    const day = dateObj.getDate();
+    const month = dateObj.getMonth();
+    const year = dateObj.getFullYear();
+
+    let newdate = day + "/" + month + "/" + year;
+    return newdate;
+  };
+
   const [Teachers, setTeacher] = useState([]);
   const [kourse, setKourse] = useState([]);
 
@@ -51,8 +62,8 @@ const UpdateCourse = (props) => {
       ...state,
       title: user.title,
       cost: user.cost,
-      endDate: user.endDate,
-      startDate: user.startDate,
+      endDate: ConvertDateHandler(user.endDate),
+      startDate: ConvertDateHandler(user.startDate),
       capacity: user.capacity,
       teacher: user.teacher.fullName,
       teacher_id: user.teacher._id,
@@ -91,7 +102,7 @@ const UpdateCourse = (props) => {
       teacher: data.teacher,
       course: data.course,
     };
-    await UpdateCourses(course,props.match.params.id);
+    await UpdateCourses(course, props.match.params.id);
     history.push('/admin/courses');
   };
 
@@ -121,9 +132,8 @@ const UpdateCourse = (props) => {
                     <Field
                       name="title"
                       id="required"
-                      className={`form-control ${
-                        errors.title && touched.title && "is-invalid"
-                      }`}
+                      className={`form-control ${errors.title && touched.title && "is-invalid"
+                        }`}
                     />
                     {errors.title && touched.title ? (
                       <div className="invalid-tooltip mt-25">
@@ -139,9 +149,8 @@ const UpdateCourse = (props) => {
                       type="text"
                       name="cost"
                       id="cost"
-                      className={`form-control ${
-                        errors.cost && touched.cost && "is-invalid"
-                      }`}
+                      className={`form-control ${errors.cost && touched.cost && "is-invalid"
+                        }`}
                     />
                     {errors.cost && touched.cost ? (
                       <div className="invalid-tooltip mt-25">{errors.cost}</div>
@@ -154,9 +163,8 @@ const UpdateCourse = (props) => {
                     <Field
                       name="endDate"
                       id="endDate"
-                      className={`form-control ${
-                        errors.endDate && touched.endDate && "is-invalid"
-                      }`}
+                      className={`form-control ${errors.endDate && touched.endDate && "is-invalid"
+                        }`}
                     />
                     {errors.url && touched.url ? (
                       <div className="invalid-tooltip mt-25">
@@ -171,9 +179,8 @@ const UpdateCourse = (props) => {
                     <Field
                       name="startDate"
                       id="startDate"
-                      className={`form-control ${
-                        errors.startDate && touched.startDate && "is-invalid"
-                      }`}
+                      className={`form-control ${errors.startDate && touched.startDate && "is-invalid"
+                        }`}
                     />
                     {errors.startDate && touched.startDate ? (
                       <div className="invalid-tooltip mt-25">
@@ -189,9 +196,8 @@ const UpdateCourse = (props) => {
                       type="text"
                       name="capacity"
                       id="capacity"
-                      className={`form-control ${
-                        errors.capacity && touched.capacity && "is-invalid"
-                      }`}
+                      className={`form-control ${errors.capacity && touched.capacity && "is-invalid"
+                        }`}
                     />
                     {errors.capacity && touched.capacity ? (
                       <div className="invalid-tooltip mt-25">
@@ -209,9 +215,8 @@ const UpdateCourse = (props) => {
                       onChange={(event) =>
                         setFieldValue("teacher", event.target.value)
                       }
-                      className={`form-control ${
-                        errors.teacher && touched.teacher && "is-invalid"
-                      }`}
+                      className={`form-control ${errors.teacher && touched.teacher && "is-invalid"
+                        }`}
                     >
                       {Teachers.map((item) => (
                         <option value={item.teacher._id}>
@@ -235,9 +240,8 @@ const UpdateCourse = (props) => {
                       onChange={(event) =>
                         setFieldValue("course", event.target.value)
                       }
-                      className={`form-control ${
-                        errors.course && touched.course && "is-invalid"
-                      }`}
+                      className={`form-control ${errors.course && touched.course && "is-invalid"
+                        }`}
                     >
                       {kourse.map((item) => (
                         <option value={item._id}>{item.courseName}</option>

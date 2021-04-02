@@ -42,7 +42,7 @@ class NavbarUser extends React.PureComponent {
   };
 
   UserInformation = async () => {
-    let user = JSON.parse(getUserInformation("userinf"));
+    let user = JSON.parse(getUserInformation("adminuser"));
     this.setState((this.state.userStatus = [user]));
   };
   componentDidMount() {
@@ -137,8 +137,8 @@ class NavbarUser extends React.PureComponent {
                               {item.by
                                 ? item.by
                                 : item.email
-                                ? item.email
-                                : null}
+                                  ? item.email
+                                  : null}
                             </small>
                           ) : null}
                         </div>
@@ -149,8 +149,8 @@ class NavbarUser extends React.PureComponent {
                             {item.size
                               ? item.size
                               : item.date
-                              ? item.date
-                              : null}
+                                ? item.date
+                                : null}
                           </small>
                         </div>
                       ) : null}
@@ -341,13 +341,11 @@ class NavbarUser extends React.PureComponent {
           <DropdownToggle tag="a" className="nav-link dropdown-user-link">
             <div className="user-nav d-sm-flex d-none">
               <span className="user-name text-bold-600">
-                {/* {this.state.userStatus.length > 0
-                  ? this.state.userStatus.map((user) =>
-                      user.fullName.length > 6
-                        ? user.fullName.substr(0, 6)
-                        : user.fullName
-                    )
-                  : "No Name Found"} */}
+                {
+                  this.state.userStatus.map((user) =>
+                    user.employeeModel.fullName
+                  )
+                }
               </span>
               <span className="user-status">Available</span>
             </div>

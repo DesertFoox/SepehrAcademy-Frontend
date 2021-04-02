@@ -2,16 +2,18 @@ import React, { useState, useEffect } from "react";
 import det from "../css/Courses.module.css";
 import EachTerm from "../../../services/api/course/eachTerm.api";
 import { Fragment } from "react";
-import Moment from "react-moment";
+import AddstudentCourse from '../../../services/api/Admin-area/Courses/AddStudentToCourse.api'
+import { getItem } from '../../../services/storage/storage'
 
 const CourseInformation = (props) => {
   const [Course, setCourse] = useState([]);
-
+  const [user, setUser] = useState({});
+  const [isLogged, setIslogged] = useState(false)
   const LoadCourse = async () => {
     const result = await EachTerm(props.LoadCourseId);
     setCourse([result]);
   };
-  
+
   const ConvertDateHandler = (date) => {
     const dateObj = new Date(date);
 
@@ -22,7 +24,22 @@ const CourseInformation = (props) => {
     let newdate = year + "/" + month + "/" + day;
     return newdate;
   };
+  const addCourse = async (termid) => {
+    let res = await AddstudentCourse(user._id, termid);
+return res
+  }
+  const getuserinf = () => {
+    let user = JSON.parse(getItem("userinf"));
+    setUser(user)
+  }
+
+  const logged = () => {
+    let log = getItem("token") ? setIslogged(true) : setIslogged(false);
+    return log;
+  }
   useEffect(() => {
+    logged();
+    getuserinf();
     LoadCourse();
   }, []);
   return (
@@ -40,7 +57,7 @@ const CourseInformation = (props) => {
                   <span>{item.cost}</span> تومان
                 </div>
               </div>
-              <div className={det["signdet"]}>ثبت نام</div>
+              <button onClick={() => addCourse(item._id)} disabled={isLogged ? false : true } type="submit" className={det["signdet"]}>ثبت نام</button>
             </div>
             <div className={det["priceholder"]}>
               <div className={det["itholder"]}>
